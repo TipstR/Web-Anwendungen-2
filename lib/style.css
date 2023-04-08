@@ -32,8 +32,32 @@ main {background-color: #7c8ab6;
     float:left;
     width:75%;}
 
+.center {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
 
+.th_padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
+.th_style {
+    text-align: left;
+    border: 1px solid black;
+}
+
+.td_padding {
+    padding-top: 0px;
+    padding-bottom: 50px;
+}
+
+#table1 {
+    font-size: 22px;
+
+}
 
 footer {background-color:rgb(37, 60, 163);
     clear: left;
