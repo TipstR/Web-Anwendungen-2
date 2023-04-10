@@ -232,27 +232,23 @@ main {
 
 /* Library */
 
+#search2{
+    background-color:#0066ff;
+    color: whitesmoke;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 200px;
+    right: 100px;
+}
+
 #th_style2 {
     text-align: center;
 }
 
-#search2{
-    background-color:#0066ff;
-    color: whitesmoke;
-    right: 10px;
-    width: fit-content;
-    position: relative;
-    top: 100px;
-    border: 40px #0066ff;
-    padding-bottom: 40px;
-    padding-top: 40px;
-}
-
-
-
 #td_padding2 {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 #tr_th_style2{
     background-color: #7c8ab6;
