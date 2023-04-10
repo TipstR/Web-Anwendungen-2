@@ -16,7 +16,6 @@ header {
     background-color:black;
     color: rgba(1, 1, 85, 0.68);
     font-size: xx-large;
-    font-style:italic;
     font-weight:bolder;
     padding: 10px;
     text-align:center;
@@ -40,8 +39,8 @@ nav1 {
 main {
     background-color: #7c8ab6;
     color: rgba(11, 18, 49, 0.68);
-    float:left;
-    width:75%;
+    float: left;
+    width: 75%;
 }
 
 .center {
@@ -50,7 +49,6 @@ main {
     margin-right: 15%;
     text-align: center;
 }
-
 
 
 .th_padding {
@@ -99,7 +97,7 @@ footer {background-color:rgb(37, 60, 163);
 
 /* Evaluation */
 
-#evaluationfield{
+#evaluationfield {
     background-color: aqua;
 }
 
