@@ -74,7 +74,13 @@ footer {background-color:rgb(37, 60, 163);
     width: 100%;}
 
 
-/* Starevaluation */
+/* Evaluation */
+evaluationtext {
+    background-color: #999999;
+    height:100px;
+    width:100px;
+
+}
 
 .star-form {
     display: block;
