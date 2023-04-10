@@ -226,8 +226,7 @@ main {
 }
 
 #blurb {
-    width: 50%;
-    background-color: gray;
+    text-align: center;
 }
 
 /* Library */
