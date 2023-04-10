@@ -21,11 +21,6 @@ header {
     text-align:center;
 }
 
-#hilfscontainer {
-    margin:0px auto;
-    max-width:1024px;
-}
-
 
 nav1 {
     margin: 5px;
@@ -36,11 +31,49 @@ nav1 {
     text-align:center;
 }
 
-main {
-    background-color: #7c8ab6;
-    color: rgba(11, 18, 49, 0.68);
-    float: left;
-    width: 75%;
+#store {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#library {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#about {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+footer {
+    background-color:rgb(37, 60, 163);
+    clear: left;
+    color: #ffffff;
+    font-size: large;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#privacy_policy {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#legal {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#contact {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .center {
@@ -48,6 +81,26 @@ main {
     margin-left: 15%;
     margin-right: 15%;
     text-align: center;
+}
+
+/* index*/
+
+main {
+    background-color: #7c8ab6;
+    color: rgba(11, 18, 49, 0.68);
+    float: left;
+    width: 75%;
+}
+#drop_down_genres {
+    background-color: #0066ff;
+    color: white;
+    width: fit-content;
+    position: relative;
+    left: 100px;
+    top: 100px;
+    border: 40px #0066ff;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 
@@ -80,25 +133,24 @@ main {
 
 }
 
-footer {background-color:rgb(37, 60, 163);
-    clear: left;
-    color: #ffffff;
-    font-size: large;
-    font-style: italic;
-    font-weight: bolder;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 100%;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    width: 100%;}
 
-
-/* Evaluation */
+/* Game */
 
 #evaluationfield {
     background-color: aqua;
+    /* text-align: center;*/
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#descriptionGameFull {
+    background-color: #faaa38;
+    text-align: center;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
 }
 
 #evaluationtext {
@@ -115,9 +167,9 @@ footer {background-color:rgb(37, 60, 163);
 .star-form {
     display: block;
     position: relative;
-    width: 90px;
-    min-height: 60px;
-    padding: 0;
+    width: 100px;
+    min-height: 40px;
+    padding-top:5px;
     border: none;
     font-size: 22px;
 }
@@ -147,5 +199,62 @@ footer {background-color:rgb(37, 60, 163);
     color: #3a4752;
     cursor: pointer;
     background-repeat: no-repeat;
+}
+
+
+#drop_down_game_editions {
+    width: fit-content;
+    background-color: lightblue;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#review_button {
+    right: 100px;
+}
+
+#review_button_td {
+    float: right;
+}
+
+#review_account {
+    text-align: left;
+}
+
+#cover_edition {
+    margin: 0 auto;
+}
+
+#blurb {
+    width: 50%;
+    background-color: gray;
+}
+
+/* Library */
+
+#th_style2 {
+    text-align: center;
+}
+
+#search2{
+    background-color:#0066ff;
+    color: whitesmoke;
+    right: 10px;
+    width: fit-content;
+    position: relative;
+    top: 100px;
+    border: 40px #0066ff;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+
+
+#td_padding2 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#tr_th_style2{
+    background-color: #7c8ab6;
 }
 

@@ -32,29 +32,92 @@
 
 <main class="center">
 
-<table id="evaluationfield">
-    <tr>
-        <td>Account</td>
-        <td>
-            <div class="star-form">
-                <input type="radio" id="rate5" name="rating" value="5" />
-                <label for="rate5" title="5star"><span class="icon-star">&#9733;</span></label>
-                <input type="radio" id="rate4" name="rating" value="4" />
-                <label for="rate4" title="4star"><span class="icon-star">&#9733;</span></label>
-                <input type="radio" id="rate3" name="rating" value="3" />
-                <label for="rate3" title="3star"><span class="icon-star">&#9733;</span></label>
-                <input type="radio" id="rate2" name="rating" value="2" />
-                <label for="rate2" title="2star"><span class="icon-star">&#9733;</span></label>
-                <input type="radio" id="rate1" name="rating" value="1" />
-                <label for="rate1" title="1star"><span class="icon-star">&#9733;</span></label>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2"><input type="text" id="evaluationtext" placeholder="Evaluation" ></td>
-    </tr>
-    
-</table>
+    <h1 style="text-algin:center"> Name of the Game </h1>
+
+    <table id="cover_edition">
+        <tr>
+            <td colspan="2" rowspan="2">
+                <img src="/resources/tetris.jpg" alt="game_logo" height="292.5" width="292.5">
+            </td>
+            <td>
+                <p id="blurb"> blurb: A short description about the game </p>
+            </td>
+        </tr>
+
+        <tr>
+            
+        </tr>
+        <tr>
+            <td>
+                <form id="drop_down_game_editions">
+                    <label> Editionen </label>
+                    <label>
+                        <select>
+                            <option value="Standard"> Standard
+                            </option>
+                            <option value="Gold"> Gold
+                            </option>
+                            <option value="Ultimate"> Ultimate
+                            </option>
+                        </select>
+                    </label>
+                </form>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <table  id="descriptionGameFull">
+        <tr>
+            <td >About this Game:</td>
+        </tr>
+        <tr>
+            <td>     Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                    no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </td>
+        </tr>
+    </table>
+
+
+    <table id="evaluationfield">
+        <tr>
+            <td style="width:fit-content" id="review_account">
+                <span>Account</span>
+            </td>
+            <td>
+                <div class="star-form">
+                    <input type="radio" id="rate5" name="rating" value="5" />
+                    <label for="rate5" title="5 star"><span class="icon-star">&#9733;</span></label>
+                    <input type="radio" id="rate4" name="rating" value="4" />
+                    <label for="rate4" title="4 star"><span class="icon-star">&#9733;</span></label>
+                    <input type="radio" id="rate3" name="rating" value="3" />
+                    <label for="rate3" title="3 star"><span class="icon-star">&#9733;</span></label>
+                    <input type="radio" id="rate2" name="rating" value="2" />
+                    <label for="rate2" title="2 star"><span class="icon-star">&#9733;</span></label>
+                    <input type="radio" id="rate1" name="rating" value="1" />
+                    <label for="rate1" title="1 star"><span class="icon-star">&#9733;</span></label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><label for="evaluationtext"></label><textarea rows="6" id="evaluationtext" placeholder="Your review here..." ></textarea></td>
+        </tr>
+        <tr>
+            <td style="width:1%"></td>
+            <td style="width:1%"></td>
+            <td style="width:25%"></td>
+            <td id="review_button_td"><button id="review_button" type="submit"> Send </button></td>
+        </tr>
+    </table>
+</main>
 
     <footer id="footer">
         <a id="privacy_policy" class=remove_text_decoration href="/html/privacy_policy.html"> Privacy Policy </a>
