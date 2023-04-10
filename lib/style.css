@@ -75,10 +75,17 @@ footer {background-color:rgb(37, 60, 163);
 
 
 /* Evaluation */
-evaluationtext {
-    background-color: #999999;
+
+#evaluationfield{
+    background-color: aqua;
+}
+
+#evaluationtext {
+    background-color: #000000;
     height:100px;
     width:100px;
+    color: antiquewhite;
+
 
 }
 
