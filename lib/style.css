@@ -223,6 +223,14 @@ main {
 
 #cover_edition {
     margin: 0 auto;
+    width: 10px;
+    border: 1px solid orange;
+    margin-bottom: 15px;
+    background-color: grey;
+}
+
+#purchase_button_td {
+    float:right;
 }
 
 #blurb {
