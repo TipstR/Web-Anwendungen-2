@@ -10,25 +10,37 @@
 <body>
     <header id="header">
         <nav id= "nav1">
-            <a href="index.html" class="L1" id="logo"> <img src="resources/logo.png" alt="logo"></a>
-            <a href="index.html" class="L1" id="store"> Store </a>
-            <a href="html/library.html" class="L1" id="library"> Library </a>
-            <a href="html/about.html" class="L1" id="about"> About </a>
-            <a> <label for="search"></label><input type="text" id="search" placeholder="Search"></a>
-            <a href="html/cart.html" class="L1" id="cart"> <img src="resources/cart.png" alt="cart" width="30" height="30"> </a>
+            <a href="index.html" class="L1 remove_text_decoration" id="logo" style="float:left"> <img src="resources/logo.png" alt="logo"></a>
+            <a href="index.html" class="L1 remove_text_decoration" id="store"> Store </a>
+            <a href="html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
+            <a href="html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
+            <a> <label for="search"></label><input type="text" id="search" placeholder="Search"> </a>
+            <a href="html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="resources/cart.png" alt="cart" width="30" height="30"> </a>
         </nav>
     </header>
 
     <aside>
+        <form id ="drop down genres">
+            <label> Genres </label>
+            <select>
+                <option value = "Action"> Action
+                </option>
+                <option value = "Rollenspiele"> Rollenspiele
+                </option>
+                <option value = "Rätsel"> Rätsel
+                </option>
+                <option value = "Strategie"> Strategie
+                </option>
+            </select>
+        </form>
 
     </aside>
 
     <main class="center">
         <table class="center" id="table1">
             <tr>
-                <th class="th_padding th_style"> <a href="html/trending.html">Trending</a> <img src="resources/arrow_chevron.png" width="25" height="25"> </th>
-                <th class="th_padding"></th>
-                <th class="th_padding"></th>
+                <th class="th_padding th_style" colspan="3"> <a href="html/trending.html">Trending</a> </th>
+
             </tr>
             <tr>
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>
@@ -36,10 +48,9 @@
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>
             </tr>
 
-            <tr>
-                <th class="th_padding th_style"> <a href="html/trending.html">New Games</a> </th>
-                <th class="th_padding"></th>
-                <th class="th_padding"></th>
+            <tr class="tr_th_style">
+                <th class="th_padding th_style"colspan="3"> <a class="remove_text_decoration" href="html/trending.html">New Games</a> </th>
+
             </tr>
             <tr>
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>
@@ -47,10 +58,8 @@
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>
             </tr>
 
-            <tr>
-                <th class="th_padding th_style"> <a href="html/trending.html">Trending</a> </th>
-                <th class="th_padding" ></th>
-                <th class="th_padding"></th>
+            <tr class="tr_th_style">
+                <th class="th_padding th_style" colspan="3"> <a class="remove_text_decoration" href="html/trending.html">Trending</a> </th>
             </tr>
             <tr>
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>
@@ -58,10 +67,8 @@
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>
             </tr>
 
-            <tr>
-                <th class="th_padding th_style"> <a href="html/trending.html">Trending</a> </th>
-                <th class="th_padding"></th>
-                <th class="th_padding"></th>
+            <tr class="tr_th_style">
+                <th class="th_padding th_style" colspan="3"> <a class="remove_text_decoration" href="html/trending.html">Trending</a> </th>
             </tr>
             <tr>
                 <td class="td_padding"><img src="resources/tetris.jpg" alt="tetris"></td>

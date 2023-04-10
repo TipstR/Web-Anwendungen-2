@@ -1,36 +1,48 @@
 @charset "utf-8";
 /* CSS Document */
 
-body {background-color: rgba(10, 36, 119, 0.53);
+body {
+    background-color: rgba(10, 36, 119, 0.53);
     color:#000000;
     font-family:Verdana, Geneva, sans-serif;
-    margin:0px;}
+    margin:0px;
+}
 
-body a {color:#0066ff;}
+body a {
+    color:#0066ff;
+}
 
-header {background-color:black;
+header {
+    background-color:black;
     color: rgba(1, 1, 85, 0.68);
     font-size: xx-large;
     font-style:italic;
     font-weight:bolder;
     padding: 10px;
-    text-align:center;}
+    text-align:center;
+}
 
-#hilfscontainer {margin:0px auto;
-    max-width:1024px;}
+#hilfscontainer {
+    margin:0px auto;
+    max-width:1024px;
+}
 
 
-nav1 {margin:5px;
+nav1 {
+    margin:5px;
     padding-bottom:20px;
     padding-left:5px;
     padding-right:5px;
     padding-top:10px;
-    text-align:center;}
+    text-align:center;
+}
 
-main {background-color: #7c8ab6;
+main {
+    background-color: #7c8ab6;
     color: rgba(11, 18, 49, 0.68);
     float:left;
-    width:75%;}
+    width:75%;
+}
 
 .center {
     width: 70%;
@@ -39,14 +51,25 @@ main {background-color: #7c8ab6;
     text-align: center;
 }
 
+
+
 .th_padding {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+.tr_th_style {
+    background-color: grey;
+}
+
 .th_style {
     text-align: left;
-    border: 1px solid black;
+    border-width: 0px;
+}
+
+.remove_text_decoration {
+    text-decoration: none;
+    color: white;
 }
 
 .td_padding {
