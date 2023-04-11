@@ -1,31 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>pay</title>
     <link rel="stylesheet" type="text/css" href="/lib/style.css">
 </head>
 <body>
-    <header id="header">
-        <nav id= "nav1">
-            <section style="display: flex">
-                <section style="float: left">
-                    <a href="/index.html" class="L1 remove_text_decoration" id="logo"> <img src="/resources/logo.png" alt="logo"></a>
-                </section>
-                <section style="position: absolute; left:50%; transform: translateX(-50%)">
-                    <a href="/index.html" class="L1 remove_text_decoration" style="text-align:center" id="store"> Store </a>
-                    <a href="/html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
-                    <a href="/html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
-                </section>
-                <section style="position: absolute; right: 1%">
-                    <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
-                    <a href="/html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="/resources/cart.png" alt="cart" width="30" height="30"> </a>
-                </section>
+<header id="header">
+    <nav id= "nav1">
+        <section id= "header line">
+            <section id="style logo">
+                <a href="/index.html" class="L1 remove_text_decoration" id="logo"> <img src="/resources/logo.png" alt="logo"></a>
             </section>
-        </nav>
-    </header>
+            <section id= "menu style">
+                <a href="/index.html" class="L1 remove_text_decoration" id="store"> Store </a>
+                <a href="/html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
+                <a href="/html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
+            </section>
+            <section id="style search cart">
+                <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
+                <a href="/html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="/resources/cart.png" alt="cart" width="30" height="30"> </a>
+            </section>
+        </section>
+    </nav>
+</header>
+
+    <main class="center">
+        <h1> Payment Methods </h1>
+
+        <table  class="center">
+
+            <tr>
+                <td id="payment_type"> Pay method<td>
+            </tr>
+
+            <tr>
+                <td class="payment_headline">IBAN</td>
+                <td class="payment_headline">Swift</td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="IBAN" class="payment_input"></td>
+                <td><input type="text" placeholder="Swift" class="payment_input"></td>
+            </tr>
+
+            <tr>
+                <td class="payment_headline">Surname</td>
+                <td class="payment_headline">Name</td>
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="Surname" class="payment_input"></td>
+                <td><input type="text" placeholder="Name" class="payment_input"></td>
+            </tr>
+
+        </table>
+
+        <table class="center">
+            <tr>
+                <td id="term_of_use_pay"><input type="checkbox">I have read the <a href="terms_of_use.html">terms of use</a> and agree to them.</td>
+            </tr>
+            <tr>
+                <td ><button  type="submit" class="pay_button"> Purchase </button></td>
+            </tr>
+        </table>
+
+        <table id="payment_methods_table">
+            <tr>
+                <td class="payment_methods_header" colspan="2">Payments Methods</td>
+            </tr>
+
+            <tr>
+                <td class="payment_methods_item"><input type="image" src="/resources/cart.png" alt="cart" width="30" height="30"/></td>
+                <td class="payment_methods_item"><input type="image" src="/resources/cart.png" alt="cart" width="30" height="30"/></td>
+            </tr>
+
+            <tr>
+                <td class="payment_methods_item"><input type="image" src="/resources/cart.png" alt="cart" width="30" height="30"/></td>
+                <td class="payment_methods_item"><input type="image" src="/resources/cart.png" alt="cart" width="30" height="30"/></td>
+            </tr>
+
+            <tr>
+                <td class="payment_methods_item"><input type="image" src="/resources/cart.png" alt="cart" width="30" height="30"/></td>
+                <td class="payment_methods_item"><input type="image" src="/resources/cart.png" alt="cart" width="30" height="30"/></td>
+            </tr>
+        </table>
+
+    </main>
 
     <footer id="footer">
         <a id="privacy_policy" class=remove_text_decoration href="/html/privacy_policy.html"> Privacy Policy </a>
