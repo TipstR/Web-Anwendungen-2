@@ -263,11 +263,11 @@ main {
 
 /* Login/Registration */
 
-#logintext{
+#logrestext{
     background-color: #0066ff;
     padding: 10px;
      }
-#login_button{
+#login_res_button{
     background-color: #faaa38;
     padding: 10px;
 }
