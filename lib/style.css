@@ -20,6 +20,38 @@ header {
     padding: 10px;
     text-align:center;
 }
+#header line{
+    display: flex;
+}
+#style logo{
+    float: left;
+}
+#logo{
+    position: absolute;
+    left: 10px;
+}
+#menu style{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    text-align:center;
+}
+
+#style search cart{
+                  position: absolute;
+                  right: 1%;
+}
+#search{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+#cart{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 
 
 nav1 {
@@ -28,7 +60,7 @@ nav1 {
     padding-left:5px;
     padding-right:5px;
     padding-top:10px;
-    text-align:center;
+
 }
 
 #store {
@@ -239,7 +271,7 @@ main {
 
 /* Library */
 
-#search2{
+#searchBib{
     background-color:#0066ff;
     color: whitesmoke;
     position: absolute;
