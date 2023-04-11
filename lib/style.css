@@ -295,11 +295,159 @@ main {
 
 /* Login/Registration */
 
-#logrestext{
-    background-color: #0066ff;
+.logrestext{
+    background-color: #555555;
     padding: 10px;
+    color: #EFEFEF;
      }
-#login_res_button{
+.login_res_button{
     background-color: #faaa38;
     padding: 10px;
+    color: #EFEFEF;
+}
+
+
+
+/* Search */
+
+.search_view {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    margin-top: 2.5%;
+    border-spacing: 0 20px;
+}
+
+.search_view_img_cell {
+    width: 1%;
+}
+
+.search_view_game_icon {
+    width: 80px;
+    height: 80px;
+}
+
+.search_view_item {
+    background-color: grey;
+    color: #EFEFEF;
+    font-size: 30px;
+}
+
+.tags_container {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2.5%;
+}
+
+.tag {
+    background-color: darkblue;
+    color: #EFEFEF;
+    padding: 5px;
+    border: 4px solid darkblue;
+    border-radius: 10px;
+}
+
+.search_filters {
+    background-color:#0066ff;
+    color: whitesmoke;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 20%;
+    left: 100px;
+}
+
+
+/* Pay */
+
+#payment_type{
+    background-color: gray;
+    padding: 25px;
+    margin-bottom: 1%;
+}
+
+.payment_headline{
+    background-color: rgba(1, 1, 85, 0.68);
+    color: white;
+    padding-bottom:2%;
+    margin-bottom: 1%;
+
+}
+
+.pay_button{
+    background-color: chartreuse;
+    padding: 2%;
+}
+
+.payment_input{
+    background-color: rgba(1, 1, 85, 0.68);
+    color: white;
+    width: 99%;
+    padding-bottom:5%;
+    margin-bottom: 1%;
+}
+
+
+#term_of_use_pay{
+    background-color: rgba(1, 1, 85, 0.68);
+    color:white;
+}
+
+.pay_button:hover{
+    background-color: #4a7a0c;
+    padding: 2%;
+    cursor: pointer;
+}
+
+
+#payment_methods_table {
+    background-color: lightblue;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 15%;
+    right: 100px;
+}
+
+.payment_methods_header {
+    padding-bottom: 10px;
+}
+
+.payment_methods_item {
+    padding-bottom: 10px;
+}
+
+
+/* cart */
+
+.cart_table {
+    border: 1px solid black;
+    font-size: 30px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.cart_td {
+    border-bottom: 1px solid black;
+}
+
+.cart_price {
+    width: 10%;
+}
+
+#cart_button {
+    font-size: 20px;
+    background-color: rgba(12,178,54,0.74)
+}
+
+#del_cart{
+    font-size: 20px;
+    background-color: rgba(178,40,33,0.74);
+}
+
+#cont_shopping {
+    font-size: 20px;
+    background-color: rgba(0,102,255,0.74);
 }

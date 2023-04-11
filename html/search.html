@@ -8,29 +8,104 @@
     <link rel="stylesheet" type="text/css" href="/lib/style.css">
 </head>
 <body>
-    <header id="header">
-        <nav id= "nav1">
-            <section style="display: flex">
-                <section style="float: left">
-                    <a href="/index.html" class="L1 remove_text_decoration" id="logo"> <img src="/resources/logo.png" alt="logo"></a>
-                </section>
-                <section style="position: absolute; left:50%; transform: translateX(-50%)">
-                    <a href="/index.html" class="L1 remove_text_decoration" style="text-align:center" id="store"> Store </a>
-                    <a href="/html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
-                    <a href="/html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
-                </section>
-                <section style="position: absolute; right: 1%">
-                    <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
-                    <a href="/html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="/resources/cart.png" alt="cart" width="30" height="30"> </a>
-                </section>
+<header id="header">
+    <nav id= "nav1">
+        <section id= "header line">
+            <section id="style logo">
+                <a href="/index.html" class="L1 remove_text_decoration" id="logo"> <img src="/resources/logo.png" alt="logo"></a>
             </section>
-        </nav>
-    </header>
+            <section id= "menu style">
+                <a href="/index.html" class="L1 remove_text_decoration" id="store"> Store </a>
+                <a href="/html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
+                <a href="/html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
+            </section>
+            <section id="style search cart">
+                <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
+                <a href="/html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="/resources/cart.png" alt="cart" width="30" height="30"> </a>
+            </section>
+        </section>
+    </nav>
+</header>
 
-    <footer id="footer">
-        <a id="privacy_policy" class=remove_text_decoration href="/html/privacy_policy.html"> Privacy Policy </a>
-        <a id="legal" class=remove_text_decoration href="/html/legal.html"> Legal </a>
-        <a id="contact" class=remove_text_decoration href="/html/contact.html"> Contact </a>
-    </footer>
+
+<section class="tags_container">
+    <span class="tag">Sport</span>
+    <span class="tag">'Suchwort'</span>
+</section>
+
+
+<table class="search_view">
+    <tr>
+        <td class="search_view_img_cell">
+            <img src="/resources/tetris.jpg" class="search_view_game_icon">
+        </td>
+        <td class="search_view_item">
+            Game 1
+        </td>
+    </tr>
+
+    <tr>
+        <td class="search_view_img_cell">
+            <img src="/resources/tetris.jpg" class="search_view_game_icon">
+        </td>
+        <td class="search_view_item">
+            Game 2
+        </td>
+    </tr>
+
+    <tr>
+        <td class="search_view_img_cell">
+            <img src="/resources/tetris.jpg" class="search_view_game_icon">
+        </td>
+        <td class="search_view_item">
+            Game 3
+        </td>
+    </tr>
+
+    <tr>
+        <td class="search_view_img_cell">
+            <img src="/resources/tetris.jpg" class="search_view_game_icon">
+        </td>
+        <td class="search_view_item">
+            Game 4
+        </td>
+    </tr>
+
+    <tr>
+        <td class="search_view_img_cell">
+            <img src="/resources/tetris.jpg" class="search_view_game_icon">
+        </td>
+        <td class="search_view_item">
+            Game 5
+        </td>
+    </tr>
+</table>
+
+
+<aside>
+    <form class="search_filters">
+        <label> Genres </label>
+        <select>
+            <option value = "Action"> Action
+            </option>
+            <option value = "RPG"> RPG
+            </option>
+            <option value = "Puzzle"> Puzzle
+            </option>
+            <option value = "Strategy"> Strategy
+            </option>
+        </select>
+    </form>
+</aside>
+
+
+
+
+
+<footer id="footer">
+    <a id="privacy_policy" class=remove_text_decoration href="/html/privacy_policy.html"> Privacy Policy </a>
+    <a id="legal" class=remove_text_decoration href="/html/legal.html"> Legal </a>
+    <a id="contact" class=remove_text_decoration href="/html/contact.html"> Contact </a>
+</footer>
 </body>
 </html>
