@@ -261,3 +261,13 @@ main {
     background-color: #7c8ab6;
 }
 
+/* Login/Registration */
+
+#logintext{
+    background-color: #0066ff;
+    padding: 10px;
+     }
+#login_button{
+    background-color: #faaa38;
+    padding: 10px;
+}
