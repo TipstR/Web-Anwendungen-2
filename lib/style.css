@@ -23,9 +23,7 @@ header {
 #header line{
     display: flex;
 }
-#style logo{
-    float: left;
-}
+
 #logo{
     position: absolute;
     left: 10px;
