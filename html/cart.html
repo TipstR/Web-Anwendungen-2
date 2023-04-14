@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> cart </title>
-    <link rel="stylesheet" type="text/css" href="/lib/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> cart </title>
+        <link rel="stylesheet" type="text/css" href="../lib/style.css">
+    </head>
+    <body>
 
-<header id="header">
-    <nav id= "nav1">
-        <section id= "header line">
-            <section id="style logo">
-                <a href="/index.html" class="L1 remove_text_decoration" id="logo"> <img src="/resources/logo.png" alt="logo"></a>
-            </section>
-            <section id= "menu style">
-                <a href="/index.html" class="L1 remove_text_decoration" id="store"> Store </a>
-                <a href="/html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
-                <a href="/html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
-            </section>
-            <section id="style search cart">
-                <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
-                <a href="/html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="/resources/cart.png" alt="cart" width="30" height="30"> </a>
-            </section>
-        </section>
-    </nav>
-</header>
+        <header id="header">
+            <nav id= "nav1">
+                <section id= "header line">
+                    <section id="style logo">
+                        <a href="../index.html" class="L1 remove_text_decoration" id="logo"> <img src="../resources/logo.png" alt="logo"></a>
+                    </section>
+                    <section id= "menu style">
+                        <a href="../index.html" class="L1 remove_text_decoration" id="store"> Store </a>
+                        <a href="../html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
+                        <a href="../html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
+                    </section>
+                    <section id="style search cart">
+                        <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
+                        <a href="../html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="../resources/cart.png" alt="cart" width="30" height="30"> </a>
+                    </section>
+                </section>
+            </nav>
+        </header>
 
-<main class="center">
-    <h1> Warenkorb </h1>
+        <main class="center">
+            <h1> Warenkorb </h1>
 
-    <table class = "center cart_table">
-        <tr>
-            <td class="cart_td cart_price"> <img src="/resources/tetris.jpg" alt="game_cover" width="40" height="40"> </td>
-            <td class="cart_td"> game 1</td>
-            <td class="cart_price cart_td"> 60€ </td>
-        </tr>
-        <tr>
-            <td class="cart_td cart_price"> <img src="/resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
-            <td class="cart_td"> game 2</td>
-            <td class="cart_price cart_td"> 80€ </td>
-        </tr>
-        <tr>
-            <td class="cart_td cart_price"> <img src="/resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
-            <td class="cart_td"> game 3</td>
-            <td class="cart_price cart_td"> 30€ </td>
-        </tr>
-        <tr>
-            <td class="cart_td cart_price"> <img src="/resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
-            <td class="cart_td"> game 4</td>
-            <td class="cart_price cart_td"> 10€ </td>
-        </tr>
-        <tr>
-            <td>  </td>
-            <td rowspan="2"> Gesamt </td>
-            <td> 180€ </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <a href="/html/pay.html"> <button id="cart_button" type="submit"> Purchase </button> </a>
-            </td>
-        </tr>
-    </table>
+            <table class = "center cart_table">
+                <tr>
+                    <td class="cart_td cart_price"> <img src="../resources/tetris.jpg" alt="game_cover" width="40" height="40"> </td>
+                    <td class="cart_td"> game 1</td>
+                    <td class="cart_price cart_td"> 60€ </td>
+                </tr>
+                <tr>
+                    <td class="cart_td cart_price"> <img src="../resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
+                    <td class="cart_td"> game 2</td>
+                    <td class="cart_price cart_td"> 80€ </td>
+                </tr>
+                <tr>
+                    <td class="cart_td cart_price"> <img src="../resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
+                    <td class="cart_td"> game 3</td>
+                    <td class="cart_price cart_td"> 30€ </td>
+                </tr>
+                <tr>
+                    <td class="cart_td cart_price"> <img src="../resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
+                    <td class="cart_td"> game 4</td>
+                    <td class="cart_price cart_td"> 10€ </td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td rowspan="2"> Gesamt </td>
+                    <td> 180€ </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <a href="../html/pay.html"> <button id="cart_button" type="submit"> Purchase </button> </a>
+                    </td>
+                </tr>
+            </table>
 
-    <table class="center">
-        <tr>
-            <td>
-                <a href="/index.html" > <button id="cont_shopping" type="submit"> Weiter Shoppen... </button> </a>
-            </td>
-            <td> <button id="del_cart" type="submit"> Warenkorb leeren</button> </td>
-        </tr>
-    </table>
+            <table class="center">
+                <tr>
+                    <td>
+                        <a href="../index.html" > <button id="cont_shopping" type="submit"> Weiter Shoppen... </button> </a>
+                    </td>
+                    <td> <button id="del_cart" type="submit"> Warenkorb leeren</button> </td>
+                </tr>
+            </table>
 
-</main>
+        </main>
 
-<footer id="footer">
-    <a id="privacy_policy" class=remove_text_decoration href="/html/privacy_policy.html"> Privacy Policy </a>
-    <a id="legal" class=remove_text_decoration href="/html/legal.html"> Legal </a>
-    <a id="contact" class=remove_text_decoration href="/html/contact.html"> Contact </a>
-</footer>
-</body>
+        <footer id="footer">
+            <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
+            <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
+            <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
+        </footer>
+
+    </body>
 </html>
