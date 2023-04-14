@@ -276,7 +276,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-
+    resize: none;
 
 }
 
@@ -385,7 +385,7 @@ main {
     color: #EFEFEF;
      }
 .login_res_button{
-    background-color: #faaa38;
+    background-color: darkblue;
     padding: 10px;
     color: #EFEFEF;
 }
