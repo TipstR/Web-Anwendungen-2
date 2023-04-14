@@ -389,6 +389,9 @@ main {
     padding: 10px;
     color: #EFEFEF;
 }
+.login_res_button:hover{
+    cursor: pointer;
+}
 
 
 
