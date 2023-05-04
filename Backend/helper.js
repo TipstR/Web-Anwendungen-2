@@ -123,7 +123,7 @@ module.exports.parseGermanDateTimeString = function(input) {
 // parses a sql datetime string to a datetime object
 // if not valid, returns null, otherwise the object
 module.exports.parseSQLDateTimeString = function(input) {
-    var datetimeobj = DateTime.fromSQL(input);
+    var datetimeobj = DateTime.fromSQL(input);i
 
     if (!datetimeobj.isValid) 
         return null;

@@ -16,7 +16,7 @@ serviceRouter.get('/spiele/gib/:id', function(request, response) {
         console.log('Service Spiele: Record loaded');
         response.status(200).json(obj);
     } catch (ex) {
-        console.error('Service Galerie: Error loading record by id. Exception occured: ' + ex.message);
+        console.error('Service Spiele: Error loading record by id. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });
@@ -30,7 +30,7 @@ serviceRouter.get('/spiele/alle', function(request, response) {
         console.log('Service Spiele: Records loaded, count=' + arr.length);
         response.status(200).json(arr);
     } catch (ex) {
-        console.error('Service Galerie: Error loading all records. Exception occured: ' + ex.message);
+        console.error('Service Spiele: Error loading all records. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });
@@ -40,11 +40,11 @@ serviceRouter.get('/spiele/existiert/:id', function(request, response) {
 
     const galerieDao = new SpieleDao(request.app.locals.dbConnection);
     try {
-        var exists = galerieDao.exists(request.params.id);
-        console.log('Service Galerie: Check if record exists by id=' + request.params.id + ', exists=' + exists);
+        var exists = spieleDao.exists(request.params.id);
+        console.log('Service Spiele: Check if record exists by id=' + request.params.id + ', exists=' + exists);
         response.status(200).json({'id': request.params.id, 'existiert': exists});
     } catch (ex) {
-        console.error('Service Galerie: Error checking if record exists. Exception occured: ' + ex.message);
+        console.error('Service Spiele: Error checking if record exists. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });
@@ -71,11 +71,11 @@ serviceRouter.post('/spiele', function(request, response) {
 
     const galerieDao = new SpieleDao(request.app.locals.dbConnection);
     try {
-        var obj = galerieDao.create(request.body.name, request.body.dateigroesse, request.body.mimeType, request.body.bildpfad, request.body.erstellzeitpunkt);
-        console.log('Service Galerie: Record inserted');
+        var obj = galerieDao.create(request.body.name, request.body.cover_pfad, request.body.beschreibung, request.klappentext);
+        console.log('Service Spiele: Record inserted');
         response.status(200).json(obj);
     } catch (ex) {
-        console.error('Service Galerie: Error creating new record. Exception occured: ' + ex.message);
+        console.error('Service Spiele: Error creating new record. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });
@@ -94,18 +94,18 @@ serviceRouter.put('/spiele', function(request, response) {
         errorMsgs.push('klappentext fehlt');
 
     if (errorMsgs.length > 0) {
-        console.log('Service Galerie: Update not possible, data missing');
+        console.log('Service Spiele: Update not possible, data missing');
         response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
         return;
     }
 
     const spieleDao = new SpieleDao(request.app.locals.dbConnection);
     try {
-        var obj = galerieDao.update(request.body.id, request.body.name, request.body.dateigroesse, request.body.mimeType, request.body.bildpfad, request.body.erstellzeitpunkt);
-        console.log('Service Galerie: Record updated, id=' + request.body.id);
+        var obj = spieleDao.update(request.body.id, request.body.name, request.body.cover_pfad, request.body.beschreibung, request.body.klappentext);
+        console.log('Service Spiele: Record updated, id=' + request.body.id);
         response.status(200).json(obj);
     } catch (ex) {
-        console.error('Service Galerie: Error updating record by id. Exception occured: ' + ex.message);
+        console.error('Service Spiele: Error updating record by id. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }    
 });
@@ -180,7 +180,7 @@ serviceRouter.post('/spiele/aufladen', async(request, response) => {
                         // set to array
                         savedFiles.push(fileObj);
                     } catch (ex) {
-                        console.error('Service Galerie: Error creating record. Exception occured: ' + ex.message);
+                        console.error('Service Spiele: Error creating record. Exception occured: ' + ex.message);
                     }
                 } else {
                     console.log('item is no webPicture or already present, skipping it');
