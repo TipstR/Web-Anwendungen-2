@@ -160,7 +160,7 @@ try {
     app.use(TOPLEVELPATH, serviceRouter);
 
 
-    serviceRouter = require('./services/galerie.js');
+    serviceRouter = require('./services/spiele.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
 

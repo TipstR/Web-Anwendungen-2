@@ -1,6 +1,6 @@
 const helper = require('../helper.js');
 
-class GalerieDao {
+class SpieleDao {
 
     constructor(dbConnection) {
         this._conn = dbConnection;
@@ -90,8 +90,8 @@ class GalerieDao {
     }
 
     toString() {
-        console.log('GalerieDao [_conn=' + this._conn + ']');
+        console.log('SpieleDao [_conn=' + this._conn + ']');
     }
 }
 
-module.exports = GalerieDao;
+module.exports = SpieleDao;

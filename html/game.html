@@ -13,7 +13,7 @@
             <nav id= "nav1">
                 <section id= "header line">
                     <section id="style logo">
-                        <a href="../index.html" class="L1 remove_text_decoration" id="logo"> <img src="../resources/logo.png" alt="logo"></a>
+                        <a href="../index.html" class="L1 remove_text_decoration" id="logo"> <img src="../Backend/resources/logo.png" alt="logo"></a>
                     </section>
                     <section id= "menu style">
                         <a href="../index.html" class="L1 remove_text_decoration" id="store"> Store </a>
@@ -22,7 +22,7 @@
                     </section>
                     <section id="style search cart">
                         <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
-                        <a href="../html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="../resources/cart.png" alt="cart" width="30" height="30"> </a>
+                        <a href="../html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="../Backend/resources/cart.png" alt="cart" width="30" height="30"> </a>
                     </section>
                 </section>
             </nav>
@@ -36,8 +36,8 @@
 
             <table id="cover_edition">
                 <tr>
-                    <td style="text-align:left;" colspan="1" rowspan="2">
-                        <img src="../resources/tetris.jpg" alt="game_logo" height="292.5" width="292.5">
+                    <td style="text-align:left;" colspan="1" rowspan="2" id="">
+                        <img src="../Backend/resources/tetris.jpg" alt="game_logo" height="292.5" width="292.5">
                     </td>
                     <td style="width:15%;">
                         <span style="color: yellow; font-size: 50px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -124,5 +124,53 @@
                 <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
                 <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
             </footer>
+
+        <script>
+            $(document).ready(function () {
+                console.log('Document ready, loading data from Service');
+                $.ajax({
+                    url: 'http://localhost:8000/api/spiele/alle',
+                    method: 'get',
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false,
+                    dataType: 'json'
+                }).done(function (response) {
+                    console.log('Data loaded successfully');
+                    console.log(response);
+
+                    /* die Idee bei diesem Prinzip ist, dass HTML Code als Text angesehen wird.
+                        Diesen können wir häppchen-weise in einer Variable zusammen setzen
+                        und dann auch ausgeben
+                        Hinweis: Damit man Quotes/doppelte Anführungsstriche NICHT escapen muss,
+                        kann man bei jQuery einfache Anführungszeichen verwenden
+                    */
+
+                    // hilfsvariable anlegen
+                    var content = '';
+
+                    // neuen code zusammensetzen
+                    content += '<table>'
+
+                    for (i = 0; i < response.length; i++) {
+                        var obj = response[i];
+                        content += '<tr>';
+                        content += '<td>' + obj.id + '</td>';
+                        content += '<td>' + obj.name + '</td>';
+                        content += '<td><img src=\"../backend/' + obj.cover_pfad + '\"></td>';
+                        content += '</tr>';
+                    }
+
+                    content += '</table>';
+                    console.log(content);
+                    // zusammengesetzen Code im Dokument ausgeben
+                    $('#dyntarget').html(content);
+
+                }).fail(function (jqXHR, statusText, error) {
+                    console.log('Error occured');
+                    console.log('Response Code: ' + jqXHR.status + ' - Message: ' + jqXHR.responseText);
+                    alert(jqXHR.responseText);
+                });
+            });
+        </script>
     </body>
 </html>
