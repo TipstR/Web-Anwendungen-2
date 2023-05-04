@@ -53,7 +53,7 @@ serviceRouter.post('/spiele', function(request, response) {
     console.log('Service Spiele: Client requested creation of new record');
 
     var errorMsgs=[];
-    if (helper.isUndefined(request.body.name)) 
+    if (helper.isUndefined(request.body.name))
         errorMsgs.push('name fehlt');
     if (helper.isUndefined(request.body.cover_pfad))
         errorMsgs.push('cover_pfad fehlt');
@@ -77,7 +77,7 @@ serviceRouter.post('/spiele', function(request, response) {
     } catch (ex) {
         console.error('Service Galerie: Error creating new record. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
-    }    
+    }
 });
 
 serviceRouter.put('/spiele', function(request, response) {
