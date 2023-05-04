@@ -38,7 +38,7 @@ serviceRouter.get('/spiele/alle', function(request, response) {
 serviceRouter.get('/spiele/existiert/:id', function(request, response) {
     console.log('Service Spiele: Client requested check, if record exists, id=' + request.params.id);
 
-    const galerieDao = new SpieleDao(request.app.locals.dbConnection);
+    const spieleDao = new SpieleDao(request.app.locals.dbConnection);
     try {
         var exists = spieleDao.exists(request.params.id);
         console.log('Service Spiele: Check if record exists by id=' + request.params.id + ', exists=' + exists);
@@ -64,14 +64,14 @@ serviceRouter.post('/spiele', function(request, response) {
 
 
     if (errorMsgs.length > 0) {
-        console.log('Service Galerie: Creation not possible, data missing');
+        console.log('Service spiele: Creation not possible, data missing');
         response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
         return;
     }
 
-    const galerieDao = new SpieleDao(request.app.locals.dbConnection);
+    const spieleDao = new SpieleDao(request.app.locals.dbConnection);
     try {
-        var obj = galerieDao.create(request.body.name, request.body.cover_pfad, request.body.beschreibung, request.klappentext);
+        var obj = spieleDao.create(request.body.name, request.body.cover_pfad, request.body.beschreibung, request.klappentext);
         console.log('Service Spiele: Record inserted');
         response.status(200).json(obj);
     } catch (ex) {
@@ -81,7 +81,7 @@ serviceRouter.post('/spiele', function(request, response) {
 });
 
 serviceRouter.put('/spiele', function(request, response) {
-    console.log('Service Galerie: Client requested update of existing record');
+    console.log('Service spiele: Client requested update of existing record');
 
     var errorMsgs=[];
     if (helper.isUndefined(request.body.name))
@@ -120,7 +120,7 @@ serviceRouter.delete('/spiele/:id', function(request, response) {
         console.log('Service Spiele: Deletion of record successfull, id=' + request.params.id);
         response.status(200).json({ 'gelöscht': true, 'eintrag': obj });
     } catch (ex) {
-        console.error('Service Galerie: Error deleting record. Exception occured: ' + ex.message);
+        console.error('Service spiele: Error deleting record. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });
@@ -172,7 +172,7 @@ serviceRouter.post('/spiele/aufladen', async(request, response) => {
                     // now try to save file info in db
                     try {
                         var savedObj = spieleDao.create(fileObj.fileName, fileObj.fileSize, fileObj.fileMimeType, 'spiele/' + fileObj.fileName, helper.getNow());
-                        console.log('Service Galerie: Record inserted in db, id=' + savedObj.id);
+                        console.log('Service spiele: Record inserted in db, id=' + savedObj.id);
                         // transfer file to target folder with target name
                         item.mv(targetPath);
                         // remember status
