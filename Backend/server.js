@@ -59,7 +59,11 @@ try {
     // binding endpoints
     const TOPLEVELPATH = '/api';
     console.log('Binding enpoints, top level Path at ' + TOPLEVELPATH);
-    
+
+    serviceRouter = require('./services/spiele.js');
+    app.use(TOPLEVELPATH, serviceRouter);
+
+    /*
     var serviceRouter = require('./services/land.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
@@ -160,8 +164,7 @@ try {
     app.use(TOPLEVELPATH, serviceRouter);
 
 
-    serviceRouter = require('./services/spiele.js');
-    app.use(TOPLEVELPATH, serviceRouter);
+
 
 
     serviceRouter = require('./services/dateiuploadeinzeln.js');
@@ -170,8 +173,10 @@ try {
     serviceRouter = require('./services/dateiuploadmehrere.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
+*/
 
-    
+
+
     // send default error message if no matching endpoint found
     app.use(function (request, response) {
         console.log('Error occured, 404, resource not found');
