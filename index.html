@@ -56,41 +56,7 @@
 
         <main class="center">
             <table class="center" id="table1">
-                <tr class="tr_th_style">
-                    <th class="th_padding th_style" colspan="3"> <a class="remove_text_decoration" href="html/trending.html">Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a> </th>
-                </tr>
-                <tr>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                </tr>
 
-                <tr class="tr_th_style">
-                    <th class="th_padding th_style"colspan="3"> <a class="remove_text_decoration" href="html/trending.html">New Games <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a> </th>
-                </tr>
-                <tr>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                </tr>
-
-                <tr class="tr_th_style">
-                    <th class="th_padding th_style" colspan="3"> <a class="remove_text_decoration" href="html/trending.html">Sales <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a> </th>
-                </tr>
-                <tr>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                </tr>
-
-                <tr class="tr_th_style">
-                    <th class="th_padding th_style" colspan="3"> <a class="remove_text_decoration" href="html/trending.html">Last played <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a> </th>
-                </tr>
-                <tr>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                    <td class="td_padding"><a href="html/game.html"><img src="Backend/resources/tetris.jpg" alt="tetris"></a> </td>
-                </tr>
             </table>
 
         </main>
@@ -125,26 +91,26 @@
                     // hilfsvariable anlegen
                     var content = '';
 
+                    content += `<tr class="tr_th_style">
+                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/trending.html">Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
+                                </tr>`;
+                    content += '<tr>';
                     // neuen code zusammensetzen
-                    content += '<table>'
 
                     for (i = 0; i < response.length; i++) {
                         var obj = response[i];
 
-                        for (j = 0; j < ; j++) {
 
-                        }
-                        content += '<tr>';
-                        content += '<td>' + obj.id + '</td>';
-                        content += '<td>' + obj.name + '</td>';
-                        content += '<td><img src=\"../backend/' + obj.cover_pfad + '\"></td>';
-                        content += '</tr>';
+                        // TODO: href="..."
+                        content += '<td class="td_padding"><a> <img src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
+
                     }
+                    content += '<td>hallo</td>'
+                    content += '</tr>';
 
-                    content += '</table>';
                     console.log(content);
                     // zusammengesetzen Code im Dokument ausgeben
-                    $('#dyntarget').html(content);
+                    $('#table1').html(content);
 
                 }).fail(function (jqXHR, statusText, error) {
                     console.log('Error occured');

@@ -63,6 +63,8 @@ try {
     serviceRouter = require('./services/spiele.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
+
+
     /*
     var serviceRouter = require('./services/land.js');
     app.use(TOPLEVELPATH, serviceRouter);

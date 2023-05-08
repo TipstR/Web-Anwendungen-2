@@ -77,6 +77,55 @@
             <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
         </footer>
 
+        <script>
+            $(document).ready(function () {
+                console.log('Document ready, loading data from Service');
+                $.ajax({
+                    url: 'http://localhost:8000/api/spiele/alle',
+                    method: 'get',
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false,
+                    dataType: 'json'
+                }).done(function (response) {
+                    console.log('Data loaded successfully');
+                    console.log(response);
+
+                    /* die Idee bei diesem Prinzip ist, dass HTML Code als Text angesehen wird.
+                        Diesen können wir häppchen-weise in einer Variable zusammen setzen
+                        und dann auch ausgeben
+                        Hinweis: Damit man Quotes/doppelte Anführungsstriche NICHT escapen muss,
+                        kann man bei jQuery einfache Anführungszeichen verwenden
+                    */
+
+                    // hilfsvariable anlegen
+                    var content = '';
+
+                    // neuen code zusammensetzen
+                    content += '<table>'
+
+                    for (i = 0; i < response.length; i++) {
+                        var obj = response[i];
+                        content += '<tr>';
+                        content += '<td>' + obj.id + '</td>';
+                        content += '<td>' + obj.name + '</td>';
+                        content += '<td>' + obj.klappentext + '</td>';
+                        content += '<td>' + obj.beschreibung + '</td>';
+                        content += '<td><img src=\"../backend/' + obj.cover_pfad + '\"></td>';
+                        content += '</tr>';
+                    }
+
+                    content += '</table>';
+                    console.log(content);
+                    // zusammengesetzen Code im Dokument ausgeben
+                    $('#dyntarget').html(content);
+
+                }).fail(function (jqXHR, statusText, error) {
+                    console.log('Error occured');
+                    console.log('Response Code: ' + jqXHR.status + ' - Message: ' + jqXHR.responseText);
+                    alert(jqXHR.responseText);
+                });
+            });
+        </script>
 
     </body>
 </html>
