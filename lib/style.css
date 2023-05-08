@@ -375,6 +375,12 @@ main {
     background-color: #7c8ab6;
 }
 
+.resize_image {
+    width: 480px;
+    height: 270px;
+    object-fit: contain;
+}
+
 /* Login/Registration */
 
 .logrestext{
