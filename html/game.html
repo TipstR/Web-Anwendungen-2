@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Game</title>
         <link rel="stylesheet" type="text/css" href="../lib/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="../lib/urlParameter.js"></script>
     </head>
     <body>
 
@@ -32,12 +34,12 @@
 
         <main class="center">
 
-            <h1 style="text-algin:center"> Name of the Game </h1>
+            <h1 style="text-algin:center" id="name">  </h1>
 
             <table id="cover_edition">
                 <tr>
-                    <td style="text-align:left;" colspan="1" rowspan="2" id="">
-                        <img src="../Backend/resources/tetris.jpg" alt="game_logo" height="292.5" width="292.5">
+                    <td style="text-align:left;" colspan="1" rowspan="2" id="produktBild">
+
                     </td>
                     <td style="width:15%;">
                         <span style="color: yellow; font-size: 50px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -45,7 +47,7 @@
                 </tr>
 
                 <tr>
-                    <td id="blurb"> <p> blurb: A short description about the game </p> </td>
+                    <td id="blurb"> <p id="klappentext">  </p> </td>
                 </tr>
                 <tr>
                     <td>
@@ -68,20 +70,10 @@
                 </tr>
             </table>
 
-
+            <h2> About this Game </h2>
             <table  id="descriptionGameFull">
                 <tr>
-                    <td >About this Game:</td>
-                </tr>
-                <tr>
-                    <td>     Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    <td id="beschreibung">
                     </td>
                 </tr>
             </table>
@@ -126,51 +118,56 @@
             </footer>
 
         <script>
-            $(document).ready(function () {
-                console.log('Document ready, loading data from Service');
+
+            $(document).ready(function() {
+                console.log('loading specific product');
+
+                // get id from url parameter
+                var id = -1;
+
+                if (existsUrlParameter('id'))
+                    id = getUrlParameterValue('id');
+
+                console.log('target product id=' + id);
+
+                if (id == -1) {
+                    alert('keine id erhalten');
+                    return;
+                }
+
                 $.ajax({
-                    url: 'http://localhost:8000/api/spiele/alle',
+                    url: 'http://localhost:8000/api/spiele/gib/' + id,
                     method: 'get',
                     contentType: 'application/json; charset=utf-8',
                     cache: false,
                     dataType: 'json'
                 }).done(function (response) {
-                    console.log('Data loaded successfully');
                     console.log(response);
 
-                    /* die Idee bei diesem Prinzip ist, dass HTML Code als Text angesehen wird.
-                        Diesen können wir häppchen-weise in einer Variable zusammen setzen
-                        und dann auch ausgeben
-                        Hinweis: Damit man Quotes/doppelte Anführungsstriche NICHT escapen muss,
-                        kann man bei jQuery einfache Anführungszeichen verwenden
-                    */
+                    /* hier können Sie das Produkt nach eigenen Wünschen rendern und ausgeben. Ich mache es mir einfach und gebe nur einen Teil aus */
 
-                    // hilfsvariable anlegen
-                    var content = '';
+                    produktID = response.id;
+                    produktName = response.name;
+                    produktKlappentext = response.klappentext;
+                    produktBeschreibung = response.beschreibung;
+                    produktBild = '<img src="../Backend/' + response.cover_pfad + '" alt="' + produktName + '">';
 
-                    // neuen code zusammensetzen
-                    content += '<table>'
+                    $('#name').html(produktName);
+                    $('#produktBild').html(produktBild);
+                    $('#klappentext').html(produktKlappentext);
+                    $('#beschreibung').html(produktBeschreibung);
 
-                    for (i = 0; i < response.length; i++) {
-                        var obj = response[i];
-                        content += '<tr>';
-                        content += '<td>' + obj.id + '</td>';
-                        content += '<td>' + obj.name + '</td>';
-                        content += '<td><img src=\"../backend/' + obj.cover_pfad + '\"></td>';
-                        content += '</tr>';
-                    }
 
-                    content += '</table>';
-                    console.log(content);
-                    // zusammengesetzen Code im Dokument ausgeben
-                    $('#dyntarget').html(content);
+
+
 
                 }).fail(function (jqXHR, statusText, error) {
-                    console.log('Error occured');
-                    console.log('Response Code: ' + jqXHR.status + ' - Message: ' + jqXHR.responseText);
-                    alert(jqXHR.responseText);
+                    console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                    alert('Ein Fehler ist aufgetreten');
                 });
             });
+
+
         </script>
     </body>
 </html>
