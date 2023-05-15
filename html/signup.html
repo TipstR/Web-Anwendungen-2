@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>signup</title>
         <link rel="stylesheet" type="text/css" href="../lib/style.css">
+        <script src="../lib/scripts/signup.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
         <header id="header">
@@ -37,19 +39,19 @@
                 </tr>
 
                 <tr>
-                    <td><input type="text" placeholder="E-Mail" class="logrestext"></td>
+                    <td><input type="text" placeholder="E-Mail" class="logrestext" id="emailInput"></td>
                 </tr>
 
                 <tr>
-                    <td><input type="text" placeholder="E-Mail again" class="logrestext"></td>
+                    <td><input type="text" placeholder="E-Mail again" class="logrestext" id="emailAgainInput"></td>
                 </tr>
 
                 <tr>
-                    <td><input type="password" placeholder="Password" class="logrestext"></td>
+                    <td><input type="password" placeholder="Password" class="logrestext" id="passwortInput"></td>
                 </tr>
 
                 <tr>
-                    <td><input type="password" placeholder="Password again" class="logrestext"></td>
+                    <td><input type="password" placeholder="Password again" class="logrestext" id="passwortAgainInput"></td>
                 </tr>
 
                 <tr>
@@ -57,7 +59,7 @@
                 </tr>
 
                 <tr>
-                    <td><button class="login_res_button" type="submit"> Signup </button></td>
+                    <td><button class="login_res_button" type="submit" id="signupForm"> Signup </button></td>
                 </tr>
 
 
@@ -70,5 +72,31 @@
             <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
             <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
         </footer>
+
+        <script>
+
+            $(document).ready(function() {
+                console.log('loading specific product');
+
+                $.ajax({
+                    url: 'http://localhost:8000/api/benutzer/signup/' + id,
+                    method: 'post',
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false,
+                    dataType: 'json'
+                }).done(function (response) {
+                    console.log(response);
+
+
+
+                }).fail(function (jqXHR, statusText, error) {
+                    console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                    alert('Ein Fehler ist aufgetreten');
+                });
+            });
+
+
+        </script>
+
     </body>
 </html>
