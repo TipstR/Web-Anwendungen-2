@@ -125,7 +125,7 @@ serviceRouter.put('/benutzer', function(request, response) {
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var obj = benutzerDao.update(request.body.id, request.body.benutzername, request.body.passwort, request.body.geschlecht, request.body.geburtstag, request.body.beitritt, request.body.rolle.id);
+        var obj = benutzerDao.update(request.body.benutzername, request.body.email, request.body.benutzername);
         console.log('Service benutzer: Record updated, id=' + request.body.id);
         response.status(200).json(obj);
     } catch (ex) {
