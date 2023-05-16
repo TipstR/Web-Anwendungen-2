@@ -54,6 +54,10 @@
                     <td><input type="password" placeholder="Password again" class="logrestext" id="passwortAgainInput"></td>
                 </tr>
 
+                <tr id="fehlermeldung">
+
+                </tr>
+
                 <tr>
                     <td><input type="checkbox">I have read the <a href="../html/term_of_use.html">terms of use</a> and agree to them.</td>
                 </tr>
@@ -74,28 +78,25 @@
         </footer>
 
         <script>
-
-            $(document).ready(function() {
-                console.log('loading specific product');
-
-                $.ajax({
-                    url: 'http://localhost:8000/api/benutzer/signup/' + id,
-                    method: 'post',
-                    contentType: 'application/json; charset=utf-8',
-                    cache: false,
-                    dataType: 'json'
-                }).done(function (response) {
-                    console.log(response);
+            function submitSignup() {
+                console.log("Hallo");
+                const benutzernameInput = document.getElementById("benutzernameInput");
+                const emailInput = document.getElementById("emailInput");
+                const emailAgainInput = document.getElementById("emailAgainInput");
+                const passwortInput = document.getElementById("passwortInput");
+                const passwortAgainInput = document.getElementById("passwortAgainInput");
 
 
+                var fehlermeldung = document.getElementById("fehlermeldung");
 
-                }).fail(function (jqXHR, statusText, error) {
-                    console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
-                    alert('Ein Fehler ist aufgetreten');
-                });
-            });
-
-
+                if (emailInput.value != emailAgainInput.value) {
+                    fehlermeldung.innerHTML = 'E-Mails stimmen nicht überein!';
+                } else if (passwortInput.value != passwortAgainInput.value) {
+                    fehlermeldung.innerHTML = 'Passwörter stimmen nicht überein!';
+                } else {
+                    createBenutzer(benutzernameInput.value, passwortInput.value, emailInput.value);
+                }
+            }
         </script>
 
     </body>

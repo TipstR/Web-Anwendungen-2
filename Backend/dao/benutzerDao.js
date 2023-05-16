@@ -82,15 +82,15 @@ class BenutzerDao {
         return this.loadById(result.lastInsertRowid);
     }
 
-    update(id, benutzername = '', neuespasswort = null) {
-        if (helper.isNull(neuespasswort)) {
+    update(id, benutzername = '', neuesPasswort = null) {
+        if (helper.isNull(neuesPasswort)) {
             var sql = 'UPDATE Benutzer SET benutzername=? WHERE id=?';
             var statement = this._conn.prepare(sql);
             var params = [benutzername, id];
         } else {
             var sql = 'UPDATE Benutzer SET benutzername=?,passwort=? WHERE id=?';
             var statement = this._conn.prepare(sql);
-            var params = [benutzername, md5(neuespasswort), id];
+            var params = [benutzername, md5(neuesPasswort), id];
         }
         var result = statement.run(params);
 

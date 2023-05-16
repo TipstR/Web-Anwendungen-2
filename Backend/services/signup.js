@@ -89,7 +89,7 @@ serviceRouter.post('/benutzer', function(request, response) {
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var obj = benutzerDao.create(request.body.benutzername, request.body.passwort, request.body.geschlecht, request.body.geburtstag, request.body.beitritt, request.body.rolle.id);
+        var obj = benutzerDao.create(request.body.benutzername,request.body.email, request.body.passwort);
         console.log('Service benutzer: Record inserted');
         response.status(200).json(obj);
     } catch (ex) {
