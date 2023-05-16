@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changed password to passwort in DB">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes of 16.05.2023">
+      <change afterPath="$PROJECT_DIR$/Backend/resources/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
-    <list id="f7bc47d8-264d-4f3f-ac0e-de98625b6801" name="Changes by janik" comment="Changes by janik" />
-    <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/signup2.js" beforeDir="false" />
-    </list>
+    <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
     <list id="99eb31ee-39ee-41b2-a90b-0f55b527359e" name="Changes by Tizian" comment="Changes by Tizian">
-      <change beforePath="$PROJECT_DIR$/Backend/services/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,30 +33,6 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Backend/services/signup.js">
-      <ranges>
-        <range start1="91" end1="92" start2="91" end2="92" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="127" end1="128" start2="127" end2="128" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/signup.html">
-      <ranges>
-        <range start1="54" end1="54" start2="54" end2="58" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="61" end1="62" start2="65" end2="66" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-        <range start1="76" end1="89" start2="80" end2="87" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="91" end1="96" start2="89" end2="90" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="97" end1="98" start2="91" end2="99" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Backend/dao/benutzerDao.js">
-      <ranges>
-        <range start1="75" end1="76" start2="75" end2="76" changelist="a1423584-2d6c-4213-a20a-1323f36311a3" />
-        <range start1="84" end1="86" start2="84" end2="86" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="92" end1="93" start2="92" end2="93" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -132,7 +99,7 @@
       <workItem from="1684150510873" duration="253000" />
       <workItem from="1684226342205" duration="357000" />
       <workItem from="1684238101579" duration="982000" />
-      <workItem from="1684243569306" duration="2476000" />
+      <workItem from="1684243569306" duration="3145000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -183,7 +150,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684226645336</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changes of 16.05.2023">
+      <created>1684246200039</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684246200039</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by rapha">
+      <created>1684246209506</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684246209506</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes by Tizian">
+      <created>1684246218186</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684246218186</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,8 +189,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changes by Tizian" />
     <MESSAGE value="Changes by thert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by thert" />
+    <MESSAGE value="changes of 16.05.2023" />
+    <MESSAGE value="Changes by rapha" />
+    <MESSAGE value="Changes by Tizian" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
   </component>
 </project>
