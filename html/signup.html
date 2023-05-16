@@ -63,7 +63,7 @@
                 </tr>
 
                 <tr>
-                    <td><input type="checkbox">I have read the <a href="../html/term_of_use.html">terms of use</a> and agree to them.</td>
+                    <td><input type="checkbox" id="termsOfUseCheckbox">I have read the <a href="../html/term_of_use.html">terms of use</a> and agree to them.</td>
                 </tr>
 
                 <tr>
@@ -83,13 +83,12 @@
 
         <script>
             function submitSignup() {
-                console.log("Hallo");
                 const benutzernameInput = document.getElementById("benutzernameInput");
                 const emailInput = document.getElementById("emailInput");
                 const emailAgainInput = document.getElementById("emailAgainInput");
                 const passwortInput = document.getElementById("passwortInput");
                 const passwortAgainInput = document.getElementById("passwortAgainInput");
-
+                const termsOfUseCheckbox = document.getElementById("termsOfUseCheckbox");
 
                 var fehlermeldung = document.getElementById("fehlermeldung");
                 var erfolg = document.getElementById('erfolg');
@@ -98,8 +97,21 @@
                     fehlermeldung.innerHTML = 'E-Mails stimmen nicht überein!';
                 } else if (passwortInput.value != passwortAgainInput.value) {
                     fehlermeldung.innerHTML = 'Passwörter stimmen nicht überein!';
+                } else if (passwortInput.value == "" || benutzernameInput.value == "" || emailInput.value == "") {
+                    fehlermeldung.innerHTML = 'Nicht alle erforderlichen Felder ausgefüllt!';
+                } else if (!termsOfUseCheckbox.checked) {
+                    fehlermeldung.innerHTML = 'Die Nutzungsbedingungen müssen akzeptiert werden!';
                 } else {
                     createBenutzer(benutzernameInput.value, passwortInput.value, emailInput.value);
+                    benutzernameInput.value = "";
+                    emailInput.value = "";
+                    emailAgainInput.value = "";
+                    passwortInput.value = "";
+                    passwortAgainInput.value = "";
+                    termsOfUseCheckbox.checked = false;
+                    fehlermeldung.innerHTML = "";
+                    erfolg.innerHTML = "Erfolgreich registriert!";
+
                 }
             }
         </script>
