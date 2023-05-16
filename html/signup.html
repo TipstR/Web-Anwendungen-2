@@ -58,6 +58,10 @@
 
                 </tr>
 
+                <tr id="erfolg">
+
+                </tr>
+
                 <tr>
                     <td><input type="checkbox">I have read the <a href="../html/term_of_use.html">terms of use</a> and agree to them.</td>
                 </tr>
@@ -88,6 +92,7 @@
 
 
                 var fehlermeldung = document.getElementById("fehlermeldung");
+                var erfolg = document.getElementById('erfolg');
 
                 if (emailInput.value != emailAgainInput.value) {
                     fehlermeldung.innerHTML = 'E-Mails stimmen nicht überein!';
