@@ -33,27 +33,36 @@ serviceRouter.get('/benutzer/alle', function(request, response) {
     }
 });
 
-serviceRouter.get('/benutzer/eindeutig', function(request, response) {
-    console.log('Service benutzer: Client requested check, if username is unique');
+serviceRouter.get('/benutzer/eindeutig/:benutzername/:email', function(request, response) {
+    console.log('Service benutzer: Client requested check, if username and email are unique');
+    console.log(request.params)
 
-    var errorMsgs=[];
-    if (helper.isUndefined(request.body.benutzername))
+    var errorMsgs = [];
+    if (helper.isUndefined(request.params.benutzername))
         errorMsgs.push('benutzername fehlt');
+
+    if (helper.isUndefined(request.params.email))
+        errorMsgs.push('email fehlt');
 
     if (errorMsgs.length > 0) {
         console.log('Service benutzer: check not possible, data missing');
-        response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
+        response.status(400).json({
+            'fehler': true,
+            'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs)
+        });
         return;
     }
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var unique = benutzerDao.isunique(request.body.benutzername);
+        var usernameUnique = benutzerDao.isuniqueUsername(request.params.benutzername);
+        var emailUnique = benutzerDao.isuniqueEmail(request.params.email);
+        var unique = usernameUnique && emailUnique;
         console.log('Service benutzer: Check if unique, unique=' + unique);
-        response.status(200).json({ 'benutzername': request.body.benutzername, 'eindeutig': unique });
+        response.status(200).json({'email': request.params.email, 'benutzername': request.params.benutzername, 'email_eindeutig': emailUnique, 'benutzername_eindeutig': usernameUnique, 'eindeutig': unique});
     } catch (ex) {
         console.error('Service benutzer: Error checking if unique. Exception occured: ' + ex.message);
-        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+        response.status(400).json({'fehler': true, 'nachricht': ex.message});
     }
 });
 

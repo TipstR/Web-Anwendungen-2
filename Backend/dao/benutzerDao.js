@@ -47,7 +47,7 @@ class BenutzerDao {
         return false;
     }
 
-    isunique(email) {
+    isuniqueEmail(email) {
         var sql = 'SELECT COUNT(id) AS cnt FROM Benutzer WHERE email=?';
         var statement = this._conn.prepare(sql);
         var result = statement.get(email);

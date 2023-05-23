@@ -83,6 +83,7 @@
 
         <script>
             function submitSignup() {
+
                 const benutzernameInput = document.getElementById("benutzernameInput");
                 const emailInput = document.getElementById("emailInput");
                 const emailAgainInput = document.getElementById("emailAgainInput");
@@ -102,16 +103,35 @@
                 } else if (!termsOfUseCheckbox.checked) {
                     fehlermeldung.innerHTML = 'Die Nutzungsbedingungen müssen akzeptiert werden!';
                 } else {
-                    createBenutzer(benutzernameInput.value, passwortInput.value, emailInput.value);
-                    benutzernameInput.value = "";
-                    emailInput.value = "";
-                    emailAgainInput.value = "";
-                    passwortInput.value = "";
-                    passwortAgainInput.value = "";
-                    termsOfUseCheckbox.checked = false;
-                    fehlermeldung.innerHTML = "";
-                    erfolg.innerHTML = "Erfolgreich registriert!";
+                    $.ajax({
+                        url: 'http://localhost:8000/api/benutzer/eindeutig/' + encodeURIComponent(benutzernameInput.value) + "/" + encodeURIComponent(emailInput.value),
+                        method: 'get',
+                        contentType: 'application/json; charset=utf-8',
+                        cache: false,
+                        dataType: 'json'
+                    }).done(function (response) {
+                        console.log(response);
 
+                    console.log(response.email_eindeutig);
+                    console.log(response.benutzername_eindeutig);
+                    if (response.email_eindeutig == false) {
+                        fehlermeldung.innerHTML = 'E-Mail ist nicht eindeutig!';
+                        erfolg.innerHTML = "";
+                    } else if (response.benutzername_eindeutig == false) {
+                        fehlermeldung.innerHTML = "Benutzername ist nicht eindeutig";
+                        erfolg.innerHTML = "";
+                    } else {
+                        createBenutzer(benutzernameInput.value, passwortInput.value, emailInput.value);
+                        benutzernameInput.value = "";
+                        emailInput.value = "";
+                        emailAgainInput.value = "";
+                        passwortInput.value = "";
+                        passwortAgainInput.value = "";
+                        termsOfUseCheckbox.checked = false;
+                        fehlermeldung.innerHTML = "";
+                        erfolg.innerHTML = "Erfolgreich registriert!";
+                    }
+                    });
                 }
             }
         </script>
