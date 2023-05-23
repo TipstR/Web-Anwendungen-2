@@ -58,6 +58,17 @@ class BenutzerDao {
         return false;
     }
 
+    isuniqueUsername(benutzername) {
+        var sql = 'SELECT COUNT(id) AS cnt FROM Benutzer WHERE benutzername=?';
+        var statement = this._conn.prepare(sql);
+        var result = statement.get(benutzername);
+
+        if (result.cnt == 0)
+            return true;
+
+        return false;
+    }
+
     hasaccess(email, passwort) {
         var sql = 'SELECT ID FROM Benutzer WHERE email=? AND passwort=?';
         var statement = this._conn.prepare(sql);
