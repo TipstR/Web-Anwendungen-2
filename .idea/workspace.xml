@@ -4,16 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="added logo">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="fixed signup.html">
+      <change afterPath="$PROJECT_DIR$/Backend/dao/neueSpieleDao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/resources/ac.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/resources/cyberpunk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/resources/outlast.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/services/neueSpiele.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indexBackup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/scripts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/resources/WoT.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/resources/WoT.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/resources/tetris.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/resources/tetris.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
-    <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
-    <list id="99eb31ee-39ee-41b2-a90b-0f55b527359e" name="Changes by Tizian" comment="Changes by Tizian">
+    <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha">
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
+    </list>
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +38,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Dao Prefab" />
+        <option value="Service Prefab" />
       </list>
     </option>
   </component>
@@ -37,21 +52,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/html/signup.html">
+    <file path="$PROJECT_DIR$/Backend/dao/benutzerDao.js">
       <ranges>
-        <range start1="59" end1="59" start2="59" end2="63" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="61" end1="62" start2="65" end2="66" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-        <range start1="81" end1="82" start2="85" end2="85" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-        <range start1="87" end1="88" start2="90" end2="91" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-        <range start1="90" end1="90" start2="93" end2="94" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="95" end1="95" start2="99" end2="103" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-        <range start1="97" end1="97" start2="105" end2="114" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/lib/style.css">
-      <ranges>
-        <range start1="30" end1="30" start2="30" end2="38" changelist="99eb31ee-39ee-41b2-a90b-0f55b527359e" />
-        <range start1="399" end1="399" start2="407" end2="414" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="49" end1="50" start2="49" end2="50" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="60" end1="60" start2="60" end2="71" changelist="a1423584-2d6c-4213-a20a-1323f36311a3" />
       </ranges>
     </file>
   </component>
@@ -73,7 +77,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/rapha/Desktop/HTML Codes/Heroic Smoke_stylesheet.css",
+    "last_opened_file_path": "C:/Users/thert/WebstormProjects/Web Anwendungen 2",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -81,6 +85,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -89,6 +94,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\thert\WebstormProjects\Web Anwendungen 2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rapha\WebstormProjects\Web2\lib\scripts" />
     </key>
@@ -120,7 +128,9 @@
       <workItem from="1684150510873" duration="253000" />
       <workItem from="1684226342205" duration="357000" />
       <workItem from="1684238101579" duration="982000" />
-      <workItem from="1684243569306" duration="4108000" />
+      <workItem from="1684243569306" duration="4651000" />
+      <workItem from="1684510933290" duration="527000" />
+      <workItem from="1684831560459" duration="11163000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -199,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684246969952</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed signup.html">
+      <created>1684247728067</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684247728067</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changes by Tizian">
+      <created>1684247743876</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684247743876</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,8 +244,9 @@
     <MESSAGE value="Changes by thert" />
     <MESSAGE value="changes of 16.05.2023" />
     <MESSAGE value="Changes by rapha" />
-    <MESSAGE value="Changes by Tizian" />
     <MESSAGE value="added logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logo" />
+    <MESSAGE value="fixed signup.html" />
+    <MESSAGE value="Changes by Tizian" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
   </component>
 </project>

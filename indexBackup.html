@@ -76,42 +76,65 @@
 
 
         <script>
-           $.when(spieleAjax(), neueSpieleAjax()).done(function (spieleResponse, neueSpieleResponse){
-               const alleSpiele = spieleResponse[0];
-               const alleNeuenSpiele = neueSpieleResponse[0];
+            $(document).ready(function () {
+                console.log('Document ready, loading data from Service');
+                $.ajax({
+                    url: 'http://localhost:8000/api/spiele/alle',
+                    method: 'get',
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false,
+                    dataType: 'json'
+                }).done(function (response) {
+                    console.log('Data loaded successfully');
+                    console.log(response);
+                    const neueSpieleId = getNeueSpieleId();
 
-               let content = '';
+                    /* die Idee bei diesem Prinzip ist, dass HTML Code als Text angesehen wird.
+                        Diesen können wir häppchen-weise in einer Variable zusammen setzen
+                        und dann auch ausgeben
+                        Hinweis: Damit man Quotes/doppelte Anführungsstriche NICHT escapen muss,
+                        kann man bei jQuery einfache Anführungszeichen verwenden
+                    */
 
-               content += `<tr class="tr_th_style">
+                    // hilfsvariable anlegen
+                    var content = '';
+
+                    content += `<tr class="tr_th_style">
                                     <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/trending.html">Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
                                 </tr>`;
-               content += '<tr>';
-               // neuen code zusammensetzen
+                    content += '<tr>';
+                    // neuen code zusammensetzen
 
-               for (let i = 0; i < 3; i++) {
-                   const obj = alleSpiele[i];
-                   content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
-               }
-               content += '</tr>'
-               content += `<tr class="tr_th_style">
+                    for (let i = 0; i < 3; i++) {
+                        var obj = response[i];
+                        content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
+                    }
+                    content += '</tr>'
+                    content += `<tr class="tr_th_style">
                                     <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/trending.html"> Neue Spiele <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
                                 </tr>`;
-               content += '<tr>'
+                    content += '<tr>'
 
 
-               console.log("länge der spieleids:")
-               console.log(alleNeuenSpiele.length)
-               for (let i = 0; i < 3 && i < alleNeuenSpiele.length; i++) {
-                   const obj = alleNeuenSpiele[i];
-                   const spiel = alleSpiele[obj.spiele_id - 1]
-                   content += '<td class="td_padding"><a href="html/game.html?id=' + obj.spiele_id + '"> <img class="cover" src = "Backend/' + spiel.cover_pfad + '" alt="' + spiel.name + '"</a></td>';
-               }
+                    console.log("länge der spieleids:")
+                    console.log(neueSpieleId.length)
+                    for (let i = 0; i < 3 && i < neueSpieleId.length; i++) {
+                        /// var obj = response[i];
+                        // content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
+                        content += '<td> SpieleID: ' + neueSpieleId[i] + '</td>';
+                    }
 
 
-               console.log(content);
-               // zusammengesetzen Code im Dokument ausgeben
-               $('#table1').html(content);
-           });
+                    console.log(content);
+                    // zusammengesetzen Code im Dokument ausgeben
+                    $('#table1').html(content);
+
+                }).fail(function (jqXHR, statusText, error) {
+                    console.log('Error occured');
+                    console.log('Response Code: ' + jqXHR.status + ' - Message: ' + jqXHR.responseText);
+                    alert(jqXHR.responseText);
+                });
+            });
         </script>
     </body>
 </html>

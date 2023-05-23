@@ -130,6 +130,11 @@ main {
     width: 75%;
 }
 
+.cover {
+    width: 391px;
+    height: 183px;
+}
+
 /* Dropdown Menu */
 
 #drop_down_genres {
