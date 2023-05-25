@@ -66,7 +66,7 @@ try {
     serviceRouter = require('./services/spiele.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
-    serviceRouter = require('./services/signup.js');
+    serviceRouter = require('./services/benutzer.js');
     app.use(TOPLEVELPATH, serviceRouter);
 
     serviceRouter = require('./services/neueSpiele.js');

@@ -164,8 +164,8 @@ serviceRouter.post('/benutzer/login', function(request, response) {
     console.log('Service benutzer: Client requested check, if user has access');
 
     var errorMsgs=[];
-    if (helper.isUndefined(request.body.benutzername))
-        errorMsgs.push('benutzername fehlt');
+    if (helper.isUndefined(request.body.email))
+        errorMsgs.push('email fehlt');
     if (helper.isUndefined(request.body.passwort))
         errorMsgs.push('passwort fehlt');
 
@@ -177,9 +177,9 @@ serviceRouter.post('/benutzer/login', function(request, response) {
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var hasaccess = benutzerDao.hasaccess(request.body.benutzername, request.body.passwort);
-        console.log('Service benutzer: Check if user has access, hasaccess=' + hasaccess);
-        response.status(200).json(hasaccess);
+        var hasAccess = benutzerDao.hasAccess(request.body.email, request.body.passwort);
+        console.log('Service benutzer: Check if user has access, hasaccess=' + hasAccess);
+        response.status(200).json(hasAccess);
     } catch (ex) {
         console.error('Service benutzer: Error checking if user has access. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
