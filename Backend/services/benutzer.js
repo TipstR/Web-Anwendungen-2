@@ -86,6 +86,8 @@ serviceRouter.post('/benutzer', function(request, response) {
     var errorMsgs=[];
     if (helper.isUndefined(request.body.benutzername))
         errorMsgs.push('benutzername fehlt');
+    if (helper.isUndefined(request.body.email))
+        errorMsgs.push('email fehlt');
     if (helper.isUndefined(request.body.passwort))
         errorMsgs.push('passwort fehlt');
 
