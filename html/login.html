@@ -1,69 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>login</title>
-        <link rel="stylesheet" type="text/css" href="../lib/style.css">
-        <script src="../lib/scripts/signup.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="../lib/style.css">
 
-        <header id="header">
-            <nav id= "nav1">
-                <section id= "header line">
-                    <section id="style logo">
-                        <a href="../index.html" class="L1 remove_text_decoration" id="logo"> <img id="logoImage" src="../Backend/resources/logo.png" alt="logo"></a>
-                    </section>
-                    <section id= "menu style">
-                        <a href="../index.html" class="L1 remove_text_decoration" id="store"> Store </a>
-                        <a href="../html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
-                        <a href="../html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
-                    </section>
-                    <section id="style search cart">
-                        <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
-                        <a href="../html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="../Backend/resources/cart.png" alt="cart" width="30" height="30"> </a>
-                    </section>
-                </section>
-            </nav>
-        </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
 
-        <main class="center">
-            <h1> Login </h1>
+<header id="header">
+    <nav id="nav1">
+        <section id="header line">
+            <section id="style logo">
+                <a href="../index.html" class="L1 remove_text_decoration" id="logo"> <img id="logoImage"
+                                                                                          src="../Backend/resources/logo.png"
+                                                                                          alt="logo"></a>
+            </section>
+            <section id="menu style">
+                <a href="../index.html" class="L1 remove_text_decoration" id="store"> Store </a>
+                <a href="../html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
+                <a href="../html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
+            </section>
+            <section id="style search cart">
+                <a> <label for="search"></label><input type="text" id="search" placeholder="Search"> </a>
+                <a href="../html/cart.html" class="L1 remove_text_decoration" id="cart"> <img
+                        src="../Backend/resources/cart.png" alt="cart" width="30" height="30"> </a>
+            </section>
+        </section>
+    </nav>
+</header>
 
-            <table class="center" >
-                <tr>
-                    <td><input type="text" placeholder="E-Mail " class="logrestext" id="emailInput"></td>
-                </tr>
+<main class="center">
+    <h1> Login </h1>
+
+    <table class="center">
+        <tr>
+            <td><input type="text" placeholder="E-Mail " class="logrestext" id="emailInput"></td>
+        </tr>
 
 
                 <tr>
                     <td><input type="password" placeholder="Password" class="logrestext" id="passwordInput"></td>
                 </tr>
 
+        <tr>
+            <td id="fehlermeldung"></td>
+        </tr>
 
-                <tr>
-                    <td ><button class="login_res_button" type="submit"> Login </button></td>
-                </tr>
+        <tr>
+            <td id="erfolg"></td>
+        </tr>
 
-                <tr>
-                    <td > <a href="../html/signup.html"><button class="login_res_button"> To Signup </button> </a> </td>
-                </tr>
+        <tr>
+            <td>
+                <button class="login_res_button" type="submit" onclick="submitLogin()"> Login</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="../html/signup.html">
+                <button class="login_res_button"> To Signup</button>
+            </a></td>
+        </tr>
 
 
-            </table>
+    </table>
 
-        </main>
+</main>
 
-        <footer id="footer">
-            <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
-            <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
-            <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
-        </footer>
+<footer id="footer">
+    <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
+    <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
+    <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
+</footer>
 
-        <script src="js/login.js"></script>
+<script src="../lib/scripts/login.js"></script>
 
-    </body>
+</body>
+
+<script>
+    async function submitLogin() {
+
+        const emailInput = document.getElementById("emailInput");
+        const passwortInput = document.getElementById("passwortInput");
+
+        let fehlermeldung = document.getElementById("fehlermeldung");
+        let erfolg = document.getElementById("erfolg");
+
+        if (passwortInput.value == "" || emailInput.value == "") {
+            fehlermeldung.innerHTML = 'Nicht alle erforderlichen Felder ausgefüllt!';
+        } else {
+            let benutzer;
+            /* benutzer = loginBenutzer(emailInput.value, passwortInput.value).then(response => {
+                return response;
+            }); */
+            benutzer = await loginBenutzer(emailInput.value, passwortInput.value);
+            console.log(benutzer);
+            if (benutzer == null) {
+                emailInput.value = "";
+                passwortInput.value = "";
+                fehlermeldung.innerHTML = "E-Mail oder Passwort ungültig!";
+                erfolg.innerHTML = "";
+            } else {
+                console.log(benutzer);
+                localStorage.setItem("Benutzer", JSON.stringify(benutzer));
+
+                emailInput.value = "";
+                passwortInput.value = "";
+                fehlermeldung.innerHTML = "";
+                erfolg.innerHTML = "Erfolgreich angemeldet!";
+            }
+        }
+    }
+</script>
 </html>

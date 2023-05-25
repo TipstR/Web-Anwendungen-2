@@ -47,7 +47,7 @@ class BenutzerDao {
         return false;
     }
 
-    isuniqueEmail(email) {
+    isUniqueEmail(email) {
         var sql = 'SELECT COUNT(id) AS cnt FROM Benutzer WHERE email=?';
         var statement = this._conn.prepare(sql);
         var result = statement.get(email);
@@ -58,7 +58,7 @@ class BenutzerDao {
         return false;
     }
 
-    isuniqueUsername(benutzername) {
+    isUniqueUsername(benutzername) {
         var sql = 'SELECT COUNT(id) AS cnt FROM Benutzer WHERE benutzername=?';
         var statement = this._conn.prepare(sql);
         var result = statement.get(benutzername);
@@ -69,7 +69,7 @@ class BenutzerDao {
         return false;
     }
 
-    hasaccess(email, passwort) {
+    hasAccess(email, passwort) {
         var sql = 'SELECT ID FROM Benutzer WHERE email=? AND passwort=?';
         var statement = this._conn.prepare(sql);
         var params = [email, md5(passwort)];

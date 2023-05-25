@@ -55,8 +55,8 @@ serviceRouter.get('/benutzer/eindeutig/:benutzername/:email', function(request, 
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var usernameUnique = benutzerDao.isuniqueUsername(request.params.benutzername);
-        var emailUnique = benutzerDao.isuniqueEmail(request.params.email);
+        var usernameUnique = benutzerDao.isUniqueUsername(request.params.benutzername);
+        var emailUnique = benutzerDao.isUniqueEmail(request.params.email);
         var unique = usernameUnique && emailUnique;
         console.log('Service benutzer: Check if unique, unique=' + unique);
         response.status(200).json({'email': request.params.email, 'benutzername': request.params.benutzername, 'email_eindeutig': emailUnique, 'benutzername_eindeutig': usernameUnique, 'eindeutig': unique});
@@ -150,7 +150,7 @@ serviceRouter.delete('/benutzer/:id', function(request, response) {
     try {
         var obj = benutzerDao.loadById(request.params.id);
         benutzerDao.delete(request.params.id);
-        console.log('Service benutzer: Deletion of record successfull, id=' + request.params.id);
+        console.log('Service benutzer: Deletion of record successful, id=' + request.params.id);
         response.status(200).json({ 'gelöscht': true, 'eintrag': obj });
     } catch (ex) {
         console.error('Service benutzer: Error deleting record. Exception occured: ' + ex.message);
