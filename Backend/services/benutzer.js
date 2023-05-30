@@ -33,6 +33,21 @@ serviceRouter.get('/benutzer/alle', function(request, response) {
     }
 });
 
+serviceRouter.get('/benutzer/spiele/:id', function(request, response) {
+    console.log('Service benutzer: Client requested all records');
+
+    const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
+    try {
+        var arr = benutzerDao.loadUserGames(request.params.id);
+        console.log('Service benutzer: Records loaded, count=' + arr.length);
+        response.status(200).json(arr);
+    } catch (ex) {
+        console.error('Service benutzer: Error loading all records. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
+
 serviceRouter.get('/benutzer/eindeutig/:benutzername/:email', function(request, response) {
     console.log('Service benutzer: Client requested check, if username and email are unique');
     console.log(request.params)

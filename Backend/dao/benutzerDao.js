@@ -23,6 +23,16 @@ class BenutzerDao {
         return result;
     }
 
+    loadUserGames(id) {
+        var sql = 'SELECT Spiele FROM Benutzer WHERE id=?';
+        var statement = this._conn.prepare(sql);
+        var result = statement.get(id);
+
+        if (helper.isUndefined(result))
+            throw new Error('No Record found by id=' + id);
+
+        return result;
+    }
 
 
     loadAll() {

@@ -46,6 +46,7 @@ class SpieleDao {
         return result;
     }
 
+
     loadAll() {
         var sql = 'SELECT * FROM Spiele';
         var statement = this._conn.prepare(sql);

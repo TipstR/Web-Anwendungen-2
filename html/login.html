@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../lib/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../lib/scripts/header.js"></script>
 </head>
 <body>
 
@@ -61,6 +62,7 @@
 
 <script src="../lib/scripts/login.js"></script>
 
+
 </body>
 
 <script>
@@ -92,13 +94,14 @@
                 fehlermeldung.innerHTML = "E-Mail oder Passwort ungültig!";
                 erfolg.innerHTML = "";
             } else {
-                console.log(benutzer);
-                localStorage.setItem("Benutzer", JSON.stringify(benutzer));
+                console.log(benutzer.id);
+                localStorage.setItem("Benutzer", benutzer.id.toString());
 
                 emailInput.value = "";
                 passwortInput.value = "";
                 fehlermeldung.innerHTML = "";
                 erfolg.innerHTML = "Erfolgreich angemeldet!";
+                location.href = "../index.html";
             }
         }
     }
