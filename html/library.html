@@ -6,26 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>library</title>
         <link rel="stylesheet" type="text/css" href="../lib/style.css">
+        <script src="../lib/scripts/header.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="../lib/scripts/library.js"></script>
     </head>
     <body>
 
         <header id="header">
-            <nav id= "nav1">
-                <section id= "header line">
-                    <section id="style logo">
-                        <a href="../index.html" class="L1 remove_text_decoration" id="logo"> <img id="logoImage" src="../Backend/resources/logo.png" alt="logo"></a>
-                    </section>
-                    <section id= "menu style">
-                        <a href="../index.html" class="L1 remove_text_decoration" id="store"> Store </a>
-                        <a href="../html/library.html" class="L1 remove_text_decoration" id="library"> Library </a>
-                        <a href="../html/about.html" class="L1 remove_text_decoration" id="about"> About </a>
-                    </section>
-                    <section id="style search cart">
-                        <a> <label for="search"></label><input type="text" id="search" placeholder="Search" > </a>
-                        <a href="../html/cart.html" class="L1 remove_text_decoration" id="cart"> <img src="../Backend/resources/cart.png" alt="cart" width="30" height="30"> </a>
-                    </section>
-                </section>
-            </nav>
+
         </header>
 
             <aside id = "searchBib">
@@ -45,27 +33,6 @@
                     <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
                 </tr>
 
-
-                <tr>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                </tr>
-
-                <tr>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                </tr>
-
-                <tr>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                    <td class="td_padding"><a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" alt="tetris"></a></td>
-                </tr>
             </table>
 
         </main>
@@ -79,52 +46,22 @@
 
         <script>
             $(document).ready(function () {
+                getHeader();
+
                 console.log('Document ready, loading data from Service');
-                $.ajax({
-                    url: 'http://localhost:8000/api/spiele/alle',
-                    method: 'get',
-                    contentType: 'application/json; charset=utf-8',
-                    cache: false,
-                    dataType: 'json'
-                }).done(function (response) {
+                $.when(getGameDetails()).done(function (response) {
+
+
                     console.log('Data loaded successfully');
-                    console.log(response);
+                    console.log('Response und so: ' + JSON.stringify(response));
 
-                    /* die Idee bei diesem Prinzip ist, dass HTML Code als Text angesehen wird.
-                        Diesen können wir häppchen-weise in einer Variable zusammen setzen
-                        und dann auch ausgeben
-                        Hinweis: Damit man Quotes/doppelte Anführungsstriche NICHT escapen muss,
-                        kann man bei jQuery einfache Anführungszeichen verwenden
-                    */
 
-                    // hilfsvariable anlegen
-                    var content = '';
-
-                    // neuen code zusammensetzen
-                    content += '<table>'
-
-                    for (i = 0; i < response.length; i++) {
-                        var obj = response[i];
-                        content += '<tr>';
-                        content += '<td>' + obj.id + '</td>';
-                        content += '<td>' + obj.name + '</td>';
-                        content += '<td>' + obj.klappentext + '</td>';
-                        content += '<td>' + obj.beschreibung + '</td>';
-                        content += '<td><img src=\"../backend/' + obj.cover_pfad + '\"></td>';
-                        content += '</tr>';
-                    }
-
-                    content += '</table>';
-                    console.log(content);
-                    // zusammengesetzen Code im Dokument ausgeben
-                    $('#dyntarget').html(content);
-
-                }).fail(function (jqXHR, statusText, error) {
-                    console.log('Error occured');
-                    console.log('Response Code: ' + jqXHR.status + ' - Message: ' + jqXHR.responseText);
-                    alert(jqXHR.responseText);
                 });
+
             });
+
+
+
         </script>
 
     </body>

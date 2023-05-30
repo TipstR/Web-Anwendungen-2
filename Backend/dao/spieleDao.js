@@ -21,9 +21,36 @@ class SpieleDao {
         return result;
     }
 
+    loadByIdList(idListString) {
+        let idList = idListString.toString().split(",");
+        console.log(idList);
+        let sql = 'SELECT * FROM Spiele WHERE ';
+        for (let i = 0; i < idList.length; i++) {
+            console.log(idList[i]);
+            console.log(typeof idList[i]);
+            if (i == idList.length - 1) {
+                sql += "id='" + idList[i] + "';";
+            } else {
+                sql += "id='" + idList[i] + "' OR ";
+            }
+        }
+        const statement = this._conn.prepare(sql);
+        console.log(statement);
+        console.log("idListString: " + idListString);
+        console.log("statement: " + statement.all());
+        const result = statement.all();
+
+        if (helper.isUndefined(result))
+            throw new Error('No Record found by id=' + id);
+
+        return result;
+    }
+
     loadAll() {
         var sql = 'SELECT * FROM Spiele';
         var statement = this._conn.prepare(sql);
+        console.log(statement);
+        console.log("statement.all(): " + statement.all());
         var result = statement.all();
 
         if (helper.isArrayEmpty(result))
