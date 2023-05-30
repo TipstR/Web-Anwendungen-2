@@ -373,7 +373,7 @@ main {
     width: 150px;
     height: 100px;
     top: 200px;
-    right: 100px;
+    left: 100px;
 }
 
 #th_style2 {
