@@ -4,39 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes of 25.05.">
-      <change afterPath="$PROJECT_DIR$/lib/scripts/header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes of 23.05.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/spieleDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/spieleDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/spiele.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/spiele.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/legal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/privacy_policy.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/privacy_policy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/term_of_use.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/term_of_use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/testBackend.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/testBackend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/trending.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/trending.html" afterDir="false" />
-    </list>
-    <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
-    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian">
-      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/spieleDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/spieleDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list id="293c6832-2e80-43ed-baa5-d77dfde027d2" name="Changes by janik" comment="" />
+    <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
+    <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,42 +42,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Backend/dao/spieleDao.js">
-      <ranges>
-        <range start1="22" end1="22" start2="22" end2="47" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="23" end1="23" start2="48" end2="49" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="26" end1="26" start2="52" end2="54" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/library.html">
-      <ranges>
-        <range start1="8" end1="8" start2="8" end2="11" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="12" end1="28" start2="15" end2="16" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="37" end1="46" start2="25" end2="27" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="47" end1="68" start2="28" end2="28" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="81" end1="81" start2="41" end2="43" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="82" end1="89" start2="44" end2="47" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="90" end1="91" start2="48" end2="49" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="92" end1="98" start2="50" end2="50" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="99" end1="101" start2="51" end2="52" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="102" end1="104" start2="53" end2="54" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="105" end1="115" start2="55" end2="55" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="116" end1="120" start2="56" end2="56" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="121" end1="127" start2="57" end2="57" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/login.html">
-      <ranges>
-        <range start1="10" end1="10" start2="10" end2="11" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="14" end1="33" start2="15" end2="16" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="80" end1="80" start2="63" end2="64" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="84" end1="84" start2="68" end2="73" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="107" end1="109" start2="96" end2="98" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="114" end1="114" start2="103" end2="104" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -107,30 +53,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thert/WebstormProjects/Web Anwendungen 2&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/thert/WebstormProjects/Web Anwendungen 2",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+    ],
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\thert\WebstormProjects\Web Anwendungen 2" />
@@ -173,6 +122,10 @@
       <workItem from="1684848260227" duration="113000" />
       <workItem from="1685019441855" duration="10620000" />
       <workItem from="1685436443622" duration="14862000" />
+      <workItem from="1685464347990" duration="121000" />
+      <workItem from="1685464478592" duration="142000" />
+      <workItem from="1685464844929" duration="3019000" />
+      <workItem from="1685487541980" duration="4500000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>

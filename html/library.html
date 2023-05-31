@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>library</title>
-        <link rel="stylesheet" type="text/css" href="../lib/style.css">
-        <script src="../lib/scripts/header.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="../lib/scripts/library.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+    <link rel="stylesheet" type="text/css" href="../lib/style.css">
+    <script src="../lib/scripts/header.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../lib/scripts/library.js"></script>
+</head>
+<body>
 
-        <header id="header">
+<header id="header">
 
-        </header>
+</header>
 
-            <aside id = "searchBib">
-                <a> <label for="search_library"></label><input type="text" id="search_library" placeholder="Bibliothek durchsuchen" > </a>
-            </aside>
-
-
-        <main class="center">
-            <table class="center" id="table1">
+<aside id="searchBib">
+    <a> <label for="search_library"></label><input type="text" id="search_library" placeholder="Bibliothek durchsuchen">
+    </a>
+</aside>
 
 
-
-            </table>
-
-        </main>
+<main class="center">
+    <table class="center" id="table1">
 
 
-        <footer id="footer">
-            <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
-            <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
-            <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
-        </footer>
+    </table>
 
-        <script>
-            $(document).ready(function () {
-                getHeader();
-
-                console.log('Document ready, loading data from Service');
-                $.when(getGameDetails()).done(function (response) {
+</main>
 
 
-                    console.log('Data loaded successfully');
-                    console.log('Response und so: ' + JSON.stringify(response));
+<footer id="footer">
+    <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
+    <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
+    <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
+</footer>
+
+<script>
+    $(document).ready(async function () {
+        getHeader();
+
+        console.log('Document ready, loading data from Service');
+        const gameDetails = await getGameDetails();
+        // gameDetails wird automatisch nach aufsteigenden IDs sortiert
+        console.log("Game Details: " + JSON.stringify(gameDetails));
+
+        let content = "";
+        for (let i = 0; i < Math.floor(gameDetails.length / 3) + 1; i++) {
+            content += '<tr>';
+
+            for (let j = 0; j < 3 && i * 3 + j < gameDetails.length; j++) {
+                content += '<td class="td_padding"><a href="game.html?id=' + gameDetails[i * 3 + j].id + '"> <img class="cover" src = "../Backend/' + gameDetails[i * 3 + j].cover_pfad + '" alt="' + gameDetails[i * 3 + j].name + '"</a></td>';
+            }
+
+            content += '</tr>';
+            if (content.substring(content.length - 9, content.length) == "<tr></tr>") {
+                content = content.substring(0, content.length - 9);
+            }
+        }
+
+        console.log(content);
+        $('#table1').html(content);
+
+    });
 
 
-                });
+</script>
 
-            });
-
-
-
-        </script>
-
-    </body>
+</body>
 </html>

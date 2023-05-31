@@ -11,15 +11,15 @@
   "author": "Robert Kuti",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "^8.1.0",
-    "body-parser": "^1.20.1",
+    "better-sqlite3": "^8.4.0",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "lodash": "^4.17.21",
-    "luxon": "^3.2.1",
+    "luxon": "^3.3.0",
     "md5": "^2.3.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.22"
   }
 }

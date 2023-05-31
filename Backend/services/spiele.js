@@ -24,7 +24,7 @@ serviceRouter.get('/spiele/gib/:id', function(request, response) {
 serviceRouter.get('/spiele/gib/idList/:idList', function(request, response) {
     console.log(decodeURIComponent(request.params.idList));
     console.log('Service Spiele: Client requested one record, idList=' + request.params.idList);
-    console.log(request.params.idList.split(','));
+    console.log("idListSplit" + request.params.idList.split(', '));
 
     const spieleDao = new SpieleDao(request.app.locals.dbConnection);
     try {
