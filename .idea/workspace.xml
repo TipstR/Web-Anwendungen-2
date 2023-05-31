@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="fixed library.js + implemented logic for library.html">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="simple error handling if no user is logged in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
     <list id="293c6832-2e80-43ed-baa5-d77dfde027d2" name="Changes by janik" comment="" />
     <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
@@ -120,7 +121,8 @@
       <workItem from="1685464478592" duration="142000" />
       <workItem from="1685464844929" duration="3019000" />
       <workItem from="1685487541980" duration="4677000" />
-      <workItem from="1685498207293" duration="340000" />
+      <workItem from="1685498207293" duration="403000" />
+      <workItem from="1685507797030" duration="254000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -269,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685492207788</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="simple error handling if no user is logged in">
+      <created>1685498598349</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1685498598349</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +307,7 @@
     <MESSAGE value="Changes by rapha" />
     <MESSAGE value="Changes by tizian" />
     <MESSAGE value="fixed library.js + implemented logic for library.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed library.js + implemented logic for library.html" />
+    <MESSAGE value="simple error handling if no user is logged in" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple error handling if no user is logged in" />
   </component>
 </project>
