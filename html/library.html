@@ -43,26 +43,32 @@
 
         console.log('Document ready, loading data from Service');
         const gameDetails = await getGameDetails();
-        // gameDetails wird automatisch nach aufsteigenden IDs sortiert
-        console.log("Game Details: " + JSON.stringify(gameDetails));
 
-        let content = "";
-        for (let i = 0; i < Math.floor(gameDetails.length / 3) + 1; i++) {
-            content += '<tr>';
+        // if no user is logged in
+        if (gameDetails == null) {
+            const notLoggedInContent = "not logged in";
+            $('#table1').html(notLoggedInContent);
+        } else {
+            // gameDetails wird automatisch nach aufsteigenden IDs sortiert
+            console.log("Game Details: " + JSON.stringify(gameDetails));
 
-            for (let j = 0; j < 3 && i * 3 + j < gameDetails.length; j++) {
-                content += '<td class="td_padding"><a href="game.html?id=' + gameDetails[i * 3 + j].id + '"> <img class="cover" src = "../Backend/' + gameDetails[i * 3 + j].cover_pfad + '" alt="' + gameDetails[i * 3 + j].name + '"</a></td>';
+            let content = "";
+            for (let i = 0; i < Math.floor(gameDetails.length / 3) + 1; i++) {
+                content += '<tr>';
+
+                for (let j = 0; j < 3 && i * 3 + j < gameDetails.length; j++) {
+                    content += '<td class="td_padding"><a href="game.html?id=' + gameDetails[i * 3 + j].id + '"> <img class="cover" src = "../Backend/' + gameDetails[i * 3 + j].cover_pfad + '" alt="' + gameDetails[i * 3 + j].name + '"</a></td>';
+                }
+
+                content += '</tr>';
+                if (content.substring(content.length - 9, content.length) == "<tr></tr>") {
+                    content = content.substring(0, content.length - 9);
+                }
             }
 
-            content += '</tr>';
-            if (content.substring(content.length - 9, content.length) == "<tr></tr>") {
-                content = content.substring(0, content.length - 9);
-            }
+            console.log(content);
+            $('#table1').html(content);
         }
-
-        console.log(content);
-        $('#table1').html(content);
-
     });
 
 
