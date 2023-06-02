@@ -1,72 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Game</title>
-        <link rel="stylesheet" type="text/css" href="../lib/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="../lib/scripts/urlParameter.js"></script>
-        <script src="../lib/scripts/header.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="../lib/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../lib/scripts/urlParameter.js"></script>
+    <script src="../lib/scripts/header.js"></script>
+</head>
+<body>
 
-        <header id="header">
+<header id="header">
 
-        </header>
-
-
-
-        <main class="center">
-
-            <h1 style="text-align:center" id="name">  </h1>
-
-            <table id="cover_edition">
-                <tr>
-                    <td style="text-align:left;" colspan="1" rowspan="2" id="produktBild">
-
-                    </td>
-                    <td style="width:15%;">
-                        <span style="color: yellow; font-size: 50px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td id="blurb"> <p id="klappentext">  </p> </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form id="drop_down_game_editions">
-                            <label> Editionen </label>
-                            <label>
-                                <select>
-                                    <option value="Standard"> Standard
-                                    </option>
-                                    <option value="Gold"> Gold
-                                    </option>
-                                    <option value="Ultimate"> Ultimate
-                                    </option>
-                                </select>
-                            </label>
-                        </form>
-                    </td>
-
-                    <td id="purchase_button_td"><button id="purchase_button" type="submit" onclick="put_id_into_local_storage()"> Put into cart </button></td>
-                </tr>
-            </table>
-
-            <h2> About this Game </h2>
-            <table  id="descriptionGameFull">
-                <tr>
-                    <td id="beschreibung">
-                    </td>
-                </tr>
-            </table>
+</header>
 
 
-            <table id="evaluationfield">
-                <tr>
+<main class="center">
+
+    <h1 style="text-align:center" id="name"></h1>
+
+    <table id="cover_edition">
+        <tr>
+            <td style="text-align:left;" colspan="1" rowspan="2" id="produktBild">
+
+            </td>
+            <td style="width:15%;">
+                <span style="color: yellow; font-size: 50px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td id="blurb"><p id="klappentext"></p></td>
+        </tr>
+        <tr>
+            <td>
+                <form id="drop_down_game_editions">
+                    <label> Editionen </label>
+                    <label>
+                        <select>
+                            <option value="Standard"> Standard
+                            </option>
+                            <option value="Gold"> Gold
+                            </option>
+                            <option value="Ultimate"> Ultimate
+                            </option>
+                        </select>
+                    </label>
+                </form>
+            </td>
+
+            <td id="purchase_button_td">
+
+            </td>
+
+        </tr>
+    </table>
+
+    <h2> About this Game </h2>
+    <table id="descriptionGameFull">
+        <tr>
+            <td id="beschreibung">
+            </td>
+        </tr>
+    </table>
+
+
+    <table id="evaluationfield">
+
+    </table>
+
+</main>
+
+<footer id="footer">
+    <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
+    <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
+    <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
+</footer>
+
+<script>
+
+    $(document).ready(function () {
+        getHeader();
+        handle_add_to_cart_reviews_visibility();
+
+        console.log('loading specific product');
+
+        // get id from url parameter
+        var id = -1;
+
+        if (existsUrlParameter('id'))
+            id = getUrlParameterValue('id');
+
+        console.log('target product id=' + id);
+
+        if (id == -1) {
+            alert('keine id erhalten');
+            return;
+        }
+
+        $.ajax({
+            url: 'http://localhost:8000/api/spiele/gib/' + id,
+            method: 'get',
+            contentType: 'application/json; charset=utf-8',
+            cache: false,
+            dataType: 'json'
+        }).done(function (response) {
+            console.log(response);
+
+            /* hier können Sie das Produkt nach eigenen Wünschen rendern und ausgeben. Ich mache es mir einfach und gebe nur einen Teil aus */
+
+            produktID = response.id;
+            produktName = response.name;
+            produktKlappentext = response.klappentext;
+            produktBeschreibung = response.beschreibung;
+            produktBild = '<img src="../Backend/' + response.cover_pfad + '" alt="' + produktName + '">';
+
+            $('#name').html(produktName);
+            $('#produktBild').html(produktBild);
+            $('#klappentext').html(produktKlappentext);
+            $('#beschreibung').html(produktBeschreibung);
+
+
+        }).fail(function (jqXHR, statusText, error) {
+            console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+            alert('Ein Fehler ist aufgetreten');
+        });
+    });
+
+
+    // Zeige den Warenkorb Knopf und die Reviews nur dann an, wenn angebracht
+    // Warenkorb nur, falls kein Besitz vorhanden; Bewertungen nur, falls Besitz vorhanden.
+    // Vermutlich sollten wir Editionen von Spielen weglassen
+    function handle_add_to_cart_reviews_visibility() {
+        let content = "";
+        const userId = localStorage.getItem("Benutzer");
+
+        if (userId == null) {
+            return;
+        } else if (userId == "") {
+            return;
+        } else {
+            $.ajax({
+                url: 'http://localhost:8000/api/benutzer/spiele/' + userId,
+                method: 'get',
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json'
+            }).done(function (response) {
+                let userGames = response["spiele"];
+
+                // get id from url parameter
+                var gameId = -1;
+
+                if (existsUrlParameter('id'))
+                    gameId = getUrlParameterValue('id');
+
+                if (gameId == -1) {
+                    alert('keine id erhalten');
+                    return;
+                }
+
+                if (userGames.includes(gameId.toString())) {
+                    content = "";
+                    document.getElementById("purchase_button_td").innerHTML = content;
+
+                    content = `<tr>
                     <td style="width:fit-content" id="review_account">
                         <span>Account</span>
                     </td>
@@ -93,103 +193,62 @@
                     <td style="width:1%"></td>
                     <td style="width:25%"></td>
                     <td id="review_button_td"><button id="review_button" type="submit"> Send </button></td>
-                </tr>
-            </table>
-        </main>
+                </tr>`;
+                    document.getElementById("evaluationfield").innerHTML = content;
+                } else {
+                    content = `<button id="purchase_button" type="submit" onClick="put_id_into_local_storage()"> Add to
+                                cart </button>`;
+                    document.getElementById("purchase_button_td").innerHTML = content;
 
-            <footer id="footer">
-                <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
-                <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
-                <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
-            </footer>
-
-        <script>
-
-            $(document).ready(function() {
-                getHeader();
-
-                console.log('loading specific product');
-
-                // get id from url parameter
-                var id = -1;
-
-                if (existsUrlParameter('id'))
-                    id = getUrlParameterValue('id');
-
-                console.log('target product id=' + id);
-
-                if (id == -1) {
-                    alert('keine id erhalten');
-                    return;
+                    content = "";
+                    document.getElementById("evaluationfield").innerHTML = content;
                 }
 
-                $.ajax({
-                    url: 'http://localhost:8000/api/spiele/gib/' + id,
-                    method: 'get',
-                    contentType: 'application/json; charset=utf-8',
-                    cache: false,
-                    dataType: 'json'
-                }).done(function (response) {
-                    console.log(response);
 
-                    /* hier können Sie das Produkt nach eigenen Wünschen rendern und ausgeben. Ich mache es mir einfach und gebe nur einen Teil aus */
-
-                    produktID = response.id;
-                    produktName = response.name;
-                    produktKlappentext = response.klappentext;
-                    produktBeschreibung = response.beschreibung;
-                    produktBild = '<img src="../Backend/' + response.cover_pfad + '" alt="' + produktName + '">';
-
-                    $('#name').html(produktName);
-                    $('#produktBild').html(produktBild);
-                    $('#klappentext').html(produktKlappentext);
-                    $('#beschreibung').html(produktBeschreibung);
-
-
-
-
-
-                }).fail(function (jqXHR, statusText, error) {
-                    console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
-                    alert('Ein Fehler ist aufgetreten');
-                });
+            }).fail(function (jqXHR, statusText, error) {
+                console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                console.log('Ein Fehler ist aufgetreten');
             });
+        }
 
-            function put_id_into_local_storage() {
-                var id = -1;
 
-                if (existsUrlParameter('id'))
-                    id = getUrlParameterValue('id');
+    }
 
-                console.log('target product id=' + id);
 
-                if (id == -1) {
-                    alert('keine id erhalten');
-                    return;
-                }
+    function put_id_into_local_storage() {
+        var id = -1;
 
-                // cartIds key does not exist
-                if (localStorage.getItem("cartIds") == null) {
-                    localStorage.setItem("cartIds", id);
-                }
+        if (existsUrlParameter('id'))
+            id = getUrlParameterValue('id');
 
-                // cartIds key contains no items
-                else if (localStorage.getItem("cartIds") == "") {
-                    localStorage.setItem("cartIds", id);
-                }
+        console.log('target product id=' + id);
 
-                //cartIds key contains items
-                else {
-                    if (localStorage.getItem("cartIds").split(",").includes(id.toString())) {
-                        return;
-                    }
-                    else {
-                        localStorage.setItem("cartIds", localStorage.getItem("cartIds") + "," + id);
-                    }
-                }
+        if (id == -1) {
+            alert('keine id erhalten');
+            return;
+        }
+
+        // cartIds key does not exist
+        if (localStorage.getItem("cartIds") == null) {
+            localStorage.setItem("cartIds", id);
+        }
+
+        // cartIds key contains no items
+        else if (localStorage.getItem("cartIds") == "") {
+            localStorage.setItem("cartIds", id);
+        }
+
+        //cartIds key contains items
+        else {
+            if (localStorage.getItem("cartIds").split(",").includes(id.toString())) {
+                return;
+            } else {
+                localStorage.setItem("cartIds", localStorage.getItem("cartIds") + "," + id);
             }
+        }
+    }
 
 
-        </script>
-    </body>
+</script>
+</body>
 </html>

@@ -38,10 +38,10 @@
         let content = "";
         if (localStorage.getItem("cartIds") == null) {
             content = "No items in cart";
-            $("#dynamicCart").html = content;
+            document.getElementById("dynamicCart").innerHTML = content;
         } else if (localStorage.getItem("cartIds") == "") {
             content = "No items in cart";
-            $("#dynamicCart").html = content;
+            document.getElementById("dynamicCart").innerHTML = content;
         } else {
             let itemsInCart = localStorage.getItem("cartIds").split(",");
             for (const item of itemsInCart) {
