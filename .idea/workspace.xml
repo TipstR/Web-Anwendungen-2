@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="simple error handling if no user is logged in">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="added &quot;put into cart&quot; functionality on game site; made cart dynamic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
     </list>
     <list id="293c6832-2e80-43ed-baa5-d77dfde027d2" name="Changes by janik" comment="" />
     <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
@@ -122,7 +121,9 @@
       <workItem from="1685464844929" duration="3019000" />
       <workItem from="1685487541980" duration="4677000" />
       <workItem from="1685498207293" duration="403000" />
-      <workItem from="1685507797030" duration="254000" />
+      <workItem from="1685507797030" duration="549000" />
+      <workItem from="1685678446945" duration="438000" />
+      <workItem from="1685679077303" duration="4369000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -278,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685498598349</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed damaged .center class">
+      <created>1685508100342</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1685508100342</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +316,8 @@
     <MESSAGE value="Changes by tizian" />
     <MESSAGE value="fixed library.js + implemented logic for library.html" />
     <MESSAGE value="simple error handling if no user is logged in" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple error handling if no user is logged in" />
+    <MESSAGE value="fixed damaged .center class" />
+    <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart dynamic" />
+    <option name="LAST_COMMIT_MESSAGE" value="added &quot;put into cart&quot; functionality on game site; made cart dynamic" />
   </component>
 </project>

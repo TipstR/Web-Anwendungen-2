@@ -20,7 +20,7 @@
 
         <main class="center">
 
-            <h1 style="text-algin:center" id="name">  </h1>
+            <h1 style="text-align:center" id="name">  </h1>
 
             <table id="cover_edition">
                 <tr>
@@ -52,7 +52,7 @@
                         </form>
                     </td>
 
-                    <td id="purchase_button_td"><button id="purchase_button" type="submit"> Purchase </button></td>
+                    <td id="purchase_button_td"><button id="purchase_button" type="submit" onclick="put_id_into_local_storage()"> Put into cart </button></td>
                 </tr>
             </table>
 
@@ -154,6 +154,40 @@
                     alert('Ein Fehler ist aufgetreten');
                 });
             });
+
+            function put_id_into_local_storage() {
+                var id = -1;
+
+                if (existsUrlParameter('id'))
+                    id = getUrlParameterValue('id');
+
+                console.log('target product id=' + id);
+
+                if (id == -1) {
+                    alert('keine id erhalten');
+                    return;
+                }
+
+                // cartIds key does not exist
+                if (localStorage.getItem("cartIds") == null) {
+                    localStorage.setItem("cartIds", id);
+                }
+
+                // cartIds key contains no items
+                else if (localStorage.getItem("cartIds") == "") {
+                    localStorage.setItem("cartIds", id);
+                }
+
+                //cartIds key contains items
+                else {
+                    if (localStorage.getItem("cartIds").split(",").includes(id.toString())) {
+                        return;
+                    }
+                    else {
+                        localStorage.setItem("cartIds", localStorage.getItem("cartIds") + "," + id);
+                    }
+                }
+            }
 
 
         </script>

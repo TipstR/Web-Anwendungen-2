@@ -1,79 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> cart </title>
-        <link rel="stylesheet" type="text/css" href="../lib/style.css">
-        <script src="../lib/scripts/header.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> cart </title>
+    <link rel="stylesheet" type="text/css" href="../lib/style.css">
+    <script src="../lib/scripts/header.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
 
-        <header id="header">
+<header id="header">
 
-        </header>
+</header>
 
-        <main class="center">
-            <h1> Warenkorb </h1>
+<main class="center">
+    <h1> Warenkorb </h1>
 
-            <table class = "center cart_table">
-                <tr>
-                    <td class="cart_td cart_price"> <img src="../Backend/resources/tetris.jpg" alt="game_cover" width="40" height="40"> </td>
-                    <td class="cart_td"> game 1</td>
-                    <td class="cart_price cart_td"> 60€ </td>
-                </tr>
-                <tr>
-                    <td class="cart_td cart_price"> <img src="../Backend/resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
-                    <td class="cart_td"> game 2</td>
-                    <td class="cart_price cart_td"> 80€ </td>
-                </tr>
-                <tr>
-                    <td class="cart_td cart_price"> <img src="../Backend/resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
-                    <td class="cart_td"> game 3</td>
-                    <td class="cart_price cart_td"> 30€ </td>
-                </tr>
-                <tr>
-                    <td class="cart_td cart_price"> <img src="../Backend/resources/tetris.jpg" alt="game_cover" width="35" height="35"> </td>
-                    <td class="cart_td"> game 4</td>
-                    <td class="cart_price cart_td"> 10€ </td>
-                </tr>
-                <tr>
-                    <td>  </td>
-                    <td rowspan="2"> Gesamt </td>
-                    <td> 180€ </td>
-                </tr>
-                <tr>
+    <table id="dynamicCart" class="center cart_table">
+
+    </table>
+
+</main>
+
+<footer id="footer">
+    <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
+    <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
+    <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
+</footer>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        getHeader();
+        let content = "";
+        if (localStorage.getItem("cartIds") == null) {
+            content = "No items in cart";
+            $("#dynamicCart").html = content;
+        } else if (localStorage.getItem("cartIds") == "") {
+            content = "No items in cart";
+            $("#dynamicCart").html = content;
+        } else {
+            let itemsInCart = localStorage.getItem("cartIds").split(",");
+            for (const item of itemsInCart) {
+                console.log(item);
+            }
+
+            let idList = localStorage.getItem("cartIds");
+
+            $.ajax({
+                url: 'http://localhost:8000/api/spiele/gib/idList/' + idList,
+                method: 'get',
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json'
+            }).done(function (response) {
+                console.log(response);
+                console.log(response.length);
+
+                let gesamtpreis = 0;
+                for (const item of response) {
+                    content += "<tr>";
+
+                    let produktID = item.id;
+                    let produktName = item.name;
+                    let produktKlappentext = item.klappentext;
+                    let produktBeschreibung = item.beschreibung;
+                    let produktBild = '<img src="../Backend/' + item.cover_pfad + '" alt="' + produktName + '" width="40" height="40">';
+                    let produktPreis = item.preis;
+                    gesamtpreis += parseFloat(produktPreis);
+
+
+                    content += '<td class="cart_td cart_price">' + produktBild + '</td>';
+                    content += '<td class="cart_td">' + produktName + '</td>';
+                    content += '<td class="cart_price cart_td">' + produktPreis + '€</td>';
+
+                    content += "</tr>";
+                }
+                content += `<tr>
+                        <td></td>
+                        <td rowSpan="2"> Gesamt</td>
+                        <td>` + gesamtpreis.toString() + `€</td>
+                    </tr>`;
+
+                content += `<tr>
                     <td></td>
                     <td>
                         <a href="../html/pay.html"> <button id="cart_button" type="submit"> Purchase </button> </a>
                     </td>
-                </tr>
-            </table>
+                </tr>`;
 
-            <table class="center">
-                <tr>
-                    <td>
-                        <a href="../index.html" > <button id="cont_shopping" type="submit"> Weiter Shoppen... </button> </a>
-                    </td>
-                    <td> <button id="del_cart" type="submit"> Warenkorb leeren</button> </td>
-                </tr>
-            </table>
+                // funktioniert nicht?
+                // $("#dynamicCart").html = content;
 
-        </main>
+                document.getElementById("dynamicCart").innerHTML = content;
 
-        <footer id="footer">
-            <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
-            <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
-            <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
-        </footer>
+            }).fail(function (jqXHR, statusText, error) {
+                console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                console.log('Ein Fehler ist aufgetreten');
+            });
+        }
 
-    </body>
+        // Hier unten ist ihm der content aus irgendeinem Grund fremd,
+        // Scoping Issues, keine Ahnung
+        // console.log(content);
+        // console.log("reached");
+        // document.getElementById("dynamicCart").innerHTML = content;
 
-    <script>
-        $(document).ready(function () {
-            getHeader();
-        });
-    </script>
+
+    });
+</script>
 </html>
