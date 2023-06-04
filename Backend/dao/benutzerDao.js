@@ -35,6 +35,20 @@ class BenutzerDao {
     }
 
 
+    // gameIds is delivered as a string
+    updateUserGames(userId, gameIds) {
+        var sql = 'UPDATE Benutzer SET Spiele=Spiele || ? WHERE id=?';
+        var statement = this._conn.prepare(sql);
+        var params = [gameIds, userId];
+        var result = statement.run(params);
+
+        if (result.changes != 1)
+            throw new Error('Could not update existing Record. Data: ' + params);
+
+        return result;
+    }
+
+
     loadAll() {
         var sql = 'SELECT * FROM Benutzer';
         var statement = this._conn.prepare(sql);

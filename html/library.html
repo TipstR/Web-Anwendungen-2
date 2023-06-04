@@ -42,12 +42,24 @@
         getHeader();
 
         console.log('Document ready, loading data from Service');
-        const gameDetails = await getGameDetails();
 
-        // if no user is logged in
-        if (gameDetails == null) {
+        const userId = localStorage.getItem("Benutzer");
+        if (userId == undefined || userId == null || userId == "") {
             const notLoggedInContent = "not logged in";
             $('#table1').html(notLoggedInContent);
+            return;
+        }
+        const userGames = await getUserGames(userId);
+        if (userGames["spiele"] == "") {
+            const noPurchasedGames = "No games in library";
+            $('#table1').html(noPurchasedGames);
+            return;
+        }
+
+        const gameDetails = await getGameDetails();
+        // if no user is logged in
+        if (gameDetails == null) {
+
         } else {
             // gameDetails wird automatisch nach aufsteigenden IDs sortiert
             console.log("Game Details: " + JSON.stringify(gameDetails));
@@ -69,6 +81,7 @@
             console.log(content);
             $('#table1').html(content);
         }
+
     });
 
 

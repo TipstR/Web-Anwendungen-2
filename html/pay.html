@@ -7,6 +7,7 @@
         <title>pay</title>
         <link rel="stylesheet" type="text/css" href="../lib/style.css">
         <script src="../lib/scripts/header.js"></script>
+        <script src="../lib/scripts/library.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
 
@@ -52,7 +53,7 @@
                     <td id="term_of_use_pay"><input type="checkbox">I have read the <a href="terms_of_use.html">terms of use</a> and agree to them.</td>
                 </tr>
                 <tr>
-                    <td ><button  type="submit" class="pay_button"> Purchase </button></td>
+                    <td ><button onclick="purchase_cart_items()" type="submit" class="pay_button"> Purchase </button></td>
                 </tr>
             </table>
 
@@ -91,5 +92,43 @@
         $(document).ready(function () {
             getHeader();
         });
+
+        async function purchase_cart_items() {
+            if (localStorage.getItem("Benutzer") == null || localStorage.getItem("Benutzer") == "") {
+                console.log("No user logged in");
+                return;
+            }
+
+            if (localStorage.getItem("cartIds") == null || localStorage.getItem("cartIds") == "") {
+                console.log("No items in cart");
+                return;
+            }
+
+
+            const userId = localStorage.getItem("Benutzer");
+            console.log(userId);
+            let gameIds = "";
+            let userGames = await getUserGames(userId);
+            if (userGames["spiele"] == "") {
+                gameIds = localStorage.getItem("cartIds");
+            }
+            else {
+                gameIds = "," + localStorage.getItem("cartIds");
+            }
+
+            $.ajax({
+                url: 'http://localhost:8000/api/benutzer/updateNutzerspiele/' + encodeURIComponent(userId) + "/" + encodeURIComponent(gameIds),
+                method: 'put',
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json'
+            }).done(function (response) {
+                console.log(response);
+
+            }).fail(function (jqXHR, statusText, error) {
+                console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                console.log('Ein Fehler ist aufgetreten');
+            });
+        }
     </script>
 </html>

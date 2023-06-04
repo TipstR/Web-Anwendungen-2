@@ -160,6 +160,33 @@ serviceRouter.put('/benutzer', function(request, response) {
     }
 });
 
+serviceRouter.put('/benutzer/updateNutzerspiele/:userId/:gameIds', function(request, response) {
+    console.log('Service benutzer: Client requested update of existing record');
+
+    var errorMsgs=[];
+    if (helper.isUndefined(request.params.userId))
+        errorMsgs.push('id fehlt');
+    if (helper.isUndefined(request.params.gameIds))
+        errorMsgs.push('gameIds fehlt');
+
+
+    if (errorMsgs.length > 0) {
+        console.log('Service benutzer: Update not possible, data missing');
+        response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
+        return;
+    }
+
+    const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
+    try {
+        var obj = benutzerDao.updateUserGames(request.params.userId, request.params.gameIds);
+        console.log('Service benutzer: Record updated, id=' + request.params.id);
+        response.status(200).json(obj);
+    } catch (ex) {
+        console.error('Service benutzer: Error updating record by id. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
 serviceRouter.delete('/benutzer/:id', function(request, response) {
     console.log('Service benutzer: Client requested deletion of record, id=' + request.params.id);
 

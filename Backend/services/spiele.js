@@ -24,7 +24,7 @@ serviceRouter.get('/spiele/gib/:id', function(request, response) {
 serviceRouter.get('/spiele/gib/idList/:idList', function(request, response) {
     console.log(decodeURIComponent(request.params.idList));
     console.log('Service Spiele: Client requested one record, idList=' + request.params.idList);
-    console.log("idListSplit" + request.params.idList.split(', '));
+    console.log("idListSplit" + request.params.idList.split(','));
 
     const spieleDao = new SpieleDao(request.app.locals.dbConnection);
     try {
@@ -33,7 +33,7 @@ serviceRouter.get('/spiele/gib/idList/:idList', function(request, response) {
         console.log('arr: ' + arr);
         response.status(200).json(arr);
     } catch (ex) {
-        console.error('Service Spiele: Error loading record by id. Exception occured: ' + ex.message);
+        console.error('Service Spiele: Error loading games by id list. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
 });

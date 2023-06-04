@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="added &quot;put into cart&quot; functionality on game site; made cart site dynamic">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/spiele.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/spiele.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
     </list>
     <list id="293c6832-2e80-43ed-baa5-d77dfde027d2" name="Changes by janik" comment="" />
     <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
-    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +129,10 @@
       <workItem from="1685507797030" duration="549000" />
       <workItem from="1685678446945" duration="438000" />
       <workItem from="1685679077303" duration="4462000" />
-      <workItem from="1685683754831" duration="3413000" />
+      <workItem from="1685683754831" duration="3795000" />
+      <workItem from="1685749441905" duration="1228000" />
+      <workItem from="1685790410820" duration="450000" />
+      <workItem from="1685845729622" duration="4876000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -295,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685683534391</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game">
+      <created>1685688012439</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685688012439</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +342,7 @@
     <MESSAGE value="fixed damaged .center class" />
     <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart dynamic" />
     <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart site dynamic" />
-    <option name="LAST_COMMIT_MESSAGE" value="added &quot;put into cart&quot; functionality on game site; made cart site dynamic" />
+    <MESSAGE value="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game" />
+    <option name="LAST_COMMIT_MESSAGE" value="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game" />
   </component>
 </project>
