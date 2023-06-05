@@ -97,6 +97,51 @@ serviceRouter.post('/spiele', function(request, response) {
     }
 });
 
+serviceRouter.post('/spiele/bewertungen/:spiele_id/:benutzername/:bewertungstext/:sterneanzahl', function(request, response) {
+    console.log('Service Spiele: Client requested creation of new record');
+
+    var errorMsgs=[];
+    if (helper.isUndefined(request.params.spiele_id))
+        errorMsgs.push('spiele_id fehlt');
+    if (helper.isUndefined(request.params.benutzername))
+        errorMsgs.push('benutzername fehlt');
+    if (helper.isUndefined(request.params.bewertungstext))
+        errorMsgs.push('bewertungstext fehlt');
+    if (helper.isUndefined(request.params.sterneanzahl))
+        errorMsgs.push('sterneanzahl fehlt');
+
+
+    if (errorMsgs.length > 0) {
+        console.log('Service spiele: Creation not possible, data missing');
+        response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
+        return;
+    }
+
+    const spieleDao = new SpieleDao(request.app.locals.dbConnection);
+    try {
+        var obj = spieleDao.createReview(request.params.spiele_id, request.params.benutzername, request.params.bewertungstext, request.params.sterneanzahl);
+        console.log('Service Spiele: Record inserted');
+        response.status(200).json(obj);
+    } catch (ex) {
+        console.error('Service Spiele: Error creating new record. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
+serviceRouter.get('/spiele/bewertungen/:spiele_id', function(request, response) {
+    console.log('Service Spiele: Client requested all records');
+
+    const spieleDao = new SpieleDao(request.app.locals.dbConnection);
+    try {
+        const arr = spieleDao.loadReviews(request.params.spiele_id);
+        console.log('Service Spiele: Records loaded, count=' + arr.length);
+        response.status(200).json(arr);
+    } catch (ex) {
+        console.error('Service Spiele: Error loading all records. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
 serviceRouter.put('/spiele', function(request, response) {
     console.log('Service spiele: Client requested update of existing record');
 

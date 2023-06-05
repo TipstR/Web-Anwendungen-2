@@ -71,6 +71,11 @@
 
     </table>
 
+    <table id="bewertungen">
+
+    </table>
+
+
 </main>
 
 <footer id="footer">
@@ -81,9 +86,13 @@
 
 <script>
 
-    $(document).ready(function () {
+    $(document).ready(async function () {
         getHeader();
-        handle_add_to_cart_reviews_visibility();
+        handle_add_to_cart_send_review_visibility();
+        // FIXME  Seite muss noch irgednwie nachgeladen werden, je nachdem, wie viel Inhalt existiert.
+        document.getElementById("bewertungen").innerHTML = '<tr><td>' + JSON.stringify(await loadUserReviews()) + '</td></tr>';
+        console.log(document.getElementById("bewertungen").innerHTML);
+
 
         console.log('loading specific product');
 
@@ -127,13 +136,14 @@
             console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
             alert('Ein Fehler ist aufgetreten');
         });
+
     });
 
 
     // Zeige den Warenkorb Knopf und die Reviews nur dann an, wenn angebracht
     // Warenkorb nur, falls kein Besitz vorhanden; Bewertungen nur, falls Besitz vorhanden.
     // Vermutlich sollten wir Editionen von Spielen weglassen
-    function handle_add_to_cart_reviews_visibility() {
+    function handle_add_to_cart_send_review_visibility() {
         let content = "";
         const userId = localStorage.getItem("Benutzer");
 
@@ -192,7 +202,7 @@
                     <td style="width:1%"></td>
                     <td style="width:1%"></td>
                     <td style="width:25%"></td>
-                    <td id="review_button_td"><button id="review_button" type="submit"> Send </button></td>
+                    <td id="review_button_td"><button id="review_button" onclick="submit_review()" type="submit"> Send </button></td>
                 </tr>`;
                     document.getElementById("evaluationfield").innerHTML = content;
                 } else {
@@ -221,8 +231,6 @@
         if (existsUrlParameter('id'))
             id = getUrlParameterValue('id');
 
-        console.log('target product id=' + id);
-
         if (id == -1) {
             alert('keine id erhalten');
             return;
@@ -246,6 +254,82 @@
                 localStorage.setItem("cartIds", localStorage.getItem("cartIds") + "," + id);
             }
         }
+    }
+
+
+    async function submit_review() {
+        var gameId = -1;
+
+        if (existsUrlParameter('id'))
+            gameId = getUrlParameterValue('id');
+
+        if (gameId == -1) {
+            alert('keine gameId erhalten');
+            return;
+        }
+
+        const reviewText = document.getElementById("evaluationtext").value;
+        if (reviewText == "") {
+            return;
+        }
+
+        let userName = "";
+        const userId = localStorage.getItem("Benutzer");
+        const starCount = 0;
+        try {
+            userName = (await $.ajax({
+                url: "http://localhost:8000/api/benutzer/gib/" + encodeURIComponent(userId),
+                method: "get",
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json'
+            }))["benutzername"];
+        } catch(error) {
+            console.log(error);
+        }
+
+        $.ajax({
+            url: 'http://localhost:8000/api/spiele/bewertungen' +   "/" + encodeURIComponent(gameId) +
+                                                                    "/" + encodeURIComponent(userName) +
+                                                                    "/" + encodeURIComponent(reviewText) +
+                                                                    "/" + encodeURIComponent(starCount),
+            method: 'post',
+            contentType: 'application/json; charset=utf-8',
+            cache: false,
+            dataType: 'json'
+        }).done(function (response) {
+            console.log(response);
+
+        }).fail(function (jqXHR, statusText, error) {
+            console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+            console.log('Ein Fehler ist aufgetreten');
+        });
+    }
+
+    async function loadUserReviews() {
+        var gameId = -1;
+
+        if (existsUrlParameter('id'))
+            gameId = getUrlParameterValue('id');
+
+        if (gameId == -1) {
+            alert('keine gameId erhalten');
+            return;
+        }
+
+        let reviews;
+        try {
+            reviews = await $.ajax({
+                url: "http://localhost:8000/api/spiele/bewertungen/" + encodeURIComponent(gameId),
+                method: "get",
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json'
+            });
+        } catch(error) {
+            console.log(error);
+        }
+        return reviews;
     }
 
 

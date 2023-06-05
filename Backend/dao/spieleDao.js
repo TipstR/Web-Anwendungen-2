@@ -84,6 +84,27 @@ class SpieleDao {
         return this.loadById(result.lastInsertRowid);
     }
 
+    createReview(spiele_id, benutzername, bewertungstext, sterneanzahl) {
+
+        var sql = 'INSERT INTO Bewertungen (spiele_id,benutzername,bewertungstext,sterneanzahl) VALUES (?,?,?,?)';
+        var statement = this._conn.prepare(sql);
+        var params = [spiele_id, benutzername, bewertungstext, sterneanzahl];
+        var result = statement.run(params);
+
+        if (result.changes != 1)
+            throw new Error('Could not insert new Record. Data: ' + params);
+
+        return this.loadById(result.lastInsertRowid);
+    }
+
+    loadReviews(spiele_id) {
+        var sql = 'SELECT * FROM Bewertungen WHERE spiele_id=?';
+        var statement = this._conn.prepare(sql);
+        var result = statement.all(spiele_id);
+
+        return result;
+    }
+
     update(id, name = '', cover_pfad = '', beschreibung = '', klappentext = '') {
         var sql = 'UPDATE Spiele SET name=?,cover_pfad=?,beschreibung=?,klappentext=? WHERE id=?';
         var statement = this._conn.prepare(sql);
