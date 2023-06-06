@@ -1,6 +1,8 @@
 const helper = require('../helper.js');
 const BenutzerDao = require('../dao/benutzerDao.js');
 const express = require('express');
+const jwt = require('jsonwebtoken');
+const tokenHandling = require('../tokenHandling.js');
 var serviceRouter = express.Router();
 
 console.log('- Service benutzer');
@@ -33,7 +35,7 @@ serviceRouter.get('/benutzer/alle', function(request, response) {
     }
 });
 
-serviceRouter.get('/benutzer/spiele/:id', function(request, response) {
+serviceRouter.get('/benutzer/spiele/:id', tokenHandling.checkToken, function(request, response) {
     console.log('Service benutzer: Client requested all records');
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
@@ -217,15 +219,35 @@ serviceRouter.post('/benutzer/login', function(request, response) {
         return;
     }
 
+    let access = false;
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
         var hasAccess = benutzerDao.hasAccess(request.body.email, request.body.passwort);
         console.log('Service benutzer: Check if user has access, hasaccess=' + hasAccess);
-        response.status(200).json(hasAccess);
+        // response.status(200).json(hasAccess);
+        access = true;
     } catch (ex) {
         console.error('Service benutzer: Error checking if user has access. Exception occured: ' + ex.message);
         response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
     }
+
+    if (access) {
+        let token = jwt.sign({email: request.body.email, password: request.body.passwort},
+            tokenHandling.secret,
+            { expiresIn: '24h' // expires in 24 hours
+            }
+        );
+
+        response.token = token;
+
+        //console.log(response.token);
+        //console.log(response);
+        hasAccess.token = token;
+        console.log(hasAccess);
+        response.status(200).json(hasAccess);
+
+    }
+
 });
 
 module.exports = serviceRouter;

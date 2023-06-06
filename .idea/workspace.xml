@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="fixed buying after signup">
-      <change afterPath="$PROJECT_DIR$/Backend/resources/csgo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/resources/dota2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/resources/gta5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/resources/rdr2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/resources/swJediSurvivor.jpg" afterDir="false" />
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes from 06.06.2023">
+      <change afterPath="$PROJECT_DIR$/Backend/tokenHandling.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/download/C43J890DKU.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/galerie/laptop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/galerie/saal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/produktbild/corsair.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/produktbild/intelcorei9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/produktbild/ryzen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/public/produktbild/samsungcurved.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/login.js" afterDir="false" />
     </list>
-    <list id="293c6832-2e80-43ed-baa5-d77dfde027d2" name="Changes by janik" comment="" />
     <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
-    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian">
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +50,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Backend/dao/benutzerDao.js">
+      <ranges>
+        <range start1="97" end1="100" start2="97" end2="97" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="105" end1="106" start2="102" end2="103" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,33 +72,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thert/WebstormProjects/Web Anwendungen 2&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/thert/WebstormProjects/Web Anwendungen 2",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
     ],
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\thert\WebstormProjects\Web Anwendungen 2" />
@@ -138,7 +154,7 @@
       <workItem from="1685790410820" duration="450000" />
       <workItem from="1685845729622" duration="5321000" />
       <workItem from="1685926182833" duration="9978000" />
-      <workItem from="1686044033741" duration="4695000" />
+      <workItem from="1686044033741" duration="13505000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -329,7 +345,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686046060050</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added more games">
+      <created>1686049748374</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1686049748374</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added SW to neueSpiele">
+      <created>1686049812830</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1686049812830</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +395,9 @@
     <MESSAGE value="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game" />
     <MESSAGE value="added basic functionality for buying games, fixed bugs in library.html" />
     <MESSAGE value="fixed buying after signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed buying after signup" />
+    <MESSAGE value="added more games" />
+    <MESSAGE value="added SW to neueSpiele" />
+    <MESSAGE value="changes from 06.06.2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes from 06.06.2023" />
   </component>
 </project>

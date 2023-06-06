@@ -103,7 +103,7 @@ class BenutzerDao {
         var result = statement.get(params);
 
         if (helper.isUndefined(result))
-            throw new Error('User has no access');
+            throw new Error('No such email or password');
 
         return this.loadById(result.id);
     }
