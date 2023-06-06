@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="added basic functionality for buying games, fixed bugs in library.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/spieleDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/spieleDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/spiele.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/spiele.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <list id="293c6832-2e80-43ed-baa5-d77dfde027d2" name="Changes by janik" comment="" />
     <list id="a1423584-2d6c-4213-a20a-1323f36311a3" name="Changes by rapha" comment="Changes by rapha" />
-    <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
     <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
+    <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,6 +132,7 @@
       <workItem from="1685790410820" duration="450000" />
       <workItem from="1685845729622" duration="5321000" />
       <workItem from="1685926182833" duration="9978000" />
+      <workItem from="1686044033741" duration="1465000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>

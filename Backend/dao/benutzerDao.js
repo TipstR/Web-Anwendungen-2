@@ -109,9 +109,9 @@ class BenutzerDao {
     }
 
     create(benutzername = '', email = '', passwort = '') {
-        var sql = 'INSERT INTO Benutzer (benutzername, email, passwort) VALUES (?,?,?)';
+        var sql = 'INSERT INTO Benutzer (benutzername, email, passwort, spiele) VALUES (?,?,?, ?)';
         var statement = this._conn.prepare(sql);
-        var params = [benutzername, email, md5(passwort)];
+        var params = [benutzername, email, md5(passwort), ''];
         var result = statement.run(params);
 
         if (result.changes != 1)
