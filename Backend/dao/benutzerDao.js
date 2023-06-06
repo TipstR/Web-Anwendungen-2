@@ -95,9 +95,6 @@ class BenutzerDao {
 
     hasAccess(email, passwort) {
         var sql = 'SELECT ID FROM Benutzer WHERE email=? AND passwort=?';
-        console.log(sql);
-        console.log(email);
-        console.log(passwort);
         var statement = this._conn.prepare(sql);
         var params = [email, md5(passwort)];
         var result = statement.get(params);
