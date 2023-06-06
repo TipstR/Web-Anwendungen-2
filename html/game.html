@@ -35,20 +35,8 @@
             <td id="blurb"><p id="klappentext"></p></td>
         </tr>
         <tr>
-            <td>
-                <form id="drop_down_game_editions">
-                    <label> Editionen </label>
-                    <label>
-                        <select>
-                            <option value="Standard"> Standard
-                            </option>
-                            <option value="Gold"> Gold
-                            </option>
-                            <option value="Ultimate"> Ultimate
-                            </option>
-                        </select>
-                    </label>
-                </form>
+            <td id="price">
+
             </td>
 
             <td id="purchase_button_td">
@@ -124,12 +112,18 @@
             produktName = response.name;
             produktKlappentext = response.klappentext;
             produktBeschreibung = response.beschreibung;
+            produktPreis = response.preis;
             produktBild = '<img src="../Backend/' + response.cover_pfad + '" alt="' + produktName + '">';
 
             $('#name').html(produktName);
             $('#produktBild').html(produktBild);
             $('#klappentext').html(produktKlappentext);
             $('#beschreibung').html(produktBeschreibung);
+            if (produktPreis == 0) {
+                $('#price').html("Free To Play");
+            } else {
+                $('#price').html(produktPreis + "€");
+            }
 
 
         }).fail(function (jqXHR, statusText, error) {

@@ -363,6 +363,12 @@ main {
     text-align: center;
 }
 
+#price {
+    color: white;
+    font-size: 20px;
+    background-color: #3a4752;
+}
+
 /* Library */
 
 #searchBib{
