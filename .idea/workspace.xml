@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changed cart symbol&#10;translated stuff to german&#10;moved search to dropdown&#10;filled dropdown with genres&#10;added logout as Ausloggen">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="tried to get tokens working...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/tokenHandling.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/tokenHandling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scripts/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/login.js" afterDir="false" />
     </list>
-    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +135,7 @@
       <workItem from="1685845729622" duration="5321000" />
       <workItem from="1685926182833" duration="9978000" />
       <workItem from="1686044033741" duration="13675000" />
-      <workItem from="1686121892915" duration="5233000" />
+      <workItem from="1686121892915" duration="12065000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -359,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686124824063</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="tried to get tokens working...">
+      <created>1686127487417</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1686127487417</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +409,7 @@
     <MESSAGE value="Changes by Tizian" />
     <MESSAGE value="changed cart symbol&#10;translated stuff to german&#10;moved search to dropdown&#10;filled dropdown with genres" />
     <MESSAGE value="changed cart symbol&#10;translated stuff to german&#10;moved search to dropdown&#10;filled dropdown with genres&#10;added logout as Ausloggen" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed cart symbol&#10;translated stuff to german&#10;moved search to dropdown&#10;filled dropdown with genres&#10;added logout as Ausloggen" />
+    <MESSAGE value="tried to get tokens working..." />
+    <option name="LAST_COMMIT_MESSAGE" value="tried to get tokens working..." />
   </component>
 </project>

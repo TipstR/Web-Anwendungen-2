@@ -232,7 +232,7 @@ serviceRouter.post('/benutzer/login', function(request, response) {
     }
 
     if (access) {
-        let token = jwt.sign({email: request.body.email, password: request.body.passwort},
+        let token = jwt.sign({id: hasAccess.id},
             tokenHandling.secret,
             { expiresIn: '24h' // expires in 24 hours
             }

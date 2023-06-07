@@ -151,7 +151,10 @@
                 method: 'get',
                 contentType: 'application/json; charset=utf-8',
                 cache: false,
-                dataType: 'json'
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                }
             }).done(function (response) {
                 let userGames = response["spiele"];
 
