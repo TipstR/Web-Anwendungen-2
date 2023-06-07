@@ -31,10 +31,9 @@ const checkToken = (request, response, next) => {
     }
 };
 
-module.exports = {
-    checkToken: checkToken
-}
+
 
 module.exports = {
-    secret: SECRET
+    secret: SECRET,
+    checkToken: checkToken
 };

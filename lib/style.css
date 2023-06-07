@@ -52,6 +52,14 @@ header {
     right: 50px;
     top: 20px;
 }
+
+#logout{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    font-size: 16px;
+}
+
 #cart{
     position: absolute;
     right: 10px;

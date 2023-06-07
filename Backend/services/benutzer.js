@@ -3,7 +3,7 @@ const BenutzerDao = require('../dao/benutzerDao.js');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const tokenHandling = require('../tokenHandling.js');
-var serviceRouter = express.Router();
+const serviceRouter = express.Router();
 
 console.log('- Service benutzer');
 
