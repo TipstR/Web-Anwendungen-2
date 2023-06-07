@@ -5,8 +5,10 @@ let jwt = require("jsonwebtoken");
 const SECRET = "8c48078a76768b155b421b210c0761cd";
 
 const checkToken = (request, response, next) => {
-    let token = request.header['authorization'];
-    if (token.startsWith('Bearer ')) {
+    console.log(request.header.toString())
+    let token = request.header('Authorization');
+    console.log("Checking Token: " + token);
+    if (token && token.startsWith('Bearer ')) {
         // Remove 'Bearer' from string
         token = token.slice(7, token.length);
     }
