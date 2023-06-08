@@ -94,7 +94,8 @@ class SpieleDao {
         if (result.changes != 1)
             throw new Error('Could not insert new Record. Data: ' + params);
 
-        return this.loadById(result.lastInsertRowid);
+        return this.loadById(spiele_id);
+        // return this.loadById(result.lastInsertRowid);
     }
 
     loadReviews(spiele_id) {

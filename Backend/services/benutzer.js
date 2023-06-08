@@ -12,7 +12,8 @@ serviceRouter.get('/benutzer/gib/:token', function(request, response) {
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var obj = benutzerDao.loadById(request.params.id);
+        const userId = tokenHandling.decodeToken(request.params.token);
+        var obj = benutzerDao.loadById(userId);
         console.log('Service benutzer: Record loaded');
         response.status(200).json(obj);
     } catch (ex) {
@@ -40,7 +41,8 @@ serviceRouter.get('/benutzer/spiele/:token', tokenHandling.checkToken, function(
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var arr = benutzerDao.loadUserGames(request.params.id);
+        const userId = tokenHandling.decodeToken(request.params.token);
+        const arr = benutzerDao.loadUserGames(userId);
         console.log('Service benutzer: Records loaded, count=' + arr.length);
         response.status(200).json(arr);
     } catch (ex) {
@@ -232,6 +234,7 @@ serviceRouter.post('/benutzer/login', function(request, response) {
     }
 
     if (access) {
+        jwt.decode()
         let token = jwt.sign({id: hasAccess.id},
             tokenHandling.secret,
             { expiresIn: '24h' // expires in 24 hours

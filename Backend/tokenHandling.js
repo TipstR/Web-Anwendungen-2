@@ -51,5 +51,6 @@ function decodeToken(token) {
 
 module.exports = {
     checkToken: checkToken,
+    decodeToken: decodeToken,
     secret: SECRET
 };

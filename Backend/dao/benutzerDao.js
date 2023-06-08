@@ -30,7 +30,6 @@ class BenutzerDao {
 
         if (helper.isUndefined(result))
             throw new Error('No Record found by id=' + id);
-
         return result;
     }
 

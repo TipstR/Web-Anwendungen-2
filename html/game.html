@@ -69,6 +69,10 @@
 
     </table>
 
+    <button id="loadMoreReviews" onclick="loadMoreUserReviews()">
+        Mehr anzeigen...
+    </button>
+
 
 </main>
 
@@ -79,6 +83,11 @@
 </footer>
 
 <script>
+    let starRating = -1;
+    let userName = '';
+    let reviewsLoaded = 0;
+    let totalReviews = 0;
+    let userReviews;
 
     $(document).ready(async function () {
         const token = localStorage.getItem("token");
@@ -162,16 +171,25 @@
     });
 
 
+    function loadMoreUserReviews() {
+        let reviewsLoadedLocal = reviewsLoaded;
+        for (let i = reviewsLoaded; i < reviewsLoadedLocal+5 && i < totalReviews; i++) {
+            document.getElementById("bewertungen").innerHTML += '<tr><td>' + JSON.stringify(userReviews[i]) + '</td></tr>';
+            reviewsLoaded++;
+        }
+    }
+
+
     // Zeige den Warenkorb Knopf und die Reviews nur dann an, wenn angebracht
     // Warenkorb nur, falls kein Besitz vorhanden; Bewertungen nur, falls Besitz vorhanden.
     // Vermutlich sollten wir Editionen von Spielen weglassen
     function handleAccountVisibilities() {
         let content = "";
-        const userId = localStorage.getItem("Benutzer");
+        const token = localStorage.getItem("token");
 
-        if (userId == null) {
+        if (token == null) {
             return;
-        } else if (userId == "") {
+        } else if (token == "") {
             return;
         } else {
             $.ajax({
@@ -250,6 +268,12 @@
     }
 
 
+    function setStars(value) {
+        starRating = value;
+        console.log(starRating);
+    }
+
+
     function put_id_into_local_storage() {
         var id = -1;
 
@@ -302,30 +326,21 @@
             return;
         }
 
-        let userName = "";
-        const userId = localStorage.getItem("Benutzer");
-        const starCount = 0;
-        try {
-            userName = (await $.ajax({
-                url: "http://localhost:8000/api/benutzer/gib/" + encodeURIComponent(userId),
-                method: "get",
-                contentType: 'application/json; charset=utf-8',
-                cache: false,
-                dataType: 'json'
-            }))["benutzername"];
-        } catch(error) {
-            console.log(error);
-        }
+
 
         $.ajax({
             url: 'http://localhost:8000/api/spiele/bewertungen' +   "/" + encodeURIComponent(gameId) +
                                                                     "/" + encodeURIComponent(userName) +
                                                                     "/" + encodeURIComponent(reviewText) +
-                                                                    "/" + encodeURIComponent(starCount),
+                                                                    "/" + encodeURIComponent(starRating),
             method: 'post',
             contentType: 'application/json; charset=utf-8',
             cache: false,
-            dataType: 'json'
+            dataType: 'json',
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+
         }).done(function (response) {
             console.log(response);
             location.reload();
