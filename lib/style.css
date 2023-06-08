@@ -317,7 +317,7 @@ main {
 .star-form > input:checked ~ label,
 .star-form > input:focus ~ label,
 .star-form > input:hover ~ label {
-    color: #faaa38;
+    color: deeppink;
 }
 
 .star-form > input:focus + label {
@@ -333,6 +333,10 @@ main {
     color: #3a4752;
     cursor: pointer;
     background-repeat: no-repeat;
+}
+
+#gameStars {
+    min-width: 260px;
 }
 
 

@@ -43,13 +43,13 @@
 
         console.log('Document ready, loading data from Service');
 
-        const userId = localStorage.getItem("Benutzer");
-        if (userId == undefined || userId == null || userId == "") {
+        const userToken = localStorage.getItem("token");
+        if (userToken == undefined || userToken == null || userToken == "") {
             const notLoggedInContent = "not logged in";
             $('#table1').html(notLoggedInContent);
             return;
         }
-        const userGames = await getUserGames(userId);
+        const userGames = await getUserGames(userToken);
         if (userGames["spiele"] == "") {
             const noPurchasedGames = "No games in library";
             $('#table1').html(noPurchasedGames);

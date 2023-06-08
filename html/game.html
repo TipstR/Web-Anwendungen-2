@@ -26,8 +26,14 @@
             <td style="text-align:left;" colspan="1" rowspan="2" id="produktBild">
 
             </td>
-            <td style="width:15%;">
-                <span style="color: yellow; font-size: 50px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <td id="gameStars">
+                <span style="color: yellow; font-size: 50px">
+                    <img src="../Backend/resources/star.png">
+                    <img src="../Backend/resources/star.png">
+                    <img src="../Backend/resources/star.png">
+                    <img src="../Backend/resources/star.png">
+                    <img src="../Backend/resources/star.png">
+                </span>
             </td>
         </tr>
 
@@ -75,11 +81,33 @@
 <script>
 
     $(document).ready(async function () {
+        const token = localStorage.getItem("token");
+        try {
+            userName = (await $.ajax({
+                url: "http://localhost:8000/api/benutzer/gib/" + encodeURIComponent(token),
+                method: "get",
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json'
+            }))["benutzername"];
+        } catch(error) {
+            console.log(error);
+        }
+
         getHeader();
-        handle_add_to_cart_send_review_visibility();
+        handleAccountVisibilities();
+        userReviews = await loadUserReviews();
+        totalReviews = userReviews.length;
         // FIXME  Seite muss noch irgednwie nachgeladen werden, je nachdem, wie viel Inhalt existiert.
-        document.getElementById("bewertungen").innerHTML = '<tr><td>' + JSON.stringify(await loadUserReviews()) + '</td></tr>';
-        console.log(document.getElementById("bewertungen").innerHTML);
+        //document.getElementById("bewertungen").innerHTML = '<tr><td>' + JSON.stringify(await loadUserReviews()) + '</td></tr>';
+
+
+        for (let i = 0; i < 5; i++) {
+            document.getElementById("bewertungen").innerHTML += '<tr><td>' + JSON.stringify(userReviews[i]) + '</td></tr>';
+            reviewsLoaded++;
+        }
+
+
 
 
         console.log('loading specific product');
@@ -137,7 +165,7 @@
     // Zeige den Warenkorb Knopf und die Reviews nur dann an, wenn angebracht
     // Warenkorb nur, falls kein Besitz vorhanden; Bewertungen nur, falls Besitz vorhanden.
     // Vermutlich sollten wir Editionen von Spielen weglassen
-    function handle_add_to_cart_send_review_visibility() {
+    function handleAccountVisibilities() {
         let content = "";
         const userId = localStorage.getItem("Benutzer");
 
@@ -147,7 +175,7 @@
             return;
         } else {
             $.ajax({
-                url: 'http://localhost:8000/api/benutzer/spiele/' + userId,
+                url: 'http://localhost:8000/api/benutzer/spiele/' + token,
                 method: 'get',
                 contentType: 'application/json; charset=utf-8',
                 cache: false,
@@ -175,19 +203,19 @@
 
                     content = `<tr>
                     <td style="width:fit-content" id="review_account">
-                        <span>Account</span>
+                        <span>` + userName + `</span>
                     </td>
                     <td>
                         <div class="star-form">
-                            <input type="radio" id="rate5" name="rating" value="5" />
+                            <input type="radio" id="rate5" name="rating" value="5" onclick="setStars(5)" />
                             <label for="rate5" title="5 star"><span class="icon-star">&#9733;</span></label>
-                            <input type="radio" id="rate4" name="rating" value="4" />
+                            <input type="radio" id="rate4" name="rating" value="4" onclick="setStars(4)" />
                             <label for="rate4" title="4 star"><span class="icon-star">&#9733;</span></label>
-                            <input type="radio" id="rate3" name="rating" value="3" />
+                            <input type="radio" id="rate3" name="rating" value="3" onclick="setStars(3)" />
                             <label for="rate3" title="3 star"><span class="icon-star">&#9733;</span></label>
-                            <input type="radio" id="rate2" name="rating" value="2" />
+                            <input type="radio" id="rate2" name="rating" value="2" onclick="setStars(2)" />
                             <label for="rate2" title="2 star"><span class="icon-star">&#9733;</span></label>
-                            <input type="radio" id="rate1" name="rating" value="1" />
+                            <input type="radio" id="rate1" name="rating" value="1" onclick="setStars(1)" />
                             <label for="rate1" title="1 star"><span class="icon-star">&#9733;</span></label>
                         </div>
                     </td>
@@ -257,6 +285,10 @@
     async function submit_review() {
         var gameId = -1;
 
+        if(starRating == -1) {
+            return;
+        }
+
         if (existsUrlParameter('id'))
             gameId = getUrlParameterValue('id');
 
@@ -296,6 +328,7 @@
             dataType: 'json'
         }).done(function (response) {
             console.log(response);
+            location.reload();
 
         }).fail(function (jqXHR, statusText, error) {
             console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);

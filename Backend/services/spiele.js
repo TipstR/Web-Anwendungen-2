@@ -3,6 +3,7 @@ const fileHelper = require('../fileHelper.js');
 const path = require('path');
 const SpieleDao = require('../dao/spieleDao.js');
 const express = require('express');
+const tokenHandling = require('../tokenHandling.js');
 var serviceRouter = express.Router();
 
 console.log('- Service Spiele');
@@ -97,7 +98,7 @@ serviceRouter.post('/spiele', function(request, response) {
     }
 });
 
-serviceRouter.post('/spiele/bewertungen/:spiele_id/:benutzername/:bewertungstext/:sterneanzahl', function(request, response) {
+serviceRouter.post('/spiele/bewertungen/:spiele_id/:benutzername/:bewertungstext/:sterneanzahl', tokenHandling.checkToken, function(request, response) {
     console.log('Service Spiele: Client requested creation of new record');
 
     var errorMsgs=[];

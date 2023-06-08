@@ -43,6 +43,11 @@ const checkToken = (request, response, next) => {
 };
 
 
+function decodeToken(token) {
+    return jwt.decode(token, {complete: true}).payload.id.toString();
+}
+
+
 
 module.exports = {
     checkToken: checkToken,

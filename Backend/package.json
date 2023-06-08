@@ -1,7 +1,7 @@
 {
   "name": "webanw2backend",
   "version": "4.0.0",
-  "description": "Backend for WebAnwendungen2 SS2021, mit Dateiupload",
+  "description": "Backend for WebAnwendungen2 SS2023, mit Dateiupload",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

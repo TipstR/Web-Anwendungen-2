@@ -7,8 +7,8 @@ const serviceRouter = express.Router();
 
 console.log('- Service benutzer');
 
-serviceRouter.get('/benutzer/gib/:id', function(request, response) {
-    console.log('Service benutzer: Client requested one record, id=' + request.params.id);
+serviceRouter.get('/benutzer/gib/:token', function(request, response) {
+    console.log('Service benutzer: Client requested one record, token=' + request.params.token);
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
@@ -35,7 +35,7 @@ serviceRouter.get('/benutzer/alle', function(request, response) {
     }
 });
 
-serviceRouter.get('/benutzer/spiele/:id', tokenHandling.checkToken, function(request, response) {
+serviceRouter.get('/benutzer/spiele/:token', tokenHandling.checkToken, function(request, response) {
     console.log('Service benutzer: Client requested all records');
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
