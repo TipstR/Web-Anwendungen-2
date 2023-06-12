@@ -254,6 +254,40 @@ serviceRouter.delete('/benutzer/:id', function(request, response) {
     }
 });
 
+serviceRouter.delete('/benutzer/warenkorb/:token', tokenHandling.checkToken, function(request, response) {
+    console.log('Service benutzer: Client requested deletion of record, token=' + request.params.token);
+
+    const userId = tokenHandling.decodeToken(request.params.token);
+
+    const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
+    try {
+        benutzerDao.deleteCart(userId);
+        obj = benutzerDao.loadById(userId);
+        console.log('Service benutzer: Deletion of record successful, id=' + userId);
+        response.status(200).json({ 'gelöscht': true, 'eintrag': obj });
+    } catch (ex) {
+        console.error('Service benutzer: Error deleting record. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
+serviceRouter.delete('/benutzer/warenkorb/:token/:gameId', tokenHandling.checkToken, function(request, response) {
+    console.log('Service benutzer: Client requested deletion of record, token=' + request.params.token);
+
+    const userId = tokenHandling.decodeToken(request.params.token);
+
+    const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
+    try {
+        benutzerDao.deleteItemFromCart(userId, request.params.gameId);
+        obj = benutzerDao.loadById(userId);
+        console.log('Service benutzer: Deletion of record successful, id=' + userId);
+        response.status(200).json({ 'gelöscht': true, 'eintrag': obj });
+    } catch (ex) {
+        console.error('Service benutzer: Error deleting record. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
 serviceRouter.post('/benutzer/login', function(request, response) {
     console.log('Service benutzer: Client requested check, if user has access');
 

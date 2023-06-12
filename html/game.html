@@ -107,7 +107,7 @@
         handleAccountVisibilities();
         userReviews = await loadUserReviews();
         totalReviews = userReviews.length;
-        // FIXME  Seite muss noch irgednwie nachgeladen werden, je nachdem, wie viel Inhalt existiert.
+        // FIXME  Seite muss noch irgendwie nachgeladen werden, je nachdem, wie viel Inhalt existiert.
         //document.getElementById("bewertungen").innerHTML = '<tr><td>' + JSON.stringify(await loadUserReviews()) + '</td></tr>';
 
 
@@ -249,7 +249,7 @@
                 </tr>`;
                     document.getElementById("evaluationfield").innerHTML = content;
                 } else {
-                    content = `<button id="purchase_button" type="submit" onClick="put_id_into_local_storage()"> Add to
+                    content = `<button id="purchase_button" type="submit" onClick="addGameToCart()"> Add to
                                 cart </button>`;
                     document.getElementById("purchase_button_td").innerHTML = content;
 
