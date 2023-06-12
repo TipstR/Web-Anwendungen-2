@@ -164,12 +164,57 @@ serviceRouter.put('/benutzer', function(request, response) {
     }
 });
 
-serviceRouter.put('/benutzer/updateNutzerspiele/:userId/:gameIds', function(request, response) {
+serviceRouter.put('/benutzer/updateWarenkorb/:token/:gameId', tokenHandling.checkToken, function(request, response) {
     console.log('Service benutzer: Client requested update of existing record');
 
     var errorMsgs=[];
-    if (helper.isUndefined(request.params.userId))
-        errorMsgs.push('id fehlt');
+    if (helper.isUndefined(request.params.token))
+        errorMsgs.push('token fehlt');
+    if (helper.isUndefined(request.params.gameId))
+        errorMsgs.push('gameIds fehlt');
+
+
+    if (errorMsgs.length > 0) {
+        console.log('Service benutzer: Update not possible, data missing');
+        response.status(400).json({ 'fehler': true, 'nachricht': 'Funktion nicht möglich. Fehlende Daten: ' + helper.concatArray(errorMsgs) });
+        return;
+    }
+
+    const userId = tokenHandling.decodeToken(request.params.token);
+    console.log(userId);
+
+    const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
+    try {
+        var obj = benutzerDao.addItemToCart(userId, request.params.gameId);
+        console.log('Service benutzer: Record updated, id=' + userId);
+        response.status(200).json(obj);
+    } catch (ex) {
+        console.error('Service benutzer: Error updating record by id. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
+serviceRouter.get('/benutzer/warenkorb/:token', tokenHandling.checkToken, function(request, response) {
+    console.log('Service benutzer: Client requested all records');
+
+    const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
+    try {
+        const userId = tokenHandling.decodeToken(request.params.token);
+        const arr = benutzerDao.loadCart(userId);
+        console.log('Service benutzer: Records loaded, result=' + arr);
+        response.status(200).json(arr);
+    } catch (ex) {
+        console.error('Service benutzer: Error loading all records. Exception occured: ' + ex.message);
+        response.status(400).json({ 'fehler': true, 'nachricht': ex.message });
+    }
+});
+
+serviceRouter.put('/benutzer/updateNutzerspiele/:token/:gameIds', tokenHandling.checkToken, function(request, response) {
+    console.log('Service benutzer: Client requested update of existing record');
+
+    var errorMsgs=[];
+    if (helper.isUndefined(request.params.token))
+        errorMsgs.push('token fehlt');
     if (helper.isUndefined(request.params.gameIds))
         errorMsgs.push('gameIds fehlt');
 
@@ -180,10 +225,13 @@ serviceRouter.put('/benutzer/updateNutzerspiele/:userId/:gameIds', function(requ
         return;
     }
 
+    const userId = tokenHandling.decodeToken(request.params.token);
+    console.log(userId);
+
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
     try {
-        var obj = benutzerDao.updateUserGames(request.params.userId, request.params.gameIds);
-        console.log('Service benutzer: Record updated, id=' + request.params.id);
+        var obj = benutzerDao.updateUserGames(userId, request.params.gameIds);
+        console.log('Service benutzer: Record updated, id=' + userId);
         response.status(200).json(obj);
     } catch (ex) {
         console.error('Service benutzer: Error updating record by id. Exception occured: ' + ex.message);

@@ -94,7 +94,7 @@
         });
 
         async function purchase_cart_items() {
-            if (localStorage.getItem("Benutzer") == null || localStorage.getItem("Benutzer") == "") {
+            if (localStorage.getItem("token") == null || localStorage.getItem("token") == "") {
                 console.log("No user logged in");
                 return;
             }
@@ -105,10 +105,10 @@
             }
 
 
-            const userId = localStorage.getItem("Benutzer");
-            console.log(userId);
+            const token = localStorage.getItem("token");
+            console.log(token);
             let gameIds = "";
-            let userGames = await getUserGames(userId);
+            let userGames = await getUserGames(token);
             if (userGames["spiele"] == "") {
                 gameIds = localStorage.getItem("cartIds");
             }
@@ -117,11 +117,17 @@
             }
 
             $.ajax({
-                url: 'http://localhost:8000/api/benutzer/updateNutzerspiele/' + encodeURIComponent(userId) + "/" + encodeURIComponent(gameIds),
+                url: 'http://localhost:8000/api/benutzer/updateNutzerspiele/' + encodeURIComponent(token) + "/" + encodeURIComponent(gameIds),
                 method: 'put',
                 contentType: 'application/json; charset=utf-8',
                 cache: false,
-                dataType: 'json'
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                },
+                success: function(response) {
+                  localStorage.removeItem("cartIds");
+                }
             }).done(function (response) {
                 console.log(response);
 
@@ -129,6 +135,8 @@
                 console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
                 console.log('Ein Fehler ist aufgetreten');
             });
+
+
         }
     </script>
 </html>

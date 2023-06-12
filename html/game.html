@@ -274,7 +274,7 @@
     }
 
 
-    function put_id_into_local_storage() {
+    function addGameToCart() {
         var id = -1;
 
         if (existsUrlParameter('id'))
@@ -285,24 +285,22 @@
             return;
         }
 
-        // cartIds key does not exist
-        if (localStorage.getItem("cartIds") == null) {
-            localStorage.setItem("cartIds", id);
-        }
-
-        // cartIds key contains no items
-        else if (localStorage.getItem("cartIds") == "") {
-            localStorage.setItem("cartIds", id);
-        }
-
-        //cartIds key contains items
-        else {
-            if (localStorage.getItem("cartIds").split(",").includes(id.toString())) {
-                return;
-            } else {
-                localStorage.setItem("cartIds", localStorage.getItem("cartIds") + "," + id);
+        $.ajax({
+            url: 'http://localhost:8000/api/benutzer/updateWarenkorb/' + encodeURIComponent(localStorage.getItem('token')) + "/" + encodeURIComponent(id),
+            method: 'put',
+            contentType: 'application/json; charset=utf-8',
+            cache: false,
+            dataType: 'json',
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             }
-        }
+        }).done(function (response) {
+
+        }).fail(function (jqXHR, statusText, error) {
+            console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+            console.log('Ein Fehler ist aufgetreten');
+        });
+
     }
 
 

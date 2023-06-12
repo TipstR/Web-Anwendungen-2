@@ -33,6 +33,17 @@ class BenutzerDao {
         return result;
     }
 
+    loadCart(id) {
+        var sql = 'SELECT warenkorb FROM Benutzer WHERE id=?';
+        var statement = this._conn.prepare(sql);
+        var result = statement.get(id);
+
+        if (helper.isUndefined(result))
+            throw new Error('No Record found by id=' + id);
+        return result;
+    }
+
+
 
     // gameIds is delivered as a string
     updateUserGames(userId, gameIds) {
@@ -104,10 +115,23 @@ class BenutzerDao {
         return this.loadById(result.id);
     }
 
+    addItemToCart(userId, gameId) {
+        const sql = 'UPDATE Benutzer SET warenkorb=warenkorb || ? WHERE id=?';
+        const statement = this._conn.prepare(sql);
+        const params = [gameId + ',', userId];
+        const result = statement.run(params);
+
+        if (helper.isUndefined(result)) {
+            throw new Error('no such user');
+        }
+
+        return result;
+    }
+
     create(benutzername = '', email = '', passwort = '') {
-        var sql = 'INSERT INTO Benutzer (benutzername, email, passwort, spiele) VALUES (?,?,?, ?)';
+        var sql = 'INSERT INTO Benutzer (benutzername, email, passwort, spiele, warenkorb) VALUES (?,?,?,?,?)';
         var statement = this._conn.prepare(sql);
-        var params = [benutzername, email, md5(passwort), ''];
+        var params = [benutzername, email, md5(passwort), '', ''];
         var result = statement.run(params);
 
         if (result.changes != 1)
@@ -148,6 +172,40 @@ class BenutzerDao {
             throw new Error('Could not delete Record by id=' + id + '. Reason: ' + ex.message);
         }
     }
+
+    deleteCart(id) {
+        try {
+            var sql = 'UPDATE Benutzer SET warenkorb=? WHERE id=?';
+            var statement = this._conn.prepare(sql);
+            var params = ["", id]
+            var result = statement.run(id);
+
+            if (result.changes != 1)
+                throw new Error('Could not delete Record by id=' + id);
+
+            return true;
+        } catch (ex) {
+            throw new Error('Could not delete Record by id=' + id + '. Reason: ' + ex.message);
+        }
+    }
+
+    deleteItemFromCart(id, userid) {
+        try {
+            var sql = "UPDATE Benutzer SET warenkorb=REPLACE(warenkorb," + " '" + ",?,', " + "',')";
+            console.log("Generiertes SQL" + sql);
+            var statement = this._conn.prepare(sql);
+            var params = [id, userid];
+            var result = statement.run(params);
+
+            if (result.changes != 1)
+                throw new Error('Could not delete Record by id=' + id);
+
+            return true;
+        } catch (ex) {
+            throw new Error('Could not delete Record by id=' + id + '. Reason: ' + ex.message);
+        }
+    }
+
 
     toString() {
         console.log('BenutzerDao [_conn=' + this._conn + ']');

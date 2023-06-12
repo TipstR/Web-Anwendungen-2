@@ -4,33 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="Tokens work now!">
-      <change afterPath="$PROJECT_DIR$/Backend/resources/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/resources/star_half.png" afterDir="false" />
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes from 08.06.2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/spiele.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/spiele.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/tokenHandling.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/tokenHandling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pay.html" afterDir="false" />
     </list>
     <list id="985c30fc-7d3f-4be2-9589-fd7352cece7e" name="Changes by janik" comment="" />
     <list id="d4adcb03-8124-440f-9c74-73405fbe56a8" name="Changes by rapha" comment="" />
-    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian">
-      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/spieleDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/spieleDao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/tokenHandling.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/tokenHandling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/library.js" afterDir="false" />
-    </list>
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian">
+      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,57 +45,38 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Backend/services/benutzer.js">
-      <ranges>
-        <range start1="9" end1="11" start2="9" end2="11" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="14" end1="15" start2="14" end2="16" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="37" end1="38" start2="38" end2="39" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="42" end1="43" start2="43" end2="45" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="234" end1="234" start2="236" end2="237" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/lib/scripts/library.js">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="2" end1="3" start2="2" end2="2" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="5" end1="6" start2="4" end2="5" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="19" end1="20" start2="18" end2="18" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="24" end1="25" start2="22" end2="23" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="28" end1="29" start2="26" end2="27" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Backend/tokenHandling.js">
-      <ranges>
-        <range start1="43" end1="43" start2="43" end2="48" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="48" end1="48" start2="53" end2="54" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/html/game.html">
       <ranges>
-        <range start1="28" end1="30" start2="28" end2="36" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="64" end1="64" start2="70" end2="74" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="75" end1="75" start2="85" end2="90" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="77" end1="77" start2="92" end2="105" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="78" end1="79" start2="106" end2="109" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="80" end1="82" start2="110" end2="119" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="136" end1="136" start2="173" end2="183" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="139" end1="140" start2="186" end2="187" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="141" end1="142" start2="188" end2="189" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="143" end1="144" start2="190" end2="191" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="145" end1="146" start2="192" end2="193" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="149" end1="150" start2="196" end2="197" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="177" end1="178" start2="224" end2="225" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="181" end1="182" start2="228" end2="229" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="183" end1="184" start2="230" end2="231" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="185" end1="186" start2="232" end2="233" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="187" end1="188" start2="234" end2="235" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="189" end1="190" start2="236" end2="237" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="224" end1="224" start2="271" end2="277" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="258" end1="258" start2="311" end2="315" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="272" end1="286" start2="329" end2="330" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="291" end1="292" start2="335" end2="336" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="295" end1="296" start2="339" end2="344" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
-        <range start1="298" end1="298" start2="346" end2="347" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="109" end1="110" start2="109" end2="110" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="251" end1="252" start2="251" end2="252" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="276" end1="277" start2="276" end2="277" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="287" end1="291" start2="287" end2="297" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="292" end1="296" start2="298" end2="302" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="297" end1="305" start2="303" end2="303" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/html/cart.html">
+      <ranges>
+        <range start1="35" end1="36" start2="35" end2="36" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="38" end1="51" start2="38" end2="53" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="52" end1="61" start2="54" end2="63" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="62" end1="65" start2="64" end2="67" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="66" end1="73" start2="68" end2="75" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="75" end1="78" start2="77" end2="80" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="79" end1="86" start2="81" end2="88" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="87" end1="93" start2="89" end2="95" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="94" end1="96" start2="96" end2="98" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="97" end1="98" start2="99" end2="100" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="99" end1="104" start2="101" end2="105" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Backend/services/benutzer.js">
+      <ranges>
+        <range start1="166" end1="167" start2="166" end2="212" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="170" end1="172" start2="215" end2="217" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="182" end1="182" start2="227" end2="230" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="184" end1="186" start2="232" end2="234" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="207" end1="207" start2="255" end2="289" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
       </ranges>
     </file>
   </component>
@@ -207,7 +178,9 @@
       <workItem from="1685926182833" duration="9978000" />
       <workItem from="1686044033741" duration="13675000" />
       <workItem from="1686121892915" duration="12449000" />
-      <workItem from="1686214857571" duration="9701000" />
+      <workItem from="1686214857571" duration="9863000" />
+      <workItem from="1686309652089" duration="979000" />
+      <workItem from="1686557584592" duration="8162000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -447,7 +420,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686178843931</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="changes from 08.06.2023">
+      <created>1686224808764</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1686224808764</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Changes by Tizian">
+      <created>1686224821964</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1686224821964</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes of 16.05.2023" />
     <MESSAGE value="added logo" />
     <MESSAGE value="fixed signup.html" />
     <MESSAGE value="changes of 23.05." />
@@ -484,12 +470,13 @@
     <MESSAGE value="added more games" />
     <MESSAGE value="added SW to neueSpiele" />
     <MESSAGE value="changes from 06.06.2023" />
-    <MESSAGE value="Changes by Tizian" />
     <MESSAGE value="changed cart symbol&#10;translated stuff to german&#10;moved search to dropdown&#10;filled dropdown with genres" />
     <MESSAGE value="changed cart symbol&#10;translated stuff to german&#10;moved search to dropdown&#10;filled dropdown with genres&#10;added logout as Ausloggen" />
     <MESSAGE value="tried to get tokens working..." />
     <MESSAGE value="Tokens are working now!" />
     <MESSAGE value="Tokens work now!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tokens work now!" />
+    <MESSAGE value="changes from 08.06.2023" />
+    <MESSAGE value="Changes by Tizian" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
   </component>
 </project>
