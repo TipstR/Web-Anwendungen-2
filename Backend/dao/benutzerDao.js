@@ -189,20 +189,20 @@ class BenutzerDao {
         }
     }
 
-    deleteItemFromCart(id, userid) {
+    deleteItemFromCart(userid, gameid) {
         try {
             var sql = "UPDATE Benutzer SET warenkorb=REPLACE(warenkorb," + " '" + ",?,', " + "',')";
             console.log("Generiertes SQL" + sql);
             var statement = this._conn.prepare(sql);
-            var params = [id, userid];
+            var params = [expression, userid];
             var result = statement.run(params);
 
             if (result.changes != 1)
-                throw new Error('Could not delete Record by id=' + id);
+                throw new Error('Could not delete Record by id=' + userid);
 
             return true;
         } catch (ex) {
-            throw new Error('Could not delete Record by id=' + id + '. Reason: ' + ex.message);
+            throw new Error('Could not delete Record by id=' + userid + '. Reason: ' + ex.message);
         }
     }
 

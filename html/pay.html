@@ -18,65 +18,44 @@
         </header>
 
         <main class="center">
-            <h1> Payment Methods </h1>
+            <h1> Kasse </h1>
 
             <table  class="center">
 
-                <tr>
-                    <td id="payment_type"> Pay method<td>
-                </tr>
+
 
                 <tr>
                     <td class="payment_headline">IBAN</td>
-                    <td class="payment_headline">Swift</td>
+                    <td class="payment_headline">Adresse</td>
                 </tr>
 
                 <tr>
                     <td><input type="text" placeholder="IBAN" class="payment_input"></td>
-                    <td><input type="text" placeholder="Swift" class="payment_input"></td>
+                    <td><input type="text" placeholder="Adresse" class="payment_input"></td>
                 </tr>
 
                 <tr>
-                    <td class="payment_headline">Surname</td>
-                    <td class="payment_headline">Name</td>
+                    <td class="payment_headline">Nachname</td>
+                    <td class="payment_headline">Vorname</td>
                 </tr>
 
                 <tr>
-                    <td><input type="text" placeholder="Surname" class="payment_input"></td>
-                    <td><input type="text" placeholder="Name" class="payment_input"></td>
+                    <td><input type="text" placeholder="Nachname" class="payment_input"></td>
+                    <td><input type="text" placeholder="Vorname" class="payment_input"></td>
                 </tr>
 
             </table>
 
             <table class="center">
                 <tr>
-                    <td id="term_of_use_pay"><input type="checkbox">I have read the <a href="terms_of_use.html">terms of use</a> and agree to them.</td>
+                    <td id="term_of_use_pay"><input type="checkbox">Ich habe die <a href="terms_of_use.html">Nutzungsbedingungen</a> gelesen und bin mit diesen einverstanden.</td>
                 </tr>
                 <tr>
-                    <td ><button onclick="purchase_cart_items()" type="submit" class="pay_button"> Purchase </button></td>
+                    <td ><button onclick="purchase_cart_items()" type="submit" class="pay_button"> Kaufen </button></td>
                 </tr>
             </table>
 
-            <table id="payment_methods_table">
-                <tr>
-                    <td class="payment_methods_header" colspan="2">Payments Methods</td>
-                </tr>
 
-                <tr>
-                    <td class="payment_methods_item"><input type="image" src="../Backend/resources/cart.png" alt="cart" width="30" height="30"/></td>
-                    <td class="payment_methods_item"><input type="image" src="../Backend/resources/cart.png" alt="cart" width="30" height="30"/></td>
-                </tr>
-
-                <tr>
-                    <td class="payment_methods_item"><input type="image" src="../Backend/resources/cart.png" alt="cart" width="30" height="30"/></td>
-                    <td class="payment_methods_item"><input type="image" src="../Backend/resources/cart.png" alt="cart" width="30" height="30"/></td>
-                </tr>
-
-                <tr>
-                    <td class="payment_methods_item"><input type="image" src="../Backend/resources/cart.png" alt="cart" width="30" height="30"/></td>
-                    <td class="payment_methods_item"><input type="image" src="../Backend/resources/cart.png" alt="cart" width="30" height="30"/></td>
-                </tr>
-            </table>
 
         </main>
 
@@ -99,34 +78,44 @@
                 return;
             }
 
-            if (localStorage.getItem("cartIds") == null || localStorage.getItem("cartIds") == "") {
-                console.log("No items in cart");
-                return;
-            }
-
-
             const token = localStorage.getItem("token");
-            console.log(token);
-            let gameIds = "";
-            let userGames = await getUserGames(token);
-            if (userGames["spiele"] == "") {
-                gameIds = localStorage.getItem("cartIds");
-            }
-            else {
-                gameIds = "," + localStorage.getItem("cartIds");
+
+            let items;
+            try {
+                items = (await $.ajax({
+                    url: 'http://localhost:8000/api/benutzer/warenkorb/' + encodeURIComponent(token),
+                    method: 'get',
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false,
+                    dataType: 'json',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+            })).warenkorb;
+            } catch (error) {
+                console.log(error);
             }
 
             $.ajax({
-                url: 'http://localhost:8000/api/benutzer/updateNutzerspiele/' + encodeURIComponent(token) + "/" + encodeURIComponent(gameIds),
+                url: 'http://localhost:8000/api/benutzer/updateNutzerspiele/' + encodeURIComponent(token) + "/" + encodeURIComponent(items),
                 method: 'put',
                 contentType: 'application/json; charset=utf-8',
                 cache: false,
                 dataType: 'json',
                 headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    'Authorization': 'Bearer ' + token
                 },
                 success: function(response) {
-                  localStorage.removeItem("cartIds");
+                  $.ajax({
+                      url: 'http://localhost:8000/api/benutzer/warenkorb/leeren/' + encodeURIComponent(token),
+                      method: 'put',
+                      contentType: 'application/json; charset=utf-8',
+                      cache: false,
+                      dataType: 'json',
+                      headers: {
+                          'Authorization': 'Bearer ' + token
+                      }
+                  })
                 }
             }).done(function (response) {
                 console.log(response);

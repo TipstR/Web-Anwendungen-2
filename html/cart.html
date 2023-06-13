@@ -62,43 +62,52 @@
             console.log(response);
             console.log(response.length);
 
-            let gesamtpreis = 0;
-            for (const item of response) {
-                content += "<tr>";
+            if (response.length === 0) {
+                document.getElementById("dynamicCart").innerHTML = "Keine Produkte im Warenkorb";
+            } else {
+                let gesamtpreis = 0;
+                for (const item of response) {
+                    content += "<tr>";
 
-                let produktID = item.id;
-                let produktName = item.name;
-                let produktKlappentext = item.klappentext;
-                let produktBeschreibung = item.beschreibung;
-                let produktBild = '<img src="../Backend/' + item.cover_pfad + '" alt="' + produktName + '" width="40" height="40">';
-                let produktPreis = item.preis;
-                gesamtpreis += parseFloat(produktPreis);
+                    let produktId = item.id;
+                    let produktName = item.name;
+                    let produktKlappentext = item.klappentext;
+                    let produktBeschreibung = item.beschreibung;
+                    let produktBild = '<img src="../Backend/' + item.cover_pfad + '" alt="' + produktName + '" width="107" height="50">';
+                    let produktPreis = item.preis;
+                    gesamtpreis += parseFloat(produktPreis);
 
 
-                content += '<td class="cart_td cart_price">' + produktBild + '</td>';
-                content += '<td class="cart_td">' + produktName + '</td>';
-                content += '<td class="cart_price cart_td">' + produktPreis + '€</td>';
+                    content += '<td class="cart_td cart_price">' + produktBild + '</td>';
+                    content += '<td class="cart_td">' + produktName + '</td>';
+                    content += '<td class="cart_price cart_td">' + produktPreis + '€</td>';
+                    content += '<td class="cart_price cart_td del_cart_item" onclick="deleteItem(' + produktId + ')"> X </td>';
 
-                content += "</tr>";
-            }
-            content += `<tr>
+                    content += "</tr>";
+                }
+                content += `<tr>
                     <td></td>
                     <td rowSpan="2"> Gesamt</td>
-                    <td>` + gesamtpreis.toString() + `€</td>
+                    <td>` + gesamtpreis.toFixed(2).toString() + `€</td>
+                    <td rowspan="2">
+                        <button id="delete_cart" type="submit" onclick="deleteCart()"> Warenkorb leeren </button>
+                    </td>
                 </tr>`;
 
-            content += `<tr>
+                content += `<tr>
                 <td></td>
                 <td>
-                    <a href="../html/pay.html"> <button id="cart_button" type="submit"> Purchase </button> </a>
+                    <a href="../html/pay.html"> <button id="cart_button" type="submit"> Kaufen </button> </a>
                 </td>
+
             </tr>`;
 
-            // funktioniert nicht?
-            // $("#dynamicCart").html = content;
+                // funktioniert nicht?
+                // $("#dynamicCart").html = content;
 
-            document.getElementById("dynamicCart").innerHTML = content;
+                document.getElementById("dynamicCart").innerHTML = content;
 
+            }
         }).fail(function (jqXHR, statusText, error) {
             console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
             console.log('Ein Fehler ist aufgetreten');
@@ -111,6 +120,47 @@
         // document.getElementById("dynamicCart").innerHTML = content;
 
 
+
+
     });
+
+    async function deleteCart() {
+        try {
+            await $.ajax({
+                url: 'http://localhost:8000/api/benutzer/warenkorb/leeren/' + encodeURIComponent(localStorage.getItem('token')),
+                method: 'put',
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                },
+                success: function () {
+                    location.reload();
+                }
+            });
+        } catch(error) {
+            console.log(error);
+        }
+    }
+    async function deleteItem(gameId) {
+        try {
+            await $.ajax({
+                url: 'http://localhost:8000/api/benutzer/warenkorb/entferneProdukt/' + encodeURIComponent(localStorage.getItem('token')) + '/' + encodeURIComponent(gameId),
+                method: 'put',
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                },
+                success: function () {
+                    location.reload();
+                }
+            });
+        } catch(error) {
+            console.log(error);
+        }
+    }
 </script>
 </html>

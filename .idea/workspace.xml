@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes from 12.06.2023">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="updated signup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
     <list id="985c30fc-7d3f-4be2-9589-fd7352cece7e" name="Changes by janik" comment="" />
     <list id="d4adcb03-8124-440f-9c74-73405fbe56a8" name="Changes by rapha" comment="" />
-    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian" />
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
+    <list id="43c91d87-3a15-4af3-b71a-291594aaffc8" name="Changes by Tizian" comment="Changes by Tizian">
+      <change beforePath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/dao/benutzerDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +46,46 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Backend/dao/benutzerDao.js">
+      <ranges>
+        <range start1="179" end1="181" start2="179" end2="181" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="191" end1="192" start2="191" end2="192" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="193" end1="195" start2="193" end2="197" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="196" end1="197" start2="198" end2="199" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="200" end1="201" start2="202" end2="203" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="204" end1="205" start2="206" end2="207" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/html/game.html">
+      <ranges>
+        <range start1="67" end1="68" start2="67" end2="68" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="69" end1="70" start2="69" end2="70" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="71" end1="74" start2="71" end2="77" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="114" end1="116" start2="117" end2="145" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="175" end1="177" start2="204" end2="206" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="178" end1="178" start2="207" end2="238" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/lib/style.css">
+      <ranges>
+        <range start1="103" end1="104" start2="103" end2="104" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="125" end1="128" start2="125" end2="125" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="129" end1="129" start2="126" end2="130" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="136" end1="138" start2="137" end2="138" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="210" end1="211" start2="210" end2="210" changelist="43c91d87-3a15-4af3-b71a-291594aaffc8" />
+        <range start1="267" end1="267" start2="266" end2="267" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="271" end1="271" start2="271" end2="292" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="275" end1="276" start2="296" end2="296" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="283" end1="284" start2="303" end2="304" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="319" end1="320" start2="339" end2="340" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="336" end1="336" start2="356" end2="360" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="566" end1="566" start2="590" end2="594" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="572" end1="574" start2="600" end2="602" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="581" end1="581" start2="609" end2="610" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -135,7 +187,8 @@
       <workItem from="1686121892915" duration="12449000" />
       <workItem from="1686214857571" duration="9863000" />
       <workItem from="1686309652089" duration="979000" />
-      <workItem from="1686557584592" duration="8350000" />
+      <workItem from="1686557584592" duration="8494000" />
+      <workItem from="1686648445051" duration="14124000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -403,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686568156022</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="updated signup">
+      <created>1686568358189</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1686568358189</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed signup.html" />
     <MESSAGE value="changes of 23.05." />
     <MESSAGE value="changes of 25.05." />
     <MESSAGE value="Changes by janik" />
@@ -446,6 +505,7 @@
     <MESSAGE value="changes from 08.06.2023" />
     <MESSAGE value="changes from 12.06.2023" />
     <MESSAGE value="Changes by Tizian" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
+    <MESSAGE value="updated signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated signup" />
   </component>
 </project>
