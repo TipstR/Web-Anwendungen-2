@@ -254,7 +254,7 @@ serviceRouter.delete('/benutzer/:id', function(request, response) {
     }
 });
 
-serviceRouter.delete('/benutzer/warenkorb/:token', tokenHandling.checkToken, function(request, response) {
+serviceRouter.put('/benutzer/warenkorb/leeren/:token', tokenHandling.checkToken, function(request, response) {
     console.log('Service benutzer: Client requested deletion of record, token=' + request.params.token);
 
     const userId = tokenHandling.decodeToken(request.params.token);
@@ -271,7 +271,7 @@ serviceRouter.delete('/benutzer/warenkorb/:token', tokenHandling.checkToken, fun
     }
 });
 
-serviceRouter.delete('/benutzer/warenkorb/:token/:gameId', tokenHandling.checkToken, function(request, response) {
+serviceRouter.put('/benutzer/warenkorb/entferneProdukt/:token/:gameId', tokenHandling.checkToken, function(request, response) {
     console.log('Service benutzer: Client requested deletion of record, token=' + request.params.token);
 
     const userId = tokenHandling.decodeToken(request.params.token);

@@ -202,8 +202,8 @@
 
     function loadMoreUserReviews() {
         let reviewsLoadedLocal = reviewsLoaded;
-        for (let i = reviewsLoaded; i < reviewsLoadedLocal+5 && i < totalReviews; i++) {
-            document.getElementById("bewertungen").innerHTML += '<tr><td>' + JSON.stringify(userReviews[i]) + '</td></tr>';
+        /*for (let i = reviewsLoaded; i < reviewsLoadedLocal+5 && i < totalReviews; i++) {
+            document.getElementById("alleBewertungen").innerHTML += '<tr><td>' + JSON.stringify(userReviews[i]) + '</td></tr>';
             reviewsLoaded++;
         }*/
 

@@ -177,8 +177,8 @@ class BenutzerDao {
         try {
             var sql = 'UPDATE Benutzer SET warenkorb=? WHERE id=?';
             var statement = this._conn.prepare(sql);
-            var params = ["", id]
-            var result = statement.run(id);
+            var params = [",", id]
+            var result = statement.run(params);
 
             if (result.changes != 1)
                 throw new Error('Could not delete Record by id=' + id);
@@ -191,8 +191,10 @@ class BenutzerDao {
 
     deleteItemFromCart(userid, gameid) {
         try {
-            var sql = "UPDATE Benutzer SET warenkorb=REPLACE(warenkorb," + " '" + ",?,', " + "',')";
-            console.log("Generiertes SQL" + sql);
+            const expression = "," + gameid + ",";
+            var sql = "UPDATE Benutzer SET warenkorb=REPLACE(warenkorb, ?, ',') WHERE id=?";
+            console.log("Generiertes SQL: " + sql);
+            console.log("Expression: " + expression);
             var statement = this._conn.prepare(sql);
             var params = [expression, userid];
             var result = statement.run(params);
