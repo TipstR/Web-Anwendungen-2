@@ -91,56 +91,9 @@
         </section>
 
 
-        <table class="search_view">
-            <tr>
-                <td class="search_view_img_cell">
-                    <a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" class="search_view_game_icon"></a>
-                </td>
-                <td class="search_view_item">
-                    <a href="../html/game.html" class="remove_text_decoration"> Game 1 </a>
-                </td>
-            </tr>
+        <table id="search_view">
 
-            <tr>
-                <td class="search_view_img_cell">
-                    <a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" class="search_view_game_icon"></a>
-                </td>
-
-                <td class="search_view_item">
-                    <a href="../html/game.html" class="remove_text_decoration"> Game 2 </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="search_view_img_cell">
-                    <a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" class="search_view_game_icon"></a>
-                </td>
-                <td class="search_view_item">
-                    <a href="../html/game.html" class="remove_text_decoration"> Game 3 </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="search_view_img_cell">
-                    <a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" class="search_view_game_icon"></a>
-                </td>
-                <td class="search_view_item">
-                    <a href="../html/game.html" class="remove_text_decoration"> Game 4 </a>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="search_view_img_cell">
-                    <a href="../html/game.html"><img src="../Backend/resources/tetris.jpg" class="search_view_game_icon"></a>
-                </td>
-                <td class="search_view_item">
-                    <a href="../html/game.html" class="remove_text_decoration"> Game 5 </a>
-                </td>
-            </tr>
         </table>
-
-
-
 
 
 
@@ -153,8 +106,88 @@
     </body>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(async function () {
             getHeader();
+
+
+
+            let searchTag;
+            let tags;
+
+            if (existsUrlParameter("tags")) {
+                tags = getUrlParameterValue("tags").split(",");
+            } else {
+                tags = [];
+            }
+
+            if (existsUrlParameter("search")) {
+                searchTag = getUrlParameterValue("search");
+            } else {
+                searchTag = "";
+            }
+
+
+            for (const tag of tags) {
+                document.getElementById(tag).checked = true;
+                document.getElementById("tags_container").innerHTML += "<span class='tag'>" + displayNames[tag] + "</span>\n";
+            }
+
+            if (searchTag !== "") {
+                document.getElementById("tags_container").innerHTML += "<span class='tag'>'" + searchTag + "'</span>\n";
+            }
+
+            document.getElementById("suche").value = searchTag;
+
+            let allGames;
+            try {
+                allGames = await $.ajax({
+                    url: "http://localhost:8000/api/spiele/alle",
+                    method: "get",
+                    contentType: 'application/json; charset=utf-8',
+                    cache: false,
+                    dataType: 'json'
+                });
+            } catch(error) {
+                console.log(error);
+            }
+
+            let filteredGames = [];
+            if (tags === -1) {
+                filteredGames = allGames
+            } else {
+                for (const game of allGames) {
+                    let inFilter = true;
+
+                    for (const tag of tags) {
+                        if (!game.tags.includes(tag)) {
+                            inFilter = false;
+                            break;
+                        }
+                    }
+
+                    if (!game.name.toLowerCase().includes(searchTag.toLowerCase())) {
+                        inFilter = false;
+                    }
+                    if (inFilter) {
+                        filteredGames.push(game);
+                    }
+                }
+            }
+
+            console.log(filteredGames);
+
+            let content = "";
+            for (const game of filteredGames) {
+                console.log(game.cover_pfad);
+                content += `<tr>
+                                <td class='search_view_img_cell'><a href='game.html?id=` + game.id + `' ><img src='../Backend/` + game.cover_pfad + `' class='search_view_game_icon'></a></td>
+                                <td class="search_view_item"><a class=remove_text_decoration href="game.html?id=` + game.id + `">` + game.name + `</a></td>
+                                <td class="search_view_item">` + game.preis + `€</td>
+                            </tr>`
+            }
+            document.getElementById("search_view").innerHTML = content;
+
+
         });
     </script>
 </html>

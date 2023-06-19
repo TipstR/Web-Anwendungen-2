@@ -10,6 +10,7 @@
     <script src="../lib/scripts/search.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../lib/scripts/library.js"></script>
+    <script src="../lib/scripts/urlParameter.js"></script>
 </head>
 <body>
 
@@ -88,13 +89,17 @@
 </aside>
 
 
-<main class="center">
-    <table class="center" id="table1">
 
+
+    <section id="tags_container">
+
+    </section>
+
+
+    <table class="center" id="table1">
 
     </table>
 
-</main>
 
 
 <footer id="footer">
@@ -199,8 +204,7 @@
                 }
             }
 
-            console.log(content);
-            $('#table1').html(content);
+            document.getElementById("table1").innerHTML = content;
         }
 
     });

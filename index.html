@@ -124,19 +124,19 @@
                let content = '';
 
                content += `<tr class="tr_th_style">
-                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/trending.html">Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
+                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/search.html?tags=trending"> Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
                                 </tr>`;
                content += '<tr>';
-               // neuen code zusammensetzen
 
-               for (let i = 0; i < 3; i++) {
-                   const obj = alleSpiele[i];
+
+               for (let i = 0; i < 3 && i < trendingGames.length; i++) {
+                   const obj = trendingGames[i];
                    content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
                }
 
                content += '</tr>'
                content += `<tr class="tr_th_style">
-                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/trending.html"> Neue Spiele <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
+                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/search.html?tags=neu"> Neue Spiele <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
                                 </tr>`;
                content += '<tr>'
 
@@ -149,7 +149,7 @@
 
                console.log(content);
                // zusammengesetzen Code im Dokument ausgeben
-               $('#table1').html(content);
+               document.getElementById("table1").innerHTML = content;
            });
             });
         </script>

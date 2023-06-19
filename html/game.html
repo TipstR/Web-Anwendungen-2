@@ -99,7 +99,10 @@
                 method: "get",
                 contentType: 'application/json; charset=utf-8',
                 cache: false,
-                dataType: 'json'
+                dataType: 'json',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
             }))["benutzername"];
         } catch(error) {
             console.log(error);
@@ -274,6 +277,24 @@
                     return;
                 }
 
+                let cartGames;
+                try {
+                    cartGames = (await $.ajax({
+                        url: 'http://localhost:8000/api/benutzer/warenkorb/' + encodeURIComponent(localStorage.getItem('token')),
+                        method: 'get',
+                        contentType: 'application/json; charset=utf-8',
+                        cache: false,
+                        dataType: 'json',
+                        headers: {
+                            'Authorization': 'Bearer ' + localStorage.getItem('token')
+                        }
+                    })).warenkorb;
+                } catch(error) {
+                    console.log(error);
+                }
+                cartGames = cartGames.split(",");
+
+
                 if (userGames.includes(gameId.toString())) {
                     content = "Bereits in der Bibliothek";
                     document.getElementById("purchase_button_td").innerHTML = content;
@@ -307,6 +328,11 @@
                     <td id="review_button_td"><button id="review_button" onclick="submit_review()" type="submit"> Send </button></td>
                 </tr>`;
                     document.getElementById("evaluationfield").innerHTML = content;
+                }
+                else if (cartGames.includes(gameId.toString())) {
+                    content = "<span> Im Warenkorb </span>";
+                    document.getElementById("purchase_button_td").innerHTML = content;
+
                 } else {
                     content = `<button id="purchase_button" type="submit" onClick="addGameToCart()"> Add to
                                 cart </button>`;

@@ -7,7 +7,7 @@ const serviceRouter = express.Router();
 
 console.log('- Service benutzer');
 
-serviceRouter.get('/benutzer/gib/:token', function(request, response) {
+serviceRouter.get('/benutzer/gib/:token', tokenHandling.checkToken, function(request, response) {
     console.log('Service benutzer: Client requested one record, token=' + request.params.token);
 
     const benutzerDao = new BenutzerDao(request.app.locals.dbConnection);
