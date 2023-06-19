@@ -7,6 +7,7 @@
     <title>library</title>
     <link rel="stylesheet" type="text/css" href="../lib/style.css">
     <script src="../lib/scripts/header.js"></script>
+    <script src="../lib/scripts/search.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../lib/scripts/library.js"></script>
 </head>
@@ -16,9 +17,74 @@
 
 </header>
 
-<aside id="searchBib">
-    <a> <label for="search_library"></label><input type="text" id="search_library" placeholder="Bibliothek durchsuchen">
-    </a>
+<aside>
+    <ul id="drop_down_ul">
+        <input type="checkbox" id="collapse" checked>
+        <label for="collapse" id="drop_down_ul_header"> Durchsuchen</label>
+
+        <li class="drop_down_li">
+            <label > Abenteuer </label>
+            <input id="adventure" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Action </label>
+            <input id="action" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Arcade </label>
+            <input id="arcade" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Free To Play </label>
+            <input id="free2play" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Gelegenheitsspiel </label>
+            <input id="casual" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Horror </label>
+            <input id="horror" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Wettbewerb </label>
+            <input id="comp" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > MOBA </label>
+            <input id="moba" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Neue Spiele</label>
+            <input id="neu" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Offene Welt </label>
+            <input id="openWorld" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Rollenspiel </label>
+            <input id="rpg" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > FPS </label>
+            <input id="fps" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Trending </label>
+            <input id="trending" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <label > Überleben </label>
+            <input id="survival" type="checkbox"/>
+        </li>
+        <li class="drop_down_li">
+            <input id="suche" placeholder="Suche" type="text"/>
+        </li>
+        <li class="drop_down_li">
+            <button type="submit" id="drop_down_button" onclick="submitSearch('inLibrary')"> <a class="remove_text_decoration">Search...</a> </button>
+        </li>
+    </ul>
 </aside>
 
 
@@ -58,18 +124,73 @@
 
         const gameDetails = await getGameDetails();
         // if no user is logged in
-        if (gameDetails == null) {
+
+        let searchTag;
+        let tags;
+
+        if (existsUrlParameter("tags")) {
+            tags = getUrlParameterValue("tags").split(",");
+        } else {
+            tags = [];
+        }
+
+        if (existsUrlParameter("search")) {
+            searchTag = getUrlParameterValue("search");
+        } else {
+            searchTag = "";
+        }
+
+
+        for (const tag of tags) {
+            document.getElementById(tag).checked = true;
+            document.getElementById("tags_container").innerHTML += "<span class='tag'>" + displayNames[tag] + "</span>\n";
+        }
+
+        if (searchTag !== "") {
+            document.getElementById("tags_container").innerHTML += "<span class='tag'>'" + searchTag + "'</span>\n";
+        }
+
+        document.getElementById("suche").value = searchTag;
+
+        console.log(gameDetails);
+
+        let filteredGames = [];
+        if (tags === -1) {
+            filteredGames = gameDetails
+        } else {
+            for (const game of gameDetails) {
+                let inFilter = true;
+                for (const tag of tags) {
+                    if (!game.tags.includes(tag)) {
+                        inFilter = false;
+                        break;
+                    }
+                }
+                if (!game.name.toLowerCase().includes(searchTag.toLowerCase())) {
+                    inFilter = false;
+                }
+                if (inFilter) {
+                    filteredGames.push(game);
+                }
+            }
+        }
+
+        console.log(filteredGames);
+
+        let content = "";
+
+        if (filteredGames == null) {
 
         } else {
             // gameDetails wird automatisch nach aufsteigenden IDs sortiert
-            console.log("Game Details: " + JSON.stringify(gameDetails));
+            console.log("filtered Games: " + filteredGames);
 
             let content = "";
-            for (let i = 0; i < Math.floor(gameDetails.length / 3) + 1; i++) {
+            for (let i = 0; i < Math.floor(filteredGames.length / 3) + 1; i++) {
                 content += '<tr>';
 
-                for (let j = 0; j < 3 && i * 3 + j < gameDetails.length; j++) {
-                    content += '<td class="td_padding"><a href="game.html?id=' + gameDetails[i * 3 + j].id + '"> <img class="cover" src = "../Backend/' + gameDetails[i * 3 + j].cover_pfad + '" alt="' + gameDetails[i * 3 + j].name + '"</a></td>';
+                for (let j = 0; j < 3 && i * 3 + j < filteredGames.length; j++) {
+                    content += '<td class="td_padding"><a href="game.html?id=' + filteredGames[i * 3 + j].id + '"> <img class="cover" src = "../Backend/' + filteredGames[i * 3 + j].cover_pfad + '" alt="' + filteredGames[i * 3 + j].name + '"</a></td>';
                 }
 
                 content += '</tr>';

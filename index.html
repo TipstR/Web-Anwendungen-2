@@ -9,6 +9,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="lib/scripts/index.js"></script>
         <script src="lib/scripts/header.js"></script>
+        <script src="lib/scripts/search.js"></script>
+
     </head>
     <body>
         <header id="header">
@@ -45,12 +47,16 @@
                     <input id="horror" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
-                    <label > Kompetitiv </label>
+                    <label > Wettbewerb </label>
                     <input id="comp" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > MOBA </label>
                     <input id="moba" type="checkbox"/>
+                </li>
+                <li class="drop_down_li">
+                    <label > Neue Spiele </label>
+                    <input id="neu" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Offene Welt </label>
@@ -61,18 +67,22 @@
                     <input id="rpg" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
-                    <label > Shooter </label>
+                    <label > FPS </label>
                     <input id="fps" type="checkbox"/>
+                </li>
+                <li class="drop_down_li">
+                    <label > Trending </label>
+                    <input id="trending" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Überleben </label>
                     <input id="survival" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
-                    <input placeholder="Suche" type="text"/>
+                    <input id="suche" placeholder="Suche" type="text"/>
                 </li>
                 <li class="drop_down_li">
-                    <button type="submit" id="drop_down_button"> <a class="remove_text_decoration" href="html/search.html">Search...</a> </button>
+                    <button type="submit" id="drop_down_button" onclick="submitSearch('inIndex')"> <a class="remove_text_decoration">Search...</a> </button>
                 </li>
             </ul>
         </aside>
@@ -92,13 +102,24 @@
 
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(async function() {
                 getIndexHeader();
 
+           $.when(spieleAjax()).done(function (response) {
+               const allGames = response;
+               let trendingGames = [];
+               let newGames = [];
 
-           $.when(spieleAjax(), neueSpieleAjax()).done(function (spieleResponse, neueSpieleResponse) {
-               const alleSpiele = spieleResponse[0];
-               const alleNeuenSpiele = neueSpieleResponse[0];
+                for (const game of allGames) {
+                    if (game.tags.includes("trending")) {
+                        trendingGames.push(game);
+                    }
+                    if (game.tags.includes("neu")) {
+                        newGames.push(game);
+                    }
+                }
+
+               console.log(allGames);
 
                let content = '';
 
@@ -112,20 +133,18 @@
                    const obj = alleSpiele[i];
                    content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
                }
+
                content += '</tr>'
                content += `<tr class="tr_th_style">
                                     <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/trending.html"> Neue Spiele <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
                                 </tr>`;
                content += '<tr>'
 
-
-               console.log("länge der spieleids:")
-               console.log(alleNeuenSpiele.length)
-               for (let i = 0; i < 3 && i < alleNeuenSpiele.length; i++) {
-                   const obj = alleNeuenSpiele[i];
-                   const spiel = alleSpiele[obj.spiele_id - 1]
-                   content += '<td class="td_padding"><a href="html/game.html?id=' + obj.spiele_id + '"> <img class="cover" src = "Backend/' + spiel.cover_pfad + '" alt="' + spiel.name + '"</a></td>';
+               for (let i = 0; i < 3 && i < newGames.length; i++) {
+                   const obj = newGames[i];
+                   content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
                }
+
 
 
                console.log(content);

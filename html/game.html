@@ -27,12 +27,11 @@
 
             </td>
             <td id="gameStars">
-                <span style="color: yellow; font-size: 50px">
-                    <img src="../Backend/resources/star.png">
-                    <img src="../Backend/resources/star.png">
-                    <img src="../Backend/resources/star.png">
-                    <img src="../Backend/resources/star.png">
-                    <img src="../Backend/resources/star.png">
+                <span style="color: yellow; font-size: 50px" id="rating">
+
+                </span>
+                <span style="color: yellow; font-size: 16px" id="noRating">
+
                 </span>
             </td>
         </tr>
@@ -243,7 +242,7 @@
     // Zeige den Warenkorb Knopf und die Reviews nur dann an, wenn angebracht
     // Warenkorb nur, falls kein Besitz vorhanden; Bewertungen nur, falls Besitz vorhanden.
     // Vermutlich sollten wir Editionen von Spielen weglassen
-    function handleAccountVisibilities() {
+    async function handleAccountVisibilities() {
         let content = "";
         const token = localStorage.getItem("token");
 
@@ -261,7 +260,7 @@
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
                 }
-            }).done(function (response) {
+            }).done(async function (response) {
                 let userGames = response["spiele"];
 
                 // get id from url parameter
@@ -276,7 +275,7 @@
                 }
 
                 if (userGames.includes(gameId.toString())) {
-                    content = "";
+                    content = "Bereits in der Bibliothek";
                     document.getElementById("purchase_button_td").innerHTML = content;
 
                     content = `<tr>
@@ -361,6 +360,8 @@
             console.log('Ein Fehler ist aufgetreten');
         });
 
+        location.reload();
+
     }
 
 
@@ -432,6 +433,31 @@
         } catch(error) {
             console.log(error);
         }
+
+        let rating = 0;
+
+        for (let i=0; i<reviews.length; i++) {
+            rating += reviews[i].sterneanzahl;
+        }
+
+        rating = rating / reviews.length;
+        rating = Math.round(rating*2);
+
+        if (!rating) {
+            document.getElementById("noRating").innerHTML += 'Noch keine Bewertung';
+        } else {
+            for (let i=0; i<Math.floor(rating/2); i++) {
+                document.getElementById("rating").innerHTML += '<img src="../Backend/resources/star.png">';
+            }
+
+            if (rating % 2 === 1) {
+                document.getElementById("rating").innerHTML += '<img src="../Backend/resources/star_half.png">';
+            }
+        }
+
+
+        console.log("Game is rated with " + rating/2 + " stars");
+
         return reviews;
     }
 

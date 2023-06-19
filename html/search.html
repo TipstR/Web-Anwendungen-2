@@ -7,6 +7,8 @@
         <title>search</title>
         <link rel="stylesheet" type="text/css" href="../lib/style.css">
         <script src="../lib/scripts/header.js"></script>
+        <script src="../lib/scripts/search.js"></script>
+        <script src="../lib/scripts/urlParameter.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
@@ -21,64 +23,71 @@
 
                 <li class="drop_down_li">
                     <label > Abenteuer </label>
-                    <input type="checkbox"/>
+                    <input id="adventure" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Action </label>
-                    <input type="checkbox"/>
+                    <input id="action" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Arcade </label>
-                    <input type="checkbox"/>
+                    <input id="arcade" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Free To Play </label>
-                    <input type="checkbox"/>
+                    <input id="free2play" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Gelegenheitsspiel </label>
-                    <input type="checkbox"/>
+                    <input id="casual" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Horror </label>
-                    <input type="checkbox"/>
+                    <input id="horror" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
-                    <label > Kompetitiv </label>
-                    <input type="checkbox"/>
+                    <label > Wettbewerb </label>
+                    <input id="comp" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > MOBA </label>
-                    <input type="checkbox"/>
+                    <input id="moba" type="checkbox"/>
+                </li>
+                <li class="drop_down_li">
+                    <label > Neue Spiele</label>
+                    <input id="neu" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Offene Welt </label>
-                    <input type="checkbox"/>
+                    <input id="openWorld" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Rollenspiel </label>
-                    <input type="checkbox"/>
+                    <input id="rpg" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
-                    <label > Shooter </label>
-                    <input type="checkbox"/>
+                    <label > FPS </label>
+                    <input id="fps" type="checkbox"/>
+                </li>
+                <li class="drop_down_li">
+                    <label > Trending </label>
+                    <input id="trending" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
                     <label > Überleben </label>
-                    <input type="checkbox"/>
+                    <input id="survival" type="checkbox"/>
                 </li>
                 <li class="drop_down_li">
-                    <input placeholder="Suche" type="text"/>
+                    <input id="suche" placeholder="Suche" type="text"/>
                 </li>
                 <li class="drop_down_li">
-                    <button type="submit" id="drop_down_button"> <a class="remove_text_decoration" href="html/search.html">Search...</a> </button>
+                    <button type="submit" id="drop_down_button" onclick="submitSearch('inSearch')"> <a class="remove_text_decoration">Search...</a> </button>
                 </li>
             </ul>
         </aside>
 
-        <section class="tags_container">
-            <span class="tag">Sport</span>
-            <span class="tag">'Suchwort'</span>
+        <section id="tags_container">
+
         </section>
 
 
