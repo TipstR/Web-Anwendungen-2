@@ -316,7 +316,6 @@ serviceRouter.post('/benutzer/login', function(request, response) {
     }
 
     if (access) {
-        jwt.decode()
         let token = jwt.sign({id: hasAccess.id},
             tokenHandling.secret,
             { expiresIn: '24h' // expires in 24 hours
@@ -324,13 +323,9 @@ serviceRouter.post('/benutzer/login', function(request, response) {
         );
 
         response.token = token;
-
-        //console.log(response.token);
-        //console.log(response);
         hasAccess.token = token;
         console.log(hasAccess);
         response.status(200).json(hasAccess);
-
     }
 
 });

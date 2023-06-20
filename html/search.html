@@ -98,7 +98,7 @@
 
 
 
-        <<footer id="footer">
+        <footer id="footer">
             <a id="privacy_policy" class=remove_text_decoration href="../html/privacy_policy.html"> Privacy Policy </a>
             <a id="legal" class=remove_text_decoration href="../html/legal.html"> Legal </a>
             <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
@@ -153,7 +153,7 @@
 
             let filteredGames = [];
             if (tags === -1) {
-                filteredGames = allGames
+                filteredGames = allGames;
             } else {
                 for (const game of allGames) {
                     let inFilter = true;

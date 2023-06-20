@@ -102,9 +102,6 @@
 
             </tr>`;
 
-                // funktioniert nicht?
-                // $("#dynamicCart").html = content;
-
                 document.getElementById("dynamicCart").innerHTML = content;
 
             }
@@ -133,6 +130,8 @@
             console.log(error);
         }
     }
+
+
     async function deleteItem(gameId) {
         try {
             await $.ajax({

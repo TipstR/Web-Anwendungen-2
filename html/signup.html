@@ -93,7 +93,7 @@
                     fehlermeldung.innerHTML = 'Die Nutzungsbedingungen müssen akzeptiert werden!';
                 } else {
                     $.ajax({
-                        url: 'http://localhost:8000/api/benutzer/eindeutig/' + encodeURIComponent(benutzernameInput.value) + "/" + encodeURIComponent(emailInput.value),
+                        url: 'http://localhost:8000/api/benutzer/eindeutig/' + encodeURIComponent(benutzernameInput.value) + "/" + encodeURIComponent(emailInput.value.toLowerCase()),
                         method: 'get',
                         contentType: 'application/json; charset=utf-8',
                         cache: false,
@@ -108,7 +108,7 @@
                         fehlermeldung.innerHTML = "Benutzername ist nicht eindeutig";
                         erfolg.innerHTML = "";
                     } else {
-                        createBenutzer(benutzernameInput.value, passwortInput.value, emailInput.value);
+                        createBenutzer(benutzernameInput.value, passwortInput.value, emailInput.value.toLowerCase());
                         benutzernameInput.value = "";
                         emailInput.value = "";
                         emailAgainInput.value = "";
@@ -117,6 +117,7 @@
                         termsOfUseCheckbox.checked = false;
                         fehlermeldung.innerHTML = "";
                         erfolg.innerHTML = "Erfolgreich registriert!";
+                        location.href = "login.html";
                     }
                     });
                 }

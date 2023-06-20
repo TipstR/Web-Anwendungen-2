@@ -273,6 +273,11 @@ main {
 
 }
 
+#loadMoreReviews:hover {
+    color: black;
+    background-color: gold;
+}
+
 #alleBewertungen {
     margin-top: 40px;
     text-align: center;
