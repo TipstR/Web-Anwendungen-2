@@ -83,10 +83,7 @@
             fehlermeldung.innerHTML = 'Nicht alle erforderlichen Felder ausgefüllt!';
         } else {
             let benutzer;
-            /* benutzer = loginBenutzer(emailInput.value, passwortInput.value).then(response => {
-                return response;
-            }); */
-            benutzer = await loginBenutzer(emailInput.value, passwortInput.value);
+            benutzer = await loginBenutzer(emailInput.value.toLowerCase(), passwortInput.value);
             console.log(benutzer);
             if (benutzer == null) {
                 emailInput.value = "";

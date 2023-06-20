@@ -129,11 +129,11 @@
 
             for (const tag of tags) {
                 document.getElementById(tag).checked = true;
-                document.getElementById("tags_container").innerHTML += "<span class='tag'>" + displayNames[tag] + "</span>\n";
+                document.getElementById("tags_container").innerHTML += "<span class='tag'>" + displayNames[tag] + "</span> \n";
             }
 
             if (searchTag !== "") {
-                document.getElementById("tags_container").innerHTML += "<span class='tag'>'" + searchTag + "'</span>\n";
+                document.getElementById("tags_container").innerHTML += "<span class='tag'>'" + searchTag + "'</span> \n";
             }
 
             document.getElementById("suche").value = searchTag;

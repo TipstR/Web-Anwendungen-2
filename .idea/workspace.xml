@@ -4,38 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes from 13.06.2023">
-      <change afterPath="$PROJECT_DIR$/lib/scripts/search.js" afterDir="false" />
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes from 19.06.2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/neueSpieleDao.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/dao/trendingDao.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/neueSpiele.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/trending.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/testBackend.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/trending.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexBackup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
-    <list id="eb5bf5fe-6b65-4146-ad25-bed068e0a04d" name="Changes by janik" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
-    </list>
-    <list id="734608b3-a6bd-4c86-99d0-99bf8d31c3bb" name="Changes by rapha" comment="">
+    <list id="eb5bf5fe-6b65-4146-ad25-bed068e0a04d" name="Changes by janik" comment="Changes by janik" />
+    <list id="734608b3-a6bd-4c86-99d0-99bf8d31c3bb" name="Changes by rapha" comment="Changes by rapha" />
+    <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
     </list>
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
-    <list id="a29a9b25-488e-41db-afb0-fd031eefb505" name="Changes by Tizian" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/header.js" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,120 +52,44 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/index.html">
-      <ranges>
-        <range start1="11" end1="11" start2="11" end2="13" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="47" end1="48" start2="49" end2="50" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="54" end1="54" start2="56" end2="60" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="63" end1="64" start2="69" end2="70" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="66" end1="66" start2="72" end2="76" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="71" end1="72" start2="81" end2="82" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="74" end1="75" start2="84" end2="85" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="94" end1="95" start2="104" end2="105" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="97" end1="97" start2="107" end2="111" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="98" end1="101" start2="112" end2="122" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="105" end1="106" start2="126" end2="127" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="108" end1="109" start2="129" end2="129" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="110" end1="112" start2="130" end2="133" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="114" end1="114" start2="135" end2="136" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="116" end1="117" start2="138" end2="139" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="120" end1="127" start2="142" end2="145" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="128" end1="128" start2="146" end2="147" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="132" end1="133" start2="151" end2="152" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/game.html">
-      <ranges>
-        <range start1="29" end1="35" start2="29" end2="34" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="102" end1="103" start2="101" end2="105" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="245" end1="246" start2="247" end2="248" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="263" end1="264" start2="265" end2="266" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="276" end1="276" start2="278" end2="296" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="278" end1="279" start2="298" end2="299" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="310" end1="310" start2="330" end2="335" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="362" end1="362" start2="387" end2="389" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="434" end1="434" start2="461" end2="486" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/library.html">
-      <ranges>
-        <range start1="9" end1="9" start2="9" end2="10" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="11" end1="11" start2="12" end2="13" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="18" end1="21" start2="20" end2="88" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="24" end1="25" start2="91" end2="98" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="27" end1="28" start2="100" end2="100" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="30" end1="31" start2="102" end2="102" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="60" end1="61" start2="131" end2="134" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="62" end1="62" start2="135" end2="143" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="63" end1="63" start2="144" end2="189" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="64" end1="65" start2="190" end2="191" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="67" end1="68" start2="193" end2="194" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="70" end1="72" start2="196" end2="198" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="80" end1="82" start2="206" end2="207" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/lib/scripts/header.js">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="34" end1="35" start2="34" end2="36" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="41" end1="42" start2="42" end2="43" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="47" end1="48" start2="48" end2="49" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="80" end1="81" start2="81" end2="85" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="87" end1="88" start2="91" end2="92" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="93" end1="94" start2="97" end2="98" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="95" end1="95" start2="99" end2="125" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/lib/style.css">
       <ranges>
-        <range start1="4" end1="5" start2="4" end2="5" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="58" end1="59" start2="58" end2="59" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="60" end1="60" start2="60" end2="61" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="61" end1="61" start2="62" end2="70" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="95" end1="96" start2="104" end2="105" changelist="eb5bf5fe-6b65-4146-ad25-bed068e0a04d" />
-        <range start1="135" end1="136" start2="144" end2="145" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="148" end1="149" start2="157" end2="158" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="174" end1="175" start2="183" end2="184" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="187" end1="188" start2="196" end2="197" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="227" end1="228" start2="236" end2="237" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="233" end1="233" start2="242" end2="243" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="246" end1="247" start2="256" end2="257" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="294" end1="295" start2="304" end2="305" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="299" end1="299" start2="309" end2="312" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="391" end1="392" start2="404" end2="405" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="395" end1="396" start2="408" end2="409" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="400" end1="400" start2="413" end2="414" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="410" end1="419" start2="424" end2="424" changelist="734608b3-a6bd-4c86-99d0-99bf8d31c3bb" />
-        <range start1="465" end1="466" start2="470" end2="471" changelist="734608b3-a6bd-4c86-99d0-99bf8d31c3bb" />
-        <range start1="479" end1="480" start2="484" end2="485" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="489" end1="490" start2="494" end2="495" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="494" end1="494" start2="499" end2="500" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="502" end1="502" start2="508" end2="510" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="7" end1="8" start2="7" end2="8" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="45" end1="49" start2="45" end2="45" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="76" end1="87" start2="72" end2="72" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="170" end1="171" start2="155" end2="155" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="208" end1="210" start2="192" end2="194" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="240" end1="241" start2="224" end2="224" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="242" end1="243" start2="225" end2="227" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="261" end1="262" start2="245" end2="246" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="270" end1="271" start2="254" end2="255" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="284" end1="284" start2="268" end2="273" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="285" end1="285" start2="274" end2="279" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+        <range start1="309" end1="310" start2="303" end2="303" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="400" end1="401" start2="393" end2="394" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="489" end1="490" start2="482" end2="483" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="588" end1="589" start2="581" end2="582" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/html/search.html">
       <ranges>
-        <range start1="9" end1="9" start2="9" end2="11" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="23" end1="24" start2="25" end2="26" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="27" end1="28" start2="29" end2="30" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="31" end1="32" start2="33" end2="34" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="35" end1="36" start2="37" end2="38" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="39" end1="40" start2="41" end2="42" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="43" end1="44" start2="45" end2="46" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="46" end1="48" start2="48" end2="50" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="51" end1="52" start2="53" end2="58" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="55" end1="56" start2="61" end2="62" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="59" end1="60" start2="65" end2="66" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="62" end1="64" start2="68" end2="74" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="67" end1="68" start2="77" end2="78" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="70" end1="71" start2="80" end2="81" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="73" end1="74" start2="83" end2="84" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="78" end1="81" start2="88" end2="90" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="84" end1="112" start2="93" end2="94" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="113" end1="130" start2="95" end2="95" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="131" end1="134" start2="96" end2="96" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="146" end1="147" start2="108" end2="109" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
-        <range start1="148" end1="148" start2="110" end2="190" changelist="a29a9b25-488e-41db-afb0-fd031eefb505" />
+        <range start1="100" end1="101" start2="100" end2="101" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+        <range start1="131" end1="132" start2="131" end2="132" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="135" end1="136" start2="135" end2="136" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="155" end1="156" start2="155" end2="156" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/html/login.html">
+      <ranges>
+        <range start1="85" end1="89" start2="85" end2="86" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="109" end1="123" start2="106" end2="106" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/html/cart.html">
+      <ranges>
+        <range start1="103" end1="106" start2="103" end2="103" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+        <range start1="114" end1="124" start2="111" end2="111" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
+        <range start1="145" end1="145" start2="132" end2="134" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
       </ranges>
     </file>
   </component>
@@ -181,7 +97,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2O8dOFu8aaidq80DWyC0DuXXw22" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -279,7 +195,9 @@
       <workItem from="1686309652089" duration="979000" />
       <workItem from="1686557584592" duration="8494000" />
       <workItem from="1686648445051" duration="15522000" />
-      <workItem from="1687154448790" duration="25254000" />
+      <workItem from="1687154448790" duration="25563000" />
+      <workItem from="1687200716059" duration="535000" />
+      <workItem from="1687251368129" duration="3384000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -568,7 +486,35 @@
       <option name="project" value="LOCAL" />
       <updated>1686667541848</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="changes from 19.06.2023">
+      <created>1687184754082</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1687184754082</updated>
+    </task>
+    <task id="LOCAL-00043" summary="changes from 19.06.2023">
+      <created>1687184764198</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1687184764198</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Changes by rapha">
+      <created>1687184773302</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1687184773302</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Changes by Tizian">
+      <created>1687184792824</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1687184792824</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,9 +532,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changes of 25.05." />
-    <MESSAGE value="Changes by janik" />
-    <MESSAGE value="Changes by rapha" />
     <MESSAGE value="Changes by tizian" />
     <MESSAGE value="fixed library.js + implemented logic for library.html" />
     <MESSAGE value="simple error handling if no user is logged in" />
@@ -610,6 +553,9 @@
     <MESSAGE value="changes from 12.06.2023" />
     <MESSAGE value="updated signup" />
     <MESSAGE value="changes from 13.06.2023" />
+    <MESSAGE value="changes from 19.06.2023" />
+    <MESSAGE value="Changes by janik" />
+    <MESSAGE value="Changes by rapha" />
     <MESSAGE value="Changes by Tizian" />
     <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
   </component>

@@ -112,43 +112,7 @@
         handleAccountVisibilities();
         userReviews = await loadUserReviews();
         totalReviews = userReviews.length;
-        // FIXME  Seite muss noch irgendwie nachgeladen werden, je nachdem, wie viel Inhalt existiert.
-        //document.getElementById("bewertungen").innerHTML = '<tr><td>' + JSON.stringify(await loadUserReviews()) + '</td></tr>';
-
-
-        for (let i = 0; i < 5; i++) {
-            if (userReviews[i] === undefined) {
-            } else {
-                reviewsLoaded++;
-
-                let stars = '<td>';
-                for (let j = 0; j < userReviews[i].sterneanzahl; j++) {
-                    stars += `<span class="reviewStar">&#9733</span>`;
-                }
-                stars += "</td>";
-
-                document.getElementById("alleBewertungen").innerHTML += `<table class="bewertungen">
-            <tr>
-                <td style="width:fit-content" id="review_account">
-                    <span>` + userReviews[i].benutzername + `</span>
-                </td>`
-                + stars + `
-                </tr>
-            <tr>
-                <td colspan="4"><label for="evaluationtext"></label><section rows="6" class="reviewText" >` + userReviews[i].bewertungstext + `</section></td>
-            </tr>
-            <tr>
-                <td style="width:1%"></td>
-                <td style="width:1%"></td>
-                <td style="width:25%"></td>
-
-            </tr>
-               </table>`;
-            }
-        }
-
-
-
+        loadMoreUserReviews();
 
         console.log('loading specific product');
 
@@ -238,6 +202,10 @@
             </tr>
                </table>`;
             }
+        }
+
+        if (reviewsLoaded === userReviews.length) {
+            document.getElementById("loadMoreReviews").remove();
         }
     }
 
