@@ -260,7 +260,7 @@
                 cartGames = cartGames.split(",");
 
 
-                if (userGames.includes(gameId.toString())) {
+                if (userGames.includes("," + gameId.toString() + ",")) {
                     content = "Bereits in der Bibliothek";
                     document.getElementById("purchase_button_td").innerHTML = content;
 
@@ -449,7 +449,7 @@
 
         console.log("Game is rated with " + rating/2 + " stars");
 
-        return reviews;
+        return reviews.reverse();
     }
 
 
