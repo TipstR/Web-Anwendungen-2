@@ -38,8 +38,9 @@
     </body>
 
     <script>
-        $(document).ready(function () {
-            getHeader();
+        $(document).ready(async function () {
+            await getHeader();
+            document.getElementById("about").style.color = "rgba(0,201,197,0.95)";
         });
     </script>
 

@@ -122,7 +122,9 @@
 
 <script>
     $(document).ready(async function () {
-        getHeader();
+        await getHeader();
+
+        document.getElementById("library").style.color = "rgba(0,201,197,0.95)";
 
         console.log('Document ready, loading data from Service');
 

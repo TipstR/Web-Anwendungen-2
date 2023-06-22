@@ -115,54 +115,56 @@
 
         <script>
             $(document).ready(async function() {
-                getIndexHeader();
+                await getIndexHeader();
 
-           $.when(spieleAjax()).done(function (response) {
-               const allGames = response;
-               let trendingGames = [];
-               let newGames = [];
+                document.getElementById("store").style.color = "rgba(0,201,197,0.95)";
 
-                for (const game of allGames) {
-                    if (game.tags.includes("trending")) {
-                        trendingGames.push(game);
+               $.when(spieleAjax()).done(function (response) {
+                   const allGames = response;
+                   let trendingGames = [];
+                   let newGames = [];
+
+                    for (const game of allGames) {
+                        if (game.tags.includes("trending")) {
+                            trendingGames.push(game);
+                        }
+                        if (game.tags.includes("neu")) {
+                            newGames.push(game);
+                        }
                     }
-                    if (game.tags.includes("neu")) {
-                        newGames.push(game);
-                    }
-                }
 
-               console.log(allGames);
+                   console.log(allGames);
 
-               let content = '';
+                   let content = '';
 
-               content += `<tr class="tr_th_style">
-                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/search.html?tags=trending"> Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
-                                </tr>`;
-               content += '<tr>';
+                   content += `<tr class="tr_th_style">
+                                        <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/search.html?tags=trending"> Trending <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
+                                    </tr>`;
+                   content += '<tr>';
 
 
-               for (let i = 0; i < 3 && i < trendingGames.length; i++) {
-                   const obj = trendingGames[i];
-                   content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
-               }
+                   for (let i = 0; i < 3 && i < trendingGames.length; i++) {
+                       const obj = trendingGames[i];
+                       content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
+                   }
 
-               content += '</tr>'
-               content += `<tr class="tr_th_style">
-                                    <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/search.html?tags=neu"> Neue Spiele <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
-                                </tr>`;
-               content += '<tr>'
+                   content += '</tr>'
+                   content += `<tr class="tr_th_style">
+                                        <th class="th_padding th_style" colSpan="3"><a class="remove_text_decoration" href="html/search.html?tags=neu"> Neue Spiele <img src="Backend/resources/arrow_chevron.png" width="25" height="25"> </a></th>
+                                    </tr>`;
+                   content += '<tr>'
 
-               for (let i = 0; i < 3 && i < newGames.length; i++) {
-                   const obj = newGames[i];
-                   content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
-               }
+                   for (let i = 0; i < 3 && i < newGames.length; i++) {
+                       const obj = newGames[i];
+                       content += '<td class="td_padding"><a href="html/game.html?id=' + obj.id + '"> <img class="cover" src = "Backend/' + obj.cover_pfad + '" alt="' + obj.name + '"</a></td>';
+                   }
 
 
 
-               console.log(content);
-               // zusammengesetzen Code im Dokument ausgeben
-               document.getElementById("table1").innerHTML = content;
-           });
+                   console.log(content);
+                   // zusammengesetzen Code im Dokument ausgeben
+                   document.getElementById("table1").innerHTML = content;
+               });
             });
         </script>
     </body>

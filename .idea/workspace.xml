@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="if the price of a game is 0, it is now Free To Play in search.html">
-      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="added missing covers to git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/header.js" afterDir="false" />
     </list>
-    <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
     <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="Changes by Tizian" />
+    <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,21 +141,7 @@
       <workItem from="1687154448790" duration="25563000" />
       <workItem from="1687200716059" duration="535000" />
       <workItem from="1687251368129" duration="3733000" />
-      <workItem from="1687425675282" duration="2231000" />
-    </task>
-    <task id="LOCAL-00001" summary="Changes by Tizian">
-      <created>1684143940954</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684143940954</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Changes by Tizian">
-      <created>1684144013823</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684144013823</updated>
+      <workItem from="1687425675282" duration="4470000" />
     </task>
     <task id="LOCAL-00003" summary="Changes by Tizian">
       <created>1684144080916</created>
@@ -482,7 +472,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687427822296</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="mini fix in search.html">
+      <created>1687427960719</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1687427960720</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added missing covers to git">
+      <created>1687428009133</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1687428009133</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,8 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed damaged .center class" />
-    <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart dynamic" />
     <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart site dynamic" />
     <MESSAGE value="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game" />
     <MESSAGE value="added basic functionality for buying games, fixed bugs in library.html" />
@@ -525,6 +527,8 @@
     <MESSAGE value="Changes by Tizian" />
     <MESSAGE value="fixed order of search dropdown,&#10;added management, singleplayer and multiplayer to search,&#10;added 4 new Games" />
     <MESSAGE value="if the price of a game is 0, it is now Free To Play in search.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="if the price of a game is 0, it is now Free To Play in search.html" />
+    <MESSAGE value="mini fix in search.html" />
+    <MESSAGE value="added missing covers to git" />
+    <option name="LAST_COMMIT_MESSAGE" value="added missing covers to git" />
   </component>
 </project>
