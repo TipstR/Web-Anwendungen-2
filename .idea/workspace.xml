@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="final changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/search.js" afterDir="false" />
-    </list>
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="fixed order of search dropdown,&#10;added management, singleplayer and multiplayer to search,&#10;added 4 new Games" />
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
     <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="Changes by Tizian" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +135,7 @@
       <workItem from="1687154448790" duration="25563000" />
       <workItem from="1687200716059" duration="535000" />
       <workItem from="1687251368129" duration="3733000" />
-      <workItem from="1687425675282" duration="1485000" />
+      <workItem from="1687425675282" duration="1867000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -473,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687255007904</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="fixed order of search dropdown,&#10;added management, singleplayer and multiplayer to search,&#10;added 4 new Games">
+      <created>1687427538950</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1687427538950</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed library.js + implemented logic for library.html" />
     <MESSAGE value="simple error handling if no user is logged in" />
     <MESSAGE value="fixed damaged .center class" />
     <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart dynamic" />
@@ -516,6 +515,7 @@
     <MESSAGE value="Changes by rapha" />
     <MESSAGE value="final changes" />
     <MESSAGE value="Changes by Tizian" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
+    <MESSAGE value="fixed order of search dropdown,&#10;added management, singleplayer and multiplayer to search,&#10;added 4 new Games" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed order of search dropdown,&#10;added management, singleplayer and multiplayer to search,&#10;added 4 new Games" />
   </component>
 </project>

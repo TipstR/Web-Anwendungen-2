@@ -190,11 +190,19 @@
 
             let content = "";
             for (const game of filteredGames) {
+                let game_price = -1;
+
+                if (game.preis === 0) {
+                    game_price = "Free To Play";
+                } else {
+                    game_price = game.preis + "€";
+                }
+
                 console.log(game.cover_pfad);
                 content += `<tr>
                                 <td class='search_view_img_cell'><a href='game.html?id=` + game.id + `' ><img src='../Backend/` + game.cover_pfad + `' class='search_view_game_icon'></a></td>
                                 <td class="search_view_item"><a class=remove_text_decoration href="game.html?id=` + game.id + `">` + game.name + `</a></td>
-                                <td class="search_view_item">` + game.preis + `€</td>
+                                <td class="search_view_item">` + game_price + `</td>
                             </tr>`
             }
             document.getElementById("search_view").innerHTML = content;
