@@ -195,7 +195,7 @@
                 if (game.preis === 0) {
                     game_price = "Free To Play";
                 } else {
-                    game_price = game.preis + "€";
+                    game_price = game.preis.toFixed(2).toString() + "€";
                 }
 
                 console.log(game.cover_pfad);
