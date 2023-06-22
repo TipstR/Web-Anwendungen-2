@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="added missing covers to git">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="header changes color to indicate on which site you are">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scripts/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/urlParameter.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/urlParameter.js" afterDir="false" />
     </list>
-    <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="Changes by Tizian" />
+    <list id="3ea94ae6-d748-4b52-aae6-d13236d97587" name="Changes by janik" comment="">
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+    </list>
+    <list id="96449e51-6299-44d5-ba06-5fd3d17991b4" name="Changes by rapha" comment="" />
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
+    <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="Changes by Tizian">
+      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +44,15 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/html/game.html">
+      <ranges>
+        <range start1="170" end1="174" start2="170" end2="171" changelist="3ea94ae6-d748-4b52-aae6-d13236d97587" />
+        <range start1="265" end1="266" start2="262" end2="263" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+        <range start1="454" end1="455" start2="451" end2="452" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,14 +159,7 @@
       <workItem from="1687154448790" duration="25563000" />
       <workItem from="1687200716059" duration="535000" />
       <workItem from="1687251368129" duration="3733000" />
-      <workItem from="1687425675282" duration="4470000" />
-    </task>
-    <task id="LOCAL-00003" summary="Changes by Tizian">
-      <created>1684144080916</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1684144080916</updated>
+      <workItem from="1687425675282" duration="8023000" />
     </task>
     <task id="LOCAL-00004" summary="Changes by Tizian">
       <created>1684148984399</created>
@@ -486,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687428009133</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="header changes color to indicate on which site you are">
+      <created>1687430350497</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1687430350497</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added &quot;put into cart&quot; functionality on game site; made cart site dynamic" />
     <MESSAGE value="show (&quot;Add to cart&quot; button) review text field only if user (doesn't own) owns game" />
     <MESSAGE value="added basic functionality for buying games, fixed bugs in library.html" />
     <MESSAGE value="fixed buying after signup" />
@@ -529,6 +546,7 @@
     <MESSAGE value="if the price of a game is 0, it is now Free To Play in search.html" />
     <MESSAGE value="mini fix in search.html" />
     <MESSAGE value="added missing covers to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="added missing covers to git" />
+    <MESSAGE value="header changes color to indicate on which site you are" />
+    <option name="LAST_COMMIT_MESSAGE" value="header changes color to indicate on which site you are" />
   </component>
 </project>

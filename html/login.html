@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <link rel="stylesheet" type="text/css" href="../lib/style.css">
-
+    <script src="../lib/scripts/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../lib/scripts/header.js"></script>
 </head>
@@ -48,8 +48,6 @@
                 <button class="login_res_button"> To Signup</button>
             </a></td>
         </tr>
-
-
     </table>
 
 </main>
@@ -60,15 +58,13 @@
     <a id="contact" class=remove_text_decoration href="../html/contact.html"> Contact </a>
 </footer>
 
-<script src="../lib/scripts/login.js"></script>
-
-
 </body>
 
 <script>
 
     $(document).ready(function () {
         getHeader();
+        document.getElementById("library").style.color = "rgba(0,201,197,0.95)";
     });
 
     async function submitLogin() {
