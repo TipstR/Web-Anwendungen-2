@@ -4,30 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="changes from 19.06.2023">
+    <list default="true" id="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" name="Changes" comment="final changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/db/webanw2.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/testBackend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/trending.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexBackup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
-    </list>
-    <list id="eb5bf5fe-6b65-4146-ad25-bed068e0a04d" name="Changes by janik" comment="Changes by janik" />
-    <list id="734608b3-a6bd-4c86-99d0-99bf8d31c3bb" name="Changes by rapha" comment="Changes by rapha" />
-    <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/services/benutzer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/benutzer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lib/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scripts/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scripts/search.js" afterDir="false" />
     </list>
     <list id="e6d110c8-9567-444e-b996-51b2565a28da" name="Changes by tizian" comment="" />
+    <list id="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" name="Changes by Tizian" comment="Changes by Tizian" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,48 +36,6 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/lib/style.css">
-      <ranges>
-        <range start1="7" end1="8" start2="7" end2="8" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="45" end1="49" start2="45" end2="45" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="76" end1="87" start2="72" end2="72" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="170" end1="171" start2="155" end2="155" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="208" end1="210" start2="192" end2="194" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="240" end1="241" start2="224" end2="224" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="242" end1="243" start2="225" end2="227" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="261" end1="262" start2="245" end2="246" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="270" end1="271" start2="254" end2="255" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="284" end1="284" start2="268" end2="273" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="285" end1="285" start2="274" end2="279" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
-        <range start1="309" end1="310" start2="303" end2="303" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="400" end1="401" start2="393" end2="394" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="489" end1="490" start2="482" end2="483" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="588" end1="589" start2="581" end2="582" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/search.html">
-      <ranges>
-        <range start1="100" end1="101" start2="100" end2="101" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
-        <range start1="131" end1="132" start2="131" end2="132" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="135" end1="136" start2="135" end2="136" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="155" end1="156" start2="155" end2="156" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/login.html">
-      <ranges>
-        <range start1="85" end1="89" start2="85" end2="86" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="109" end1="123" start2="106" end2="106" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/html/cart.html">
-      <ranges>
-        <range start1="103" end1="106" start2="103" end2="103" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
-        <range start1="114" end1="124" start2="111" end2="111" changelist="dd383ae3-72a0-4a68-a9c1-3a224ddbf4c5" />
-        <range start1="145" end1="145" start2="132" end2="134" changelist="f5a5dc77-c4ad-4089-a5ae-7131c8738a57" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,7 +66,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -197,7 +141,8 @@
       <workItem from="1686648445051" duration="15522000" />
       <workItem from="1687154448790" duration="25563000" />
       <workItem from="1687200716059" duration="535000" />
-      <workItem from="1687251368129" duration="3384000" />
+      <workItem from="1687251368129" duration="3733000" />
+      <workItem from="1687425675282" duration="1485000" />
     </task>
     <task id="LOCAL-00001" summary="Changes by Tizian">
       <created>1684143940954</created>
@@ -514,7 +459,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687184792824</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="final changes">
+      <created>1687254994104</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1687254994104</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Changes by Tizian">
+      <created>1687255007904</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1687255007904</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changes by tizian" />
     <MESSAGE value="fixed library.js + implemented logic for library.html" />
     <MESSAGE value="simple error handling if no user is logged in" />
     <MESSAGE value="fixed damaged .center class" />
@@ -556,6 +514,7 @@
     <MESSAGE value="changes from 19.06.2023" />
     <MESSAGE value="Changes by janik" />
     <MESSAGE value="Changes by rapha" />
+    <MESSAGE value="final changes" />
     <MESSAGE value="Changes by Tizian" />
     <option name="LAST_COMMIT_MESSAGE" value="Changes by Tizian" />
   </component>
